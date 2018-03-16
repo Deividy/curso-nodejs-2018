@@ -1,5 +1,8 @@
 # Introducão
 
+Nesse módulo iremos conhecer um pouco da história do *JavaScript*, da especificação *ECMAScript*  e do *Node.js*. <br />
+Também apresentaremos os padrões de código que serão usados ao longo do curso, o objetivo é preparar o aluno para os próximos módulos.
+
 <a id="introduction-javascript"></a>
 ## JavaScript
 
