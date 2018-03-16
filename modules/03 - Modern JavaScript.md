@@ -1,4 +1,4 @@
-#3) JavaScript moderno
+# 3) JavaScript moderno
 
 Nessa sessão veremos algumas das novas funcionalidades do JavaScript, não passaremos pelo básico e assumimos que você tenha um pré conhecimento em JavaScript, saiba diferenças de *statement* vs *expression*, como usar *ifs*, etc.
 
