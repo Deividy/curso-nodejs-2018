@@ -22,10 +22,10 @@ Conhecimento básico em JavaScript, sistemas operacionais e terminal (ou cmd).
 ## Índice
 
 1. [Introdução](modules/01%20-%20Introduction.md#introduction)
-   - [JavaScript](#introduction-javascript)
-   - [ECMAScript](#introduction-ecmascript)
-   - [Node.js](#introduction-nodejs)
-   - [Code standards](#introduction-codestandards)
+   - [JavaScript](modules/01%20-%20Introduction.md#introduction-javascript)
+   - [ECMAScript](modules/01%20-%20Introduction.md#introduction-ecmascript)
+   - [Node.js](modules/01%20-%20Introduction.md#introduction-nodejs)
+   - [Code standards](modules/01%20-%20Introduction.md#introduction-codestandards)
 2. [Instalando o Node.js](#getting-ready)
    - [macOS](#getting-ready-macos)
    - [Windows](#getting-ready-windows)
