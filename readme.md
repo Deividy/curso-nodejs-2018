@@ -3,14 +3,14 @@ Curso Node.js 2018
 
 Welcome!
 
-Esse curso tem como objetivo levar o conhecimento da histórico, ensinar conceitos básicos do ecossistema, apresentar os módulos do core, passar uma perspectiva dos módulos da comunidade e capacitar o aluno a ler, entender e escrever um bom código para Node.js.
+Esse curso tem como objetivo levar o conhecimento histórico, ensinar conceitos básicos do ecossistema, apresentar os módulos do core, passar uma perspectiva dos módulos da comunidade e capacitar você a ler, entender e escrever um bom código para Node.js.
 
-Ao finalizar o curso o aluno terá conhecimentos suficientes para construir um processo em Node.js, um módulo, um http server e/ou qualquer outro aplicativo que queira usando Node.js.
+Ao finalizar o você terá conhecimentos suficientes para construir um processo em Node.js, um módulo, um http server e/ou qualquer outro aplicativo que queira usando Node.js.
 
 ### Motivação
 
-Muitos cursos e materiais sobre Node.js hoje em dia abordam apenas frameworks e modulos da comunidade, com esse curso tenho a missão de levar para você o conhecimento interno, mostrando o que é possível ser feito e como sobreviver na selva `npm`. <br />
-Sem *firulas*, sem *compilar* para JavaScript, só o bom e velho JS e nosso amigo Node.js, tudo com muita prática e mão na massa. =)
+Muitos cursos e materiais sobre Node.js abordam apenas frameworks e módulos da comunidade, com esse curso tenho a missão de levar para você o conhecimento interno, mostrando o que é possível ser feito e como sobreviver na selva. <br />
+Sem *firulas*, sem *compilar* para JavaScript, só o bom e velho JS e nosso amigo Node.js, tudo com muita mão na massa. =)
 
 
 ## Pré requisitos
