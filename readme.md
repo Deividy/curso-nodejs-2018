@@ -77,7 +77,7 @@ Conhecimento básico em JavaScript, sistemas operacionais e terminal (ou cmd).
    - [Inspector (experimental)]()
 9. [Produção]()
    - [O que eu preciso saber?]()
-   - [Nginx? Vagrant?]()
+   - [Opções para web serving]()
    - [Opções para manter o Node.js em pé]()
    - [Deploy free]()
    - [Deploy profissa]()
