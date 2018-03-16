@@ -38,3 +38,7 @@ Depois de instalado você podera executar ele da seguinte forma:
 
 [carece de dados]
 [carece de screenshot]
+
+# Referência
+
+- [01] https://nodejs.org/en/download/
