@@ -1,7 +1,7 @@
 <a id='introduction'></a>
 # Introducão
 
-> “if you can write "hello world" you can change the world” -  Raghu Venkatesh
+> “Without requirements and design, programming is the art of adding bugs to an empty text file.” - Louis Srygley
 
 Nesse módulo iremos conhecer um pouco da história do *JavaScript*, da especificação *ECMAScript*  e do *Node.js*. <br />
 Além de apresentarmos o padrão de código que será usado ao longo do curso, o objetivo é preparar o aluno para os próximos módulos.
