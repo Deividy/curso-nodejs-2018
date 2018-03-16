@@ -4,6 +4,8 @@
 Nesse módulo iremos conhecer um pouco da história do *JavaScript*, da especificação *ECMAScript*  e do *Node.js*. <br />
 Além de apresentarmos o padrão de código que será usado ao longo do curso, o objetivo é preparar o aluno para os próximos módulos.
 
+> “A language that doesn't affect the way you think about programming is not worth knowing.” -  Alan J. Perlis
+
 <a id="introduction-javascript"></a>
 ## JavaScript
 
