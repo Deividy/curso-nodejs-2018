@@ -1,7 +1,6 @@
 # 2) Instalação do Node.js
 
-Nesse módulo veremos formas de instalar o Node.js nos sistemas operacionais: *macOS*, *Windows* e *Linux*.
-
+Nesse módulo veremos formas de instalar o Node.js nos sistemas operacionais: *macOS*, *Windows* e *Linux*. <br />
 Assumimos que você tenha um conhecimento básico no sistema operacional que está instalando o Node.js.
 
 <a id="getting-ready-macos"></a>
