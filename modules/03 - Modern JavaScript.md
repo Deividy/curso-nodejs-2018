@@ -4,6 +4,8 @@ Nessa sessão veremos algumas das novas funcionalidades do JavaScript, não pass
 
 O objetivo aqui é mostrar alguns dos conceitos mais importantes e novas *features* introduzidas no JavaScript usado pelo Node.js.
 
+Alguns detalhes, como nome de escopo, serão citados em inglês para o aluno criar familiaridade com o linguajar.
+
 <a id='newjs-lexicalscope'></a>
 ### Escopo de variáveis em JavaScript
 
