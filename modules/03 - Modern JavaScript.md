@@ -8,7 +8,6 @@ O objetivo aqui é mostrar alguns dos conceitos mais importantes e novas *featur
 ### Escopo de variáveis em JavaScript
 
 Existem diversas maneiras de definir um escopo em JavaScript. <br/>
-Os nomes dos escopos serão citados em inglês para você já ir se acostumando (caso ainda não esteja). *x)*
 
 Caso queira mais detalhes e a respeito, tem uma pergunta no stackoverflow[[01]](https://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript) repleta de comentários informativos. <br />
 Irei por aqui sumarizar os escopos **Global**, **Local** e **Block**, além de uma prévia sobre **Closure**.
