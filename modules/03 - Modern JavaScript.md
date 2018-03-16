@@ -1,10 +1,10 @@
 # 3) JavaScript moderno
 
-Nessa sessão veremos algumas das novas funcionalidades do JavaScript, não passaremos pelo básico e assumimos que o aluno tenha um pré conhecimento em JavaScript, saiba diferenças de *statement* vs *expression*, como usar *ifs*, etc.
+O JavaScript não é nada moderno e tem um longa história, como vimos na introdução, porém, está em constante mudança e por aqui veremos algumas das mais novas *features* que temos disponíveis na versão atual do Node.js.
 
-O objetivo aqui é mostrar alguns dos conceitos mais importantes e novas *features* introduzidas no JavaScript usado pelo Node.js.
+Você irá aprender conceitos sobre escopo no JavaScript, `const` e `let`, `arrow functions`, `iterables` e no final terá algumas dicas de como continuar o aprendizando.
 
-Alguns detalhes, como nome de escopo, serão citados em inglês para o aluno criar familiaridade com o linguajar.
+> "Stay foolish, stay hungry" - Steve Jobs
 
 <a id='newjs-lexicalscope'></a>
 ### Escopo de variáveis em JavaScript
