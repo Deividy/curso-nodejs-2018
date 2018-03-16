@@ -1,10 +1,10 @@
 <a id='introduction'></a>
 # Introducão
 
-> “Without requirements and design, programming is the art of adding bugs to an empty text file.” - Louis Srygley
+Antes de falarmos sobre código e começarmos a por a mão na massa, precisamos conhecer um pouco da história e do funcionamento interno das tecnologias que estamos usando. <br />
+Faremos uma viagem pela história do *JavaScript*, *ECMAScript* e *Node.js*, veremos também como o *Node.js* se comporta intermanete com seu *EventLoop*, no final teremos o padrão de código usado no curso.
 
-Nesse módulo iremos conhecer um pouco da história do *JavaScript*, da especificação *ECMAScript*  e do *Node.js*. <br />
-Além de apresentarmos o padrão de código que será usado ao longo do curso, o objetivo é preparar o aluno para os próximos módulos.
+> Everything must have a beginning.
 
 <a id="introduction-javascript"></a>
 ## JavaScript
