@@ -104,6 +104,6 @@ O `.eslintrc` e `.vimrc` usados podem ser encontrados na referência([[26]](#ref
 <a id='ref-25'></a>
 - [25] http://anandmanisankar.com/posts/nodejs-iojs-why-the-fork/
 <a id='ref-26'></a>
-- [26] .eslintrc
+- [26] https://github.com/Deividy/curso-nodejs-2018/blob/master/.eslintrc
 <a id='ref-27'></a>
-- [27] .vimrc
+- [27] https://github.com/Deividy/curso-nodejs-2018/blob/master/.vimrc
