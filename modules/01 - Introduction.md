@@ -23,7 +23,7 @@ Foi nessa época que começaram a usar o JavaScript fora do browser, e em 2009 o
 <a id="introduction-ecmascript"></a>
 ## ECMAScript
 
-ECMAScript não é uma linguagem de programação, e sim especificações e padrões para a implementação de uma linguagem de scripting[[08]](https://stackoverflow.com/questions/4269150/what-is-ecmascript). Imagine o ECMAScript como o padrão que os desenvolvedores tem que seguir para a implementação do JavaScript (ou JScript se você estiver usando Internet Explorer[[09]](#https://stackoverflow.com/questions/135203/whats-the-difference-between-javascript-and-jscript)).<br />
+ECMAScript não é uma linguagem de programação, e sim especificações e padrões para a implementação de uma linguagem de scripting[[08]](https://stackoverflow.com/questions/4269150/what-is-ecmascript). Imagine o ECMAScript como o padrão que os desenvolvedores tem que seguir para a implementação do JavaScript (ou JScript se você estiver usando Internet Explorer[[09]](https://stackoverflow.com/questions/135203/whats-the-difference-between-javascript-and-jscript)).<br />
 As primeiras versões não foram seguidas bem a risca e cada empresa decidiu implementar boa parte da linguagem em seus próprios padrões, inclusive a versão 4 do ECMAScript foi abandonada por questões políticas e por sua especificação ter ficado complexa demais[[10]](https://stackoverflow.com/questions/2329602/why-was-ecmascript-4th-edition-completely-scrapped).
 
 Apenas em 2011, com a versão 5.1 do ECMAScript, que essas grandes empresas começaram a se alinhar em relação ao padrão ECMA.<br />
