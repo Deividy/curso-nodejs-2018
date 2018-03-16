@@ -47,3 +47,5 @@ Usaremos um padrão de 4 espaços no lugar de tab, e mesmo não sendo necessári
 Os códigos e comentários dentro de códigos serão escritos em *inglês*, pois esse é o padrão mundial e você como desenvolvedor em 2018 tem que no mínimo poder ler e escrever códigos em inglês.
 
 O `.eslintrc` e `.vimrc` usados podem ser encontrados na referência([[26]](#ref-26), [[30]](#ref-30)) e na [raiz desse repositorio](#ref-26).
+
+# Referências
