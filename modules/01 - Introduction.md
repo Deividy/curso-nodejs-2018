@@ -14,10 +14,10 @@ Em novembro de 1996 a Netscape anunciou que tinha submetido o JavaScript para Ec
 
 A Microsoft em 1996 lançou o Internet Explorer 3.0 e nele foi incluído o JScript, que mesmo tendo o nome levemente diferente do JavaScript ele segue a implementação ECMAScript[[02]](https://stackoverflow.com/questions/135203/whats-the-difference-between-javascript-and-jscript).
 
-Em meados de 1999, a Microsoft criou o XMLHTTP ActiveX Object[[3]](https://news.ycombinator.com/item?id=5626079) para o acesso a web do Outlook, Mozilla rapidamente implementou o XMLHttpRequest em seu navegador, porém, foi o Gmail do Google o primeiro site a usar extensivamente o XMLHttpRequest, isso em 2004[[4]](https://www.wired.com/2011/04/0401gmail-launches/).<br />
-Jesse James Garrett (criador do Adaptive Pattern), definiu em 2005 o acrônimo AJAX em seu post histórico[[5]](http://lanyrd.com/2006/barcamp-boston-1/). A partir disso, JavaScript começou a se formar não apenas uma linguagem padrão de browsers e algo chato para abrir popups, mas uma tecnologia que podia criar uma interação e experiência incrível para interfaces de usuários. <br />
-Começaram a surgir muitos frameworks e bibliotecas com foco na experiência do usuário, jQuery foi criado em 2006 por John Resig[[6]](#ref-6) e rapidamente se espalhou para a maioria dos sites e sistemas para a web da época. <br />
-Foi nessa época que começaram a usar o JavaScript fora do browser, e em 2009 o projeto CommonJS[[7]](https://www.blueskyonmars.com/2010/01/29/commonjs-the-first-year/) foi fundado com o objetivo de especificar uma biblioteca padrão para desenvolvimento JavaScript fora do navegador.
+Em meados de 1999, a Microsoft criou o XMLHTTP ActiveX Object[[03]](https://news.ycombinator.com/item?id=5626079) para o acesso a web do Outlook, Mozilla rapidamente implementou o XMLHttpRequest em seu navegador, porém, foi o Gmail do Google o primeiro site a usar extensivamente o XMLHttpRequest, isso em 2004[[04]](https://www.wired.com/2011/04/0401gmail-launches/).<br />
+Jesse James Garrett (criador do Adaptive Pattern), definiu em 2005 o acrônimo AJAX em seu post histórico[[05]](http://lanyrd.com/2006/barcamp-boston-1/). A partir disso, JavaScript começou a se formar não apenas uma linguagem padrão de browsers e algo chato para abrir popups, mas uma tecnologia que podia criar uma interação e experiência incrível para interfaces de usuários. <br />
+Começaram a surgir muitos frameworks e bibliotecas com foco na experiência do usuário, jQuery foi criado em 2006 por John Resig[[06]](#ref-6) e rapidamente se espalhou para a maioria dos sites e sistemas para a web da época. <br />
+Foi nessa época que começaram a usar o JavaScript fora do browser, e em 2009 o projeto CommonJS[[07]](https://www.blueskyonmars.com/2010/01/29/commonjs-the-first-year/) foi fundado com o objetivo de especificar uma biblioteca padrão para desenvolvimento JavaScript fora do navegador.
 
 <a id="introduction-ecmascript"></a>
 ## ECMAScript
