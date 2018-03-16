@@ -44,11 +44,11 @@ Na metade de 2014 o projeto Node.js deu uma estagnada, isso por que alguns membr
 
 <a id='introduction-codestandards'></a>
 ## Code standards
-Agora que já vimos a historia do ecosistema, está na hora de definirmos um padrão de codigo para o curso.
+Agora que já vimos a historia do ecosistema, está na hora de definirmos um padrão de código para o curso.
 
-Usaremos um padrão de 4 espaços no lugar de tab, e mesmo não sendo necessários, usaremos ponto e vírgula (*;*) no final de cada *statement* ou *expression*, usaremos parênteses em todos os argumentos de funções, nosso limite de column é *80* e iremos sempre preferir ser mais claro do que minimalista.
+Usaremos 4 espaços no lugar de tab, mesmo não sendo necessários, usaremos ponto e vírgula (*;*) no final de cada *statement* ou *expression*, usaremos parênteses em todos os argumentos de funções, nosso limite de column é *80* e iremos sempre preferir ser mais claro do que minimalista.
 
-Os códigos e comentários dentro de códigos serão escritos em *inglês*, pois esse é o padrão mundial e você como desenvolvedor em 2018 tem que no mínimo poder ler e escrever códigos em inglês.
+Os códigos e comentários dentro de códigos serão escritos em *inglês*, pois esse é o padrão mundial e você, como desenvolvedor em 2018, tem que no mínimo poder ler e escrever códigos em inglês.
 
 O `.eslintrc` e `.vimrc` usados podem ser encontrados na referência([[26]](https://github.com/Deividy/curso-nodejs-2018/blob/master/.eslintrc), [[27]](https://github.com/Deividy/curso-nodejs-2018/blob/master/.vimrc)) e na [raíz desse repositorio](https://github.com/Deividy/curso-nodejs-2018/).
 
