@@ -1,8 +1,8 @@
 # 3) JavaScript moderno
 
-Nessa sessão veremos algumas das novas funcionalidades do JavaScript, não passaremos pelo básico e assumimos que você tenha um pré conhecimento em JavaScript, saiba diferenças de *statement* vs *expression*, como usar *ifs*, etc.
+Nessa sessão veremos algumas das novas funcionalidades do JavaScript, não passaremos pelo básico e assumimos que o aluno tenha um pré conhecimento em JavaScript, saiba diferenças de *statement* vs *expression*, como usar *ifs*, etc.
 
-O objetivo aqui é mostrar alguns dos conceitos mais importantes e novas *features* introduzidas no JavaScript do Node.js.
+O objetivo aqui é mostrar alguns dos conceitos mais importantes e novas *features* introduzidas no JavaScript usado pelo Node.js.
 
 <a id='newjs-lexicalscope'></a>
 ### Escopo de variáveis em JavaScript
