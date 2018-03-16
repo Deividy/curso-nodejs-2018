@@ -1,5 +1,5 @@
-4) Programação assíncrona
-===
+# 4) Programação assíncrona
+
 
 Programação assíncrona é quando mandamos o código executar alguma ação e podemos mandar ele fazer alguma outra coisa enquanto executa essa ação.
 
