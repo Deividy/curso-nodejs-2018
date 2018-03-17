@@ -7,14 +7,14 @@ Você irá aprender conceitos sobre escopo no JavaScript, `const` e `let`, `arro
 > "Stay foolish, stay hungry" - Steve Jobs
 
 <a id='newjs-lexicalscope'></a>
-### Escopo de variáveis em JavaScript
+## Escopo de variáveis em JavaScript
 
 Existem diversas maneiras de definir um escopo em JavaScript. <br/>
 
 Caso queira mais detalhes e a respeito, tem uma pergunta no stackoverflow[[01]](https://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript) repleta de comentários informativos. <br />
 Irei por aqui sumarizar os escopos **Global**, **Local** e **Block**, além de uma prévia sobre **Closure**.
 
-#### Global scope
+### Global scope
 
 O escopo global, em Node.js, significa uma váriavel setada no objeto `global`, você pode iniciar uma váriavel global da seguinte forma:
 
@@ -34,7 +34,7 @@ console.log(foo);
 node foo.js # will print: 'speedyforce'
 ```
 
-#### Local scope
+### Local scope
 
 No JavaScript, toda função (com excessão de arrow functions), cria um novo lexical scope[[32]](#ref-32), e isso é o que conhecemos como *local scope*. <br />
 Algo peculiar é que váriaveis (`var`) e funções de um local scope são *hoisted*[[33]](#ref-33) no topo de seu escopo.
@@ -62,7 +62,7 @@ console.log(bar); // prints undefined
 bar = 'foo';
 ```
 
-#### Block scope
+### Block scope
 
 Block scope são escopos criados por qualquer `{}`, com a obvia excessao de funçoes que vimos em local scope. <br />
 Por exemplo, podemos definir um block scope da seguinte forma:
@@ -88,7 +88,7 @@ for (let n = 0; n < 5; ++n) {}
 console.log(n) // TypeError
 ```
 
-#### Closure
+### Closure
 
 Closure pode ser um nome meio estranho a primeira vista, mas significa algo muito simples. <br />
 Uma closure e uma funcao que tem acesso a uma variavel que nao e exposta, por exemplo:
@@ -108,8 +108,18 @@ console.log(bar()) // foo
 No exemplo, definimos a variavel `bar` dentro do initBar e retornamos uma outra funcao para o caller interagir, nao importa o que o caller faca, ele nao ira conseguir mudar a variavel bar diretamente, ele tem que chamar o `initBar()` para alterar o seu valor. <br />
 Essa e uma forma de emularmos variaveis privadas em JavaScript, classes usam esse conceito extensamente.
 
+#### 1) Exercício
+
+blabla
+
+```javascript
+
+console.log('foo');
+
+```
+
 <a id='newjs-constletvar'></a>
-### var, const e let
+## var, const e let
 No início, não existia nada além de var, a partir do ECMAScript6 foram introduzidos let e const na especificação, `const` e `let` são variável de **block scope**, diferente de `var`.
 
 [descricao mais detalhada e aprofundamento]
@@ -153,7 +163,7 @@ for (var i = 0; i < 5; ++i) {
 
 
 <a id='newjs-arrowfunctions'></a>
-### Arrow functions
+## Arrow functions
 Arrow functions são funções definidas usando o operador `=>` ao invés do tradicional modo `function(){}`.<br />
 Além de encurtar as definições, arrow functions são uteís pois não iniciam um lexical scoping, isso significa que o escopo da função sera herdado de seu criador, ao contrario de normal functions. Um detalhe dessa implementacao é que arrow functions nao podem ser usadas como constructor, usando *new* keyword.
 
@@ -182,7 +192,7 @@ const myAwesomeClassFactory = function () {
 ```
 
 <a id='newjs-arrayiterables'></a>
-### Array iterables
+## Array iterables
 
 No spec do ECMA5[[ref]](#ref) foram introduzidos novos array iterables como `forEach`, `reduce` e `map`. São funcoes bem simples que iteram um array, todas elas recebem uma funcao de iterable que eh passada por todos os itens do array, veremos alguns exemplos:
 
@@ -197,22 +207,25 @@ const newArray = myArray.map((item) => item + 1); // [ 2, 3, 4, 5, 6 ]
 const total = myArray.reduce((accumulator, item) => accumulator + item) // 10
 ```
 
-#### Iterables e iterators
+### Iterables e iterators
 
 http://2ality.com/2015/02/es6-iteration.html
 
+#### Métodos que usam iterables
 
-#### Destructuring
+#### Criando um iterable
+
+### Destructuring
 
 http://exploringjs.com/es6/ch_destructuring.html
 
 
-#### Generators
+### Generators
 
 http://exploringjs.com/es6/ch_generators.html
 
 
-#### Stay foolish, stay hungry
+### Stay foolish, stay hungry
 
 Continue faminto! A especificacao ECMA vem evoluindo rapido, em menos de 5 anos mudou MUITA coisa, entao nao pare de estudar e aprender, para esse capitulo deixarei um desafio 'simples' (he he he :D). <br />
 
