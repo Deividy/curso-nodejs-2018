@@ -17,9 +17,7 @@ Depois de instalado você podera executar ele da seguinte forma:
 <a id="getting-ready-windows"></a>
 ### Windows
 
-Para instalar no Windows você pode simplesmente acessar o site https://nodejs.org/en/download/ e baixar o instalador para Windows.
-
-Depois de instalado você podera executar ele da seguinte forma:
+Para instalar no Windows você pode simplesmente acessar o site https://nodejs.org/en/download/, baixar o instalador para Windows e seguir os passos.
 
 
 [carece de dados]
@@ -37,6 +35,12 @@ Depois de instalado você podera executar ele da seguinte forma:
 
 [carece de dados]
 [carece de screenshot]
+
+### Gerenciador de versão
+
+#### nvm
+
+#### nvm-windows
 
 # Referência
 
