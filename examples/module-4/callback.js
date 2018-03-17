@@ -5,7 +5,7 @@ console.log("I'm here!");
 
 function callbackError () { throw new Error('OH NO'); }
 try {
-    setTimeout(callbackError, 1000);
+    setTimeout(callbackError, 2000);
 } catch (ex) {
     console.log("i will never be hit :/");
 }
@@ -23,3 +23,4 @@ setTimeout(() => {
     callbackWithNodeErrorPattern(null, 'Oh good!');
 }, 1000);
 
+console.log("EOF :P");
