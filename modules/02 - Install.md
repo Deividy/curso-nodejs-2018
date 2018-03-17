@@ -5,14 +5,14 @@ Hoje em dia o Node.js é um sistema bem leve e de fácil instalação, mas no co
 Veremos aqui as formas atuais e mais simples de instalar, além de conhecer os dois principais gerenciadores de versão disponível.
 
 <a id="getting-ready-macos"></a>
-### macOS
+## macOS
 
 Para instalar no macOS você pode simplesmente acessar o site https://nodejs.org/en/download/, baixar o instalador para macOS e seguir os passos para instalação do `.pkg`.
 
 [carece de screenshot]
 
 <a id="getting-ready-windows"></a>
-### Windows
+## Windows
 
 Para instalar no Windows você pode simplesmente acessar o site https://nodejs.org/en/download/, baixar o instalador para Windows e seguir os passos.
 
@@ -21,7 +21,7 @@ Para instalar no Windows você pode simplesmente acessar o site https://nodejs.o
 [carece de screenshot]
 
 <a id="getting-ready-linux"></a>
-### Linux
+## Linux
 
 Para instalar no Linux você pode baixar os binários direto do site:
 
@@ -38,13 +38,13 @@ sudo ln -s /opt/node-v8.10.0-linux-x64/bin/npm /usr/bin/
 sudo ln -s /opt/node-v8.10.0-linux-x64/bin/npx /usr/bin/
 ```
 
-### Gerenciador de versão
+## Gerenciador de versão
 
 Caso você queira trabalhar com múltiplas versões do Node.js e/ou atualizar de maneira segura e rápida sua versão local, você pode usar um *gerenciador de versão*.
 
 Os mais populares são: `nvm`[[ref]](#ref) e `nvm-windows`[[ref]](#ref), ambos projetos são open source mas não tem nada a ver um com o outro, com excessão clara de seu nome.
 
-#### nvm
+### nvm
 
 O nvm (*Node Version Management*), é desenvolvido para sistemas *UNIX* (*macOS* e *Linux*).
 
@@ -67,7 +67,7 @@ nvm install v8.10.0
 
 Para maiores informações você pode acessar o repósitorio deles[[ref]](ref).
 
-#### nvm-windows
+### nvm-windows
 
 O nvm-windows (*Node Version Management Windows*), é desenvolvido para o *Windows*.
 
