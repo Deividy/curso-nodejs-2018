@@ -9,7 +9,8 @@ Ao finalizar o você terá conhecimentos suficientes para construir um processo 
 
 ### Motivação
 
-Muitos cursos e materiais sobre Node.js abordam apenas frameworks e módulos da comunidade, com esse curso tenho a missão de levar para você o conhecimento interno, mostrando o que é possível ser feito e como sobreviver na selva. <br />
+Muitos cursos e materiais sobre Node.js abordam apenas frameworks e módulos da comunidade, muitas pessoas acham que essa tecnologia é usada apenas para desenvolver aplicativos para web ou servidores http, com esse curso tenho a missão de levar para você o conhecimento interno, mostrando a grande variedade de aplicações que é possível desenvolver com a tecnologia, além de passar ideias e conceitos para sobreviver na *selva*.
+
 Sem *firulas*, sem *compilar* para JavaScript, só o bom e velho JS e nosso amigo Node.js, tudo com muita mão na massa. =)
 
 
