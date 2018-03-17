@@ -46,9 +46,10 @@ Isso porque Node.js provém uma maneira fácil de criar um servidor para a web c
 Internamente, usa o V8 e a libuv, isso quer dizer que podemos escrever JavaScript (*processado pelo V8*) e usar o poder do event-loop[[ref]](rev) da libuv.
 
 Essa imagem demonstra o fluxo do Event Loop da libuv:
+![libuv loop iteration](http://docs.libuv.org/en/v1.x/_images/loop_iteration.png)
 
-<div style="text-align:center"><img src ="http://docs.libuv.org/en/v1.x/_images/loop_iteration.png" alt='libuv loop iteration' /></div>
-
+A imagem a seguir demonstra o fluxo de uma app em Node.js:
+![node.js system](https://blog.deividy.com/img/event-loop.png)
 
 <a id='introduction-codestandards'></a>
 ## Code standards
