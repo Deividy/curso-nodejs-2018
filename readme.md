@@ -13,12 +13,12 @@ Muitos cursos e materiais sobre Node.js abordam apenas frameworks e módulos da 
 Sem *firulas*, sem *compilar* para JavaScript, só o bom e velho JS e nosso amigo Node.js, tudo com muita mão na massa. =)
 
 
-### Por que FREE e unlicensed ?
+### Por que free e unlicensed ?
 
 Acredito que o conhecimento não tem preço e como esse é o primeiro curso que desenvolvo, decidi fazer ele totalmente free e livre de licensas ou qualquer burocracia, qualquer um pode usar esse curso da forma que bem entender, dando os créditos para mim ou não. <br />
 Sempre aprendi muito pesquisando apenas na internet, sem pagar muita coisa, e essa é uma forma de retribuir todo o conhecimento grátis que consegui. 
 
-Espero realmente que esse curso possa ajudar a maior quantidade de pessoas possíveis, mostrando de forma simples e prática como a tecnologia funciona.
+Espero realmente que esse curso possa ajudar a maior quantidade de pessoas possíveis e fazer diferença em suas vidas, mostrando de forma simples e prática como a tecnologia funciona.
 
 ## Pré requisitos
 Conhecimento básico em JavaScript, sistemas operacionais e terminal (ou cmd).
