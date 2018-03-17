@@ -47,7 +47,7 @@ Internamente, usa o V8 e a libuv, isso quer dizer que podemos escrever JavaScrip
 
 Essa imagem demonstra o fluxo do Event Loop da libuv:
 
-[![libuv loop iteration](http://docs.libuv.org/en/v1.x/_images/loop_iteration.png)]
+<div style="text-align:center"><img src ="ttp://docs.libuv.org/en/v1.x/_images/loop_iteration.png" alt='libuv loop iteration' /></div>
 
 
 <a id='introduction-codestandards'></a>
