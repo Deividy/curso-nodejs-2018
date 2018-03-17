@@ -85,7 +85,7 @@ for (var i = 0; i < 5; ++i) {}
 console.log(i) // 5
 
 for (let n = 0; n < 5; ++n) {}
-console.log(n) // TypeError
+console.log(n) // ReferenceError
 ```
 
 ### Closure
