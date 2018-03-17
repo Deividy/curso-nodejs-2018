@@ -43,9 +43,12 @@ Hoje em dia é usado em diversas empresas[[18]](https://siftery.com/nodejs?group
 
 Isso porque Node.js provém uma maneira fácil de criar um servidor para a web com grande poder de escalabilidade que pode rodar em quase qualquer sistema operacional, além disso é possível criar variados tipos de aplicativos, não apenas HTTP servers, o que ajudou sua proliferação.
 
-Ele usa o V8 para processar o JavaScript e internamente a libuv para cuidar dos eventos. Ele tem um EventLoop que....
+Internamente, usa o V8 e a libuv, isso quer dizer que podemos escrever JavaScript (*processado pelo V8*) e usar o poder do event-loop[[ref]](rev) da libuv.
 
-[O Node.js funciona com ... texto completo com img]
+Essa imagem demonstra o fluxo do Event Loop da libuv:
+
+[![libuv loop iteration][http://docs.libuv.org/en/v1.x/_images/loop_iteration.png]]
+
 
 <a id='introduction-codestandards'></a>
 ## Code standards
