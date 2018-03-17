@@ -5,7 +5,7 @@ Welcome!
 
 Esse curso tem como objetivo levar o conhecimento histórico, ensinar conceitos básicos do ecossistema, apresentar os módulos do core, passar uma perspectiva dos módulos da comunidade e capacitar você a ler, entender e escrever um bom código para Node.js.
 
-Ao finalizar o você terá conhecimentos suficientes para construir um processo em Node.js, um módulo, um http server e/ou qualquer outro aplicativo que queira usando Node.js.
+Ao finaliza-lo você terá conhecimentos suficientes para construir um processo em Node.js, um módulo, um http server e/ou qualquer outro aplicativo que queira usando Node.js.
 
 ### Motivação
 
