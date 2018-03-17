@@ -43,7 +43,7 @@ Hoje em dia é usado em diversas empresas[[18]](https://siftery.com/nodejs?group
 
 Isso porque Node.js provém uma maneira fácil de criar um servidor para a web com grande poder de escalabilidade que pode rodar em quase qualquer sistema operacional, além disso é possível criar variados tipos de aplicativos, não apenas HTTP servers, o que ajudou sua proliferação.
 
-
+Ele usa o V8 para processar o JavaScript e internamente a libuv para cuidar dos eventos. Ele tem um EventLoop que....
 
 [O Node.js funciona com ... texto completo com img]
 
