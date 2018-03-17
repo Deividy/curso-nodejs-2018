@@ -93,7 +93,7 @@ console.log(n) // TypeError
 Closure pode ser um nome meio estranho a primeira vista, mas significa algo muito simples. <br />
 Uma closure e uma funcao que tem acesso a uma variavel que nao e exposta, por exemplo:
 
-```
+```javascript
 function initBar (initialValue) {
   const bar = initialValue;
   return function foo () {
