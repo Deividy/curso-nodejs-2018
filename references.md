@@ -6,7 +6,7 @@
 - [03] https://news.ycombinator.com/item?id=5626079
 - [04] https://www.wired.com/2011/04/0401gmail-launches/
 - [05] http://adaptivepath.org/ideas/ajax-new-approach-web-applications/
-- [06] http://lanyrd.com/2006/barcamp-boston-1/
+- [06] https://jquery.org/history/
 - [07] https://www.blueskyonmars.com/2010/01/29/commonjs-the-first-year/
 - [08] https://stackoverflow.com/questions/4269150/what-is-ecmascript
 - [09] https://stackoverflow.com/questions/135203/whats-the-difference-between-javascript-and-jscript
@@ -28,5 +28,11 @@
 - [25] http://anandmanisankar.com/posts/nodejs-iojs-why-the-fork/
 - [26] https://github.com/Deividy/curso-nodejs-2018/blob/master/.eslintrc
 - [27] https://github.com/Deividy/curso-nodejs-2018/blob/master/.vimrc
+- [28] http://docs.libuv.org/en/v1.x/design.html
 
 # Módulo 2 - Instalação do Node.js
+- [01] https://nodejs.org/en/download/
+- [02] https://github.com/creationix/nvm
+- [03] https://github.com/coreybutler/nvm-windows
+- [04] https://github.com/coreybutler/nvm-windows#this-is-not-the-same-thing-as-nvm-which-is-a-completely-separate-project-for-maclinux-only
+- [05] https://github.com/coreybutler/nvm-windows/releases
