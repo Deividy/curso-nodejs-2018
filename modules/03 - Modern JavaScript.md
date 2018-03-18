@@ -2,10 +2,10 @@
 
 O JavaScript não é nada moderno e tem um longa história, porém, está em constante mudança e por aqui veremos algumas das mais novas *features* que temos disponíveis na versão atual do Node.js.
 
-Você irá aprender conceitos sobre escopo no JavaScript, `const` e `let`, `arrow functions`, `iterables` e no final terá algumas dicas de como continuar o aprendizando. <br />
-Sei que existe (*bem*) mais coisas para se aprender sobre ES6, quero apenas passar um overview de algumas técnicas mais usadas por mim. 
+Você irá aprender conceitos sobre escopo no JavaScript, `const` e `let`, `arrow functions`, `iterations` e `generators`.
+*Sei que existe bem mais para se aprender sobre ES6, quero apenas passar um overview de algumas técnicas mais usadas por mim.*
 
-Caso queira um estudo aprofundado, na [referência](#reference) tem vários links repletos de conteúdo gratuito.
+Caso queira um estudo mais aprofundado, na [referência](#reference) tem vários links repletos de conteúdo gratuito.
 
 > “Talk is cheap. Show me the code.” - Linus Torvalds
 
