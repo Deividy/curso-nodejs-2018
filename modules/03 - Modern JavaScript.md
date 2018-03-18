@@ -18,13 +18,13 @@ Irei resumir os escopos **Global**, **Local** e **Block**, no final iremos falar
 
 O escopo global, em Node.js, significa uma váriavel setada no objeto `global`, você pode iniciar uma váriavel global da seguinte forma:
 
-[1-global-scope-app.js](../examples/module-3/1-global-scope-app.js)
+[global-scope-app.js](../examples/module-3/1-global-scope-app.js)
 ```javascript
 global.foo = 'speedyforce'
 require('./bar');
 ```
 
-[2-global-scope-module.js](../examples/module-3/1-global-scope-module.js)
+[global-scope-module.js](../examples/module-3/1-global-scope-module.js)
 ```javascript
 console.log(foo);
 ```
@@ -42,7 +42,7 @@ Entendo que a primeira vista essas palavras parecem bem complicadas, mas com alg
 Considere o seguinte codigo:
 
 
-[3-local-scope.js](../examples/module-3/3-local-scope.js)
+[local-scope.js](../examples/module-3/3-local-scope.js)
 ```javascript
 foo(); // prints 'foo'
 function foo() { console.log('foo');
@@ -67,9 +67,11 @@ bar = 'foo';
 
 Block scope são escopos criados por qualquer `{}`, com a obvia excessao de funçoes que vimos em local scope. <br />
 Por exemplo, podemos definir um block scope da seguinte forma:
+
+[block-scope.js](../examples/module-3/4-block-scope.js#L1-L3)
 ```javascript
 {
-  console.log("I'm in a block scope!");
+    console.log("I'm in a block scope!");
 }
 ```
 
@@ -80,6 +82,7 @@ Na pratica, isso significa que uma var definida em um block scope eh visivel for
 
 Considere o seguinte codigo:
 
+[block-scope.js](../examples/module-3/4-block-scope.js#L18-L22)
 ```javascript
 for (var i = 0; i < 5; ++i) {}
 console.log(i) // 5
