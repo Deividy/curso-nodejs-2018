@@ -12,26 +12,26 @@ Você irá aprender conceitos sobre escopo no JavaScript, `const` e `let`, `arro
 Existem diversas maneiras de definir um escopo em JavaScript. <br/>
 Caso queira mais detalhes e a respeito, tem uma pergunta no stackoverflow[[01]](https://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript) repleta de comentários.
 
-Irei por aqui sumarizar os escopos **Global**, **Local** e **Block**, além de uma prévia sobre **Closure**.
+Irei resumir os escopos **Global**, **Local** e **Block**, no final iremos falar sobre **Closure**.
 
 ### Global scope
 
 O escopo global, em Node.js, significa uma váriavel setada no objeto `global`, você pode iniciar uma váriavel global da seguinte forma:
 
-`foo.js`
+[`examples/module-3/1-global-scope-app.js`](../examples/module-3/1-global-scope-app.js)
 ```javascript
 global.foo = 'speedyforce'
 
 require('./bar');
 ```
 
-`bar.js`
+[`examples/module-3/2-global-scope-module.js`](../examples/module-3/1-global-scope-module.js)
 ```javascript
 console.log(foo);
 ```
 
 ```shell
-node foo.js # will print: 'speedyforce'
+node 1-global-scope-app.js # will print: 'speedyforce'
 ```
 
 ### Local scope
