@@ -393,6 +393,13 @@ myFirstGenLoaded.next() // 'Now, you are getting!'
 <a id='exercises'></a>
 ## Exercícios
 
+### 1) Observe o código abaixo, veja que ele está escrito usando `var`, refatore o código de modo a usar apenas `const` e `let`, prefira usar `const`.
+
+```javascript
+var
+
+```
+
 ---
 
 <a id='reference'></a>
