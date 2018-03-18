@@ -445,6 +445,8 @@ for (var countVists = 1; countVists <= aboutPage.getVisits(); ++countVists) {
 }
 ```
 
+### 2) Refatore as funcões abaixo para usar arrow functions.
+
 ---
 
 <a id='reference'></a>
