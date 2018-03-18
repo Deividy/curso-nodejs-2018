@@ -348,26 +348,24 @@ Para maiores informações, acesse a referência[[04]](http://exploringjs.com/es
 
 *Destructuring* é uma maneira fácil e conveniente de extrair valores de um array ou objeto.
 
-Para extrair valores de um objeto:
-
 [destructuring.js](../examples/module-3/destructuring.js)
 ```javascript
+// extracting from object
 const user = { name: 'Deividy Metheler Zachetti', email: 'deividyz@gmail.com' };
 
 const { name, email } = user; // destructuring! :P
 console.log(name, email);
-```
 
-Para extrair valores de um array:
-```javascript
 const userNames = [ 'deividy', 'speedy', 'foo', 'bar', 'ana' ];
 
+// extracting from array
 const [ firstUserName, secondUserName, ...others ] = userNames;
 
 console.log(firstUserName); // deividy
 console.log(secondUserName); // speedy
 console.log(others); // [ 'foo', 'bar', 'ana' ]
 ```
+*Note o uso de `...` para pegar o restante dos elementos de um array.*
 
 Para um estudo mais aprofundado, acesse a referência[[05]](http://exploringjs.com/es6/ch_destructuring.html).
 
