@@ -184,9 +184,70 @@ Além de encurtar as definições, arrow functions não iniciam um lexical scopi
 
 Alguns exemplos abaixo mostram a diferença:
 
+[arrow-functions.js](../examples/module-3/arrow-functions.js)
 ```javascript
-
+const definingArrowFunction = () => "Thats one way!";
+console.log(definingArrowFunction()); // "Thats one way!"
 ```
+
+Quando definimos uma arrow function e não colocamos nenhum body para ela (`{}`) ela automaticamente irá retornar o seu valor.
+
+```javascript
+const arrowWithOneArg = name => `hello ${name}`;
+console.log(arrowWithOneArg('speedy'));
+
+const arrowWithTwoArgs = (name, email) => `hello ${name} <${email}>`;
+console.log(arrowWithTwoArgs('speedy', 'deividyz@gmail.com'));
+```
+
+Note no exemplo acimar que para uma arrow function com apenas um parâmetro não precisamos usar `()`, porém se a função usar mais de um somos obrigados a user o `()`. 
+
+*Aconselho como boa-prática sempre o uso de `()`, pois fica óbvio que temos uma função e com isso nosso cerebro consegue enxergar mais rápido.*
+
+```javascript
+const arrowWithBody = (name) => {
+    console.log(`Hey-yo, ${name}`);
+    console.log('Do you want a beer?');
+};
+
+arrowWithBody('speedy');
+console.log((() => "hiiii, self calling")());
+
+(() => {
+    console.log("I'm self calling with a body! :D");
+    console.log("am I pretty? ;)");
+})();
+
+const HowAboutAClass = () => {
+    console.log("That work?");
+};
+
+try {
+    new HowAboutAClass();
+} catch (ex) {
+    console.error(ex);
+}
+
+// a function('class') to get a little context so we can test :)
+new (function JustAContext () {
+    this.canAnArrowFunctionSeeThis = 'YES';
+
+    const arrowFn = () => {
+        console.log("Arrow can see?");
+        console.log(this.canAnArrowFunctionSeeThis);
+    }
+
+    function normalFn () {
+        console.log("Normal can see?");
+        console.log(this.canAnArrowFunctionSeeThis);
+    }
+
+    arrowFn();
+    normalFn();
+}
+```
+
+Acima os exemplos são *auto-explicativos*, execute eles em sua maquina, edite e tire suas próprias conclusões. ;)
 
 <a id='newjs-arrayiterables'></a>
 ## Array iterables
