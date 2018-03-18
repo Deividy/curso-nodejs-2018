@@ -129,7 +129,7 @@ O fato da variável `myValue` não ser exposta e a função `myFirstClosure` ret
 
 <a id='newjs-constletvar'></a>
 ## var, const e let
-No início, não existia nada além de var, a partir do *ES6* foram introduzidos let e const na especificação, `const` e `let` são variável de **block scope**, diferente de `var` que é de local scope como vimos acima.
+No início, não existia nada além de *var*, a partir do *ES6* foram introduzidos *let* e *const* na especificação, `const` e `let` são variável de **block scope**, diferente de `var` que é de local scope como vimos acima.
 
 `const` define uma variável que não pode ser alterada, porém isso não nos da o conceito de *imutabilidade* por completo, pois podemos definir um objeto como `const` e alterar suas propriedades, considere o seguitne código:
 
@@ -183,28 +183,6 @@ Arrow functions são funções definidas usando o operador `=>` ao invés do tra
 Além de encurtar as definições, arrow functions são uteís pois não iniciam um lexical scoping, isso significa que o escopo da função sera herdado de seu criador, ao contrario de normal functions. Um detalhe dessa implementacao é que arrow functions nao podem ser usadas como constructor, usando *new* keyword.
 
 Alguns exemplos abaixo mostram a diferença:
-
-
-> Exercicio: <br />
-> Observe o codigo abaixo, e o refatore para usar arrow functions ao inves de functions ();
-```javascript
-function MyAwesomeClass () {
-     this.karma = 1;
-}
-
-MyAwesomeClass.prototype.addKarma = function () {
-    const self = this;
-
-    setTimeout(function () {
-        self.karma++;
-    }, 420);
-};
-
-const myAwesomeClassFactory = function () {
-    return new MyAwesomeClass();
-};
-
-```
 
 <a id='newjs-arrayiterables'></a>
 ## Array iterables
