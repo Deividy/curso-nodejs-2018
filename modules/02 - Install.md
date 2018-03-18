@@ -97,6 +97,15 @@ Após instalado, você pode acessar o `cmd` e executar o comando de *install* pa
 nvm install latest
 ```
 
+![nvm windows install](../images/nvm-windows-install-1.jpg)
+![nvm windows install](../images/nvm-windows-install-2.jpg)
+![nvm windows install](../images/nvm-windows-install-3.jpg)
+![nvm windows install](../images/nvm-windows-install-4.jpg)
+![nvm windows install](../images/nvm-windows-install-5.jpg)
+![nvm windows install](../images/nvm-windows-install-6.jpg)
+![nvm windows install](../images/nvm-windows-install-7.jpg)
+![nvm windows install](../images/nvm-windows-install-8.jpg)
+
 Para maiores informações você pode acessar o repósitorio deles[[03]](ttps://github.com/coreybutler/nvm-windows).
 
 # Referência
