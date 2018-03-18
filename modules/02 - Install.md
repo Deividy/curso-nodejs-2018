@@ -1,3 +1,4 @@
+<a id='getting-ready'></a>
 # 2) Instalação do Node.js
 
 Hoje em dia o Node.js é um sistema bem leve e de fácil instalação, na maioria dos casos basta você acessar o site oficial[[01]](https://nodejs.org/en/download/) e baixar o arquivo para seu sistema operacional.
@@ -6,7 +7,7 @@ Veremos aqui as formas atuais e mais simples de instalar, além de conhecer os d
 
 > Good software, like wine, takes time. - Joel Spolsky
 
-<a id="getting-ready-macos"></a>
+<a id="macos"></a>
 ## macOS
 
 Para instalar no macOS você pode simplesmente acessar o site oficial[[01]](https://nodejs.org/en/download/), baixar o instalador para macOS e seguir os passos para instalação do `.pkg`.
@@ -18,7 +19,7 @@ Para instalar no macOS você pode simplesmente acessar o site oficial[[01]](http
 ![macos install](../images/mac-install-5.png)
 ![macos install](../images/mac-install-6.png)
 
-<a id="getting-ready-windows"></a>
+<a id="windows"></a>
 ## Windows
 
 Para instalar no Windows você pode simplesmente acessar o site oficial[[01]](https://nodejs.org/en/download/), baixar o instalador para Windows e seguir os passos.
@@ -34,7 +35,7 @@ Para instalar no Windows você pode simplesmente acessar o site oficial[[01]](ht
 ![windows install](../images/windows-install-8.jpg)
 ![windows install](../images/windows-install-9.jpg)
 
-<a id="getting-ready-linux"></a>
+<a id="linux"></a>
 ## Linux
 
 Para instalar no Linux você pode baixar os binários direto do site oficial site oficial[[01]](https://nodejs.org/en/download/):
@@ -57,6 +58,7 @@ sudo ln -s /opt/node-v8.10.0-linux-x64/bin/npx /usr/bin/
 ![linux install](../images/linux-install-3.png)
 ![linux install](../images/linux-install-4.png)
 
+<a id="nvm"></a>
 ## Gerenciador de versão
 
 Caso você queira trabalhar com múltiplas versões do Node.js e/ou atualizar de maneira segura e rápida sua versão local, você pode usar um *gerenciador de versão*.
