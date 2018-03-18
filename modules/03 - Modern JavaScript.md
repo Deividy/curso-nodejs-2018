@@ -203,7 +203,7 @@ console.log(arrowWithTwoArgs('speedy', 'deividyz@gmail.com'));
 
 Note no exemplo acimar que para uma arrow function com apenas um parâmetro não precisamos usar `()`, porém se a função usar mais de um somos obrigados a user o `()`. 
 
-*Aconselho como boa-prática sempre o uso de `()`, pois fica óbvio que temos uma função e com isso nosso cerebro consegue enxergar mais rápido.*
+*Aconselho como boa-prática sempre o uso de `()`, pois fica padronizado e não temos que nos preocupar se tem um argumento, ou multiplos, e IMHO facilita no entendimento.*
 
 ```javascript
 const arrowWithBody = (name) => {
