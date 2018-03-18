@@ -97,7 +97,7 @@ Após instalado, você pode acessar o `cmd` e executar o comando de *install* pa
 nvm install latest
 ```
 
-Você ira precisar ligar o `nvm` também:
+Agora é so ligar o nvm:
 
 ```shell
 nvm on
