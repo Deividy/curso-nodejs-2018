@@ -77,6 +77,11 @@ Agora, para instalar uma versão do Node.js:
 nvm install v8.10.0
 ```
 
+![nvm install](../images/nvm-install-1.png)
+![nvm install](../images/nvm-install-2.png)
+![nvm install](../images/nvm-install-3.png)
+![nvm install](../images/nvm-install-4.png)
+
 Para maiores informações você pode acessar o repósitorio deles[[02]](https://github.com/creationix/nvm).
 
 ### nvm-windows
