@@ -75,7 +75,7 @@ Conhecimento básico em JavaScript, sistemas operacionais e terminal (ou cmd).
    - [hapijs]()
    - [jsonwebtoken]()
    - [bcrypt]()
-   - [loopback]()
+   - [pg]()
    - [mongo]()
    - [outros modulos]()
    - [criando um npm module]()
