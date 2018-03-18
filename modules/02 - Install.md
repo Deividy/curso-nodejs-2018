@@ -121,6 +121,8 @@ nvm on
 
 Para maiores informações você pode acessar o repósitorio deles[[03]](https://github.com/coreybutler/nvm-windows).
 
+---
+
 # Referência
 
 <a id='ref-1'></a>
