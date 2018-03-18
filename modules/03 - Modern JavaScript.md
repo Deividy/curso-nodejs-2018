@@ -1,3 +1,4 @@
+<a id='modern-javascript'></a>
 # 3) JavaScript moderno
 
 O JavaScript não é nada moderno e tem um longa história, porém, está em constante mudança e por aqui veremos algumas das mais novas *features* que temos disponíveis na versão atual do Node.js.
@@ -9,7 +10,7 @@ Caso queira um estudo mais aprofundado, na [referência](#reference) tem vários
 
 > “Talk is cheap. Show me the code.” - Linus Torvalds
 
-<a id='newjs-lexicalscope'></a>
+<a id='variable-scope'></a>
 ## Escopo de variáveis em JavaScript
 
 Existem diversas maneiras de definir um escopo em JavaScript. <br/>
@@ -128,7 +129,7 @@ A função retorna apenas um objeto com dois metódos, `set` e `get`, o único j
 
 O fato da variável `myValue` não ser exposta e a função `myFirstClosure` retornar um objeto (poderia ser uma função) que pode manipular essa variável define uma closure.
 
-<a id='newjs-constletvar'></a>
+<a id='var-const-let'></a>
 ## var, const e let
 No início, não existia nada além de *var*, a partir do *ES6* foram introduzidos *let* e *const* na especificação, `const` e `let` são variável de **block scope**, diferente de `var`.
 
@@ -178,7 +179,7 @@ console.log(myFirstVar);
 console.log(mySecondVar); // foo
 ```
 
-<a id='newjs-arrowfunctions'></a>
+<a id='arrow-functions'></a>
 ## Arrow functions
 
 Arrow functions são funções definidas usando o operador `=>` ao invés do tradicional modo `function(){}`.
@@ -252,7 +253,7 @@ new (function JustAContext () {
 
 Acima os exemplos são *auto-explicativos*, execute eles em sua maquina, edite e tire suas próprias conclusões. ;)
 
-<a id='newjs-arrayiterables'></a>
+<a id='array-functions'></a>
 ## Manipulação de arrays
 
 Novas funções para manipulação de arrays também foram introduzidas no ES6, iremos mostrar aqui `forEach`, `reduce` e `map`. 
@@ -268,7 +269,7 @@ myArray.forEach((item) => console.log(item)); // 1, 2, 3, 4, 5
 const newArray = myArray.map((item) => item + 1); // [ 2, 3, 4, 5, 6 ]
 const total = myArray.reduce((accumulator, item) => accumulator + item) // 10
 ```
-
+<a id='iteration'></a>
 ### Iterables e iterators
 
 Com o ES6 foi introduzido um novo mecanismo para iterar dados: *iteration*[[04]](http://exploringjs.com/es6/ch_iteration.html), que consistem em dois conceitos:
@@ -342,6 +343,7 @@ for (let value of iteractingClasses) {
 
 Para maiores informações, acesse a referência[[04]](http://exploringjs.com/es6/ch_iteration.html).
 
+<a id='destructuring'></a>
 ### Destructuring
 
 *Destructuring* é uma maneira fácil e conveniente de extrair valores de um array ou objeto.
@@ -369,7 +371,7 @@ console.log(others); // [ 'foo', 'bar', 'ana' ]
 
 Para um estudo mais aprofundado, acesse a referência[[05]](http://exploringjs.com/es6/ch_destructuring.html).
 
-
+<a id='generators'></a>
 ### Generators
 
 Podemos pensar em generators como pedaços de código que conseguimos pausar e resumir[[06]](http://exploringjs.com/es6/ch_generators.html).
@@ -393,7 +395,7 @@ myFirstGenLoaded.next() // 'Now, you are getting!'
 
 ---
 
-<a id='Exercises'></a>
+<a id='exercises'></a>
 ## Exercícios
 
 ---
