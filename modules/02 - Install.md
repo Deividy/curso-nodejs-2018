@@ -9,12 +9,12 @@ Veremos aqui as formas atuais e mais simples de instalar, além de conhecer os d
 
 Para instalar no macOS você pode simplesmente acessar o site oficial[[01]](https://nodejs.org/en/download/), baixar o instalador para macOS e seguir os passos para instalação do `.pkg`.
 
-![macos install](../images/macos-install-1.png)
-![macos install](../images/macos-install-2.png)
-![macos install](../images/macos-install-3.png)
-![macos install](../images/macos-install-4.png)
-![macos install](../images/macos-install-5.png)
-![macos install](../images/macos-install-6.png)
+![macos install](../images/mac-install-1.png)
+![macos install](../images/mac-install-2.png)
+![macos install](../images/mac-install-3.png)
+![macos install](../images/mac-install-4.png)
+![macos install](../images/mac-install-5.png)
+![macos install](../images/mac-install-6.png)
 
 <a id="getting-ready-windows"></a>
 ## Windows
