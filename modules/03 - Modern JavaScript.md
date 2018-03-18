@@ -374,7 +374,7 @@ Para um estudo mais aprofundado, acesse a referência[[05]](http://exploringjs.c
 
 Podemos pensar em generators como pedaços de código que conseguimos pausar e resumir[[06]](http://exploringjs.com/es6/ch_generators.html).
 
-Para definir uma função como generator, usamos o `*` no final da palavra `function* ()`, não podemos usar generators como arrow functions.
+Para definir uma função como generator, usamos o `*` no final da palavra (e.g: `function* (){}`) e em classes antes do nome do método (e.g: `* myMethod () {}`, não podemos usar generators como arrow functions.
 
 Usamos a *keyword* `yield` para pausar a execução da função e o método `.next()` para continuar, veja alguns exemplos:
 
@@ -390,8 +390,6 @@ const myFirstGenLoaded = myFirstGenerator();
 myFirstGenLoaded.next() // 'Hi, please press next() :)'
 myFirstGenLoaded.next() // 'Now, you are getting!'
 ```
-
-Maiores informações e definições para classes, acesse a referência[[06]](http://exploringjs.com/es6/ch_generators.html).
 
 ---
 
