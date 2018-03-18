@@ -4,7 +4,7 @@
 Antes de falarmos sobre código e começarmos a por a mão na massa, precisamos conhecer um pouco da história e do funcionamento interno das tecnologias que estamos usando. <br />
 Faremos uma viagem pela história do *JavaScript*, *ECMAScript* e *Node.js*, veremos também como o *Node.js* se comporta intermanete com seu *EventLoop*, no final teremos o padrão de código usado no curso.
 
-> Everything must have a beginning.
+> First, solve the problem. Then, write the code. - John Johnson
 
 <a id="introduction-javascript"></a>
 ## JavaScript
@@ -19,31 +19,33 @@ A Microsoft em 1996 lançou o Internet Explorer 3.0 e nele foi incluído o JScri
 
 Em meados de 1999, a Microsoft criou o XMLHTTP ActiveX Object[[03]](https://news.ycombinator.com/item?id=5626079) para o acesso a web do Outlook, Mozilla rapidamente implementou o XMLHttpRequest em seu navegador, porém, foi o Gmail do Google o primeiro site a usar extensivamente o XMLHttpRequest, isso em 2004[[04]](https://www.wired.com/2011/04/0401gmail-launches/).<br />
 Jesse James Garrett (criador do Adaptive Pattern), definiu em 2005 o acrônimo AJAX em seu post histórico[[05]](http://adaptivepath.org/ideas/ajax-new-approach-web-applications/). A partir disso, JavaScript começou a se formar não apenas uma linguagem padrão de browsers e algo chato para abrir popups, mas uma tecnologia que podia criar uma interação e experiência incrível para interfaces de usuários. <br />
-Começaram a surgir muitos frameworks e bibliotecas com foco na experiência do usuário, jQuery foi criado em 2006 por John Resig[[06]](http://lanyrd.com/2006/barcamp-boston-1/) e rapidamente se espalhou para a maioria dos sites e sistemas para a web da época. <br />
+Começaram a surgir muitos frameworks e bibliotecas com foco na experiência do usuário, jQuery foi criado em 2006 por John Resig[[06]](https://jquery.org/history/) e rapidamente se espalhou para a maioria dos sites e sistemas para a web da época. 
+
 Foi nessa época que começaram a usar o JavaScript fora do browser, e em 2009 o projeto CommonJS[[07]](https://www.blueskyonmars.com/2010/01/29/commonjs-the-first-year/) foi fundado com o objetivo de especificar uma biblioteca padrão para desenvolvimento JavaScript fora do navegador.
 
 <a id="introduction-ecmascript"></a>
 ## ECMAScript
 
 ECMAScript não é uma linguagem de programação, e sim especificações e padrões para a implementação de uma linguagem de scripting[[08]](https://stackoverflow.com/questions/4269150/what-is-ecmascript). Imagine o ECMAScript como o padrão que os desenvolvedores tem que seguir para a implementação do JavaScript (ou JScript se você estiver usando Internet Explorer[[09]](https://stackoverflow.com/questions/135203/whats-the-difference-between-javascript-and-jscript)).<br />
-As primeiras versões não foram seguidas bem a risca e cada empresa decidiu implementar boa parte da linguagem em seus próprios padrões, inclusive a versão 4 do ECMAScript foi abandonada por questões políticas e por sua especificação ter ficado complexa demais[[10]](https://stackoverflow.com/questions/2329602/why-was-ecmascript-4th-edition-completely-scrapped).
+A versão 4 do ECMAScript foi abandonada por questões políticas e por sua especificação ter ficado complexa demais[[10]](https://stackoverflow.com/questions/2329602/why-was-ecmascript-4th-edition-completely-scrapped).
 
-Apenas em 2011, com a versão 5.1 do ECMAScript, que essas grandes empresas começaram a se alinhar em relação ao padrão ECMA.<br />
+Apenas em 2011, com a versão 5.1 do ECMAScript, que as grandes empresas começaram a se alinhar em relação ao padrão ECMA.<br />
 A versão 6 de 2015, oficialmente ECMA2015[[11]](https://bytearcher.com/articles/es6-vs-es2015-name/), introduziu um grande avanço com uma nova sintaxe, classes, módulos, for/of loops, além de algumas features mais parecidas com a linguagem de programação Python como generators, arrow functions, binary data, typed arrays, entre muitas outras features[[12]](https://github.com/lukehoban/es6features). <br />
 Teve mais uma versão em Junho de 2016 (ECMAScript 7) e outra em Junho de 2017 (ECMAScript 8), agora aguardamos a versão 9[[13]](https://tc39.github.io/ecma262/).
 
 <a id='introduction-nodejs'></a>
 ## Node.js
 
-Google, em 2008, lançou, para o seu navegador Google Chrome, o motor para processamento JavaScript Chrome V8[[14]](https://www.youtube.com/watch?v=JxUvULKf6A4) e decidiu fazer disso um código aberto onde qualquer pessoa na internet poderia contribuir para sua evolução.<br />
+Em 2008, o Google lançou para o seu navegador Google Chrome, o motor para processamento JavaScript Chrome V8[[14]](https://www.youtube.com/watch?v=JxUvULKf6A4) e decidiu fazer disso um código aberto onde qualquer pessoa na internet poderia contribuir para sua evolução.
+
 Em 2009, Ryan Dahl juntou a tecnologia de processamento JavaScript V8 com a libevent[[15]](http://libevent.org/)] (hoje em dia libuv[[16]](http://libuv.org/)] para criar o Node.js, ele apresentou sua nova tecnologia na JSConf de 2009[[17]](https://www.youtube.com/watch?v=ztspvPYybIY).<br />
-O mundo JavaScript nunca mais foi o mesmo, Node.js se espalhou e se tornou viral, mas na metade de 2014 o projeto deu uma estagnada, isso por que alguns membros do core estavam insatisfeitos com o rumo que a Joyent (patrocinadora do projeto inicialmente) queria seguir, alguns dos desenvolvedores tentaram conversar com a empresa, surgiu então o projeto 'Node forward'[[20]](https://github.com/node-forward/discussions/issues), mas Fedor Indutny[[21]](https://github.com/indutny) se cansou de tanta conversa e decidiu criar um fork do projeto Node.js, chamando o fork de io.js[[22]](https://iojs.org/en/faq.html), depois de longas conversas e releases separadas, mikeal criou um Reconciliation Proposal[[23]](https://github.com/nodejs/node/issues/978) que conseguiu enfim unir o io.js de volta no Node.js[[24]](https://nodejs.org/en/blog/announcements/foundation-v4-announce/)[[25]](http://anandmanisankar.com/posts/nodejs-iojs-why-the-fork/).
+O mundo JavaScript nunca mais foi o mesmo, Node.js se espalhou e se tornou viral, mas na metade de 2014 o projeto deu uma estagnada, isso por que alguns membros do core estavam insatisfeitos com o rumo que a Joyent (patrocinadora do projeto inicialmente) queria seguir, alguns dos desenvolvedores tentaram conversar com a empresa, surgiu então o projeto 'Node forward'[[20]](https://github.com/node-forward/discussions/issues), mas Fedor Indutny[[21]](https://github.com/indutny) se cansou de tanta conversa e decidiu criar um fork do projeto Node.js, chamando o fork de io.js[[22]](https://iojs.org/en/faq.html), depois de longas conversas e releases separadas, mikeal criou um Reconciliation Proposal[[23]](https://github.com/nodejs/node/issues/978) que conseguiu enfim unir o io.js de volta no Node.js[[24]](https://nodejs.org/en/blog/announcements/foundation-v4-announce/)[[25]](http://anandmanisankar.com/posts/nodejs-iojs-why-the-fork/) criando a *Node Foundation*.
 
 Hoje em dia é usado em diversas empresas[[18]](https://siftery.com/nodejs?group=unicorns) dos mais variados nichos pelo mundo todo, inclusive existe um pessoal criando hardwares baseados em JavaScript[[19]](https://tessel.io/).
 
 Isso porque Node.js provém uma maneira fácil de criar um servidor para a web com grande poder de escalabilidade que pode rodar em quase qualquer sistema operacional, além disso é possível criar variados tipos de aplicativos, não apenas HTTP servers, o que ajudou sua proliferação.
 
-Internamente, usa o V8 e a libuv, isso quer dizer que podemos escrever JavaScript (*processado pelo V8*) e usar o poder do event-loop da libuv[[ref]](rev).
+Internamente, usa o V8 e a libuv, isso quer dizer que podemos escrever JavaScript (*processado pelo V8*) e usar o poder do event-loop da libuv[[28]](http://docs.libuv.org/en/v1.x/design.html).
 
 Node.js internamente:
 
@@ -78,7 +80,7 @@ O `.eslintrc` e `.vimrc` usados podem ser encontrados na referência([[26]](http
 <a id='ref-5'></a>
 - [05] http://adaptivepath.org/ideas/ajax-new-approach-web-applications/
 <a id='ref-6'></a>
-- [06] http://lanyrd.com/2006/barcamp-boston-1/
+- [06] https://jquery.org/history/
 <a id='ref-7'></a>
 - [07] https://www.blueskyonmars.com/2010/01/29/commonjs-the-first-year/
 <a id='ref-8'></a>
@@ -121,3 +123,5 @@ O `.eslintrc` e `.vimrc` usados podem ser encontrados na referência([[26]](http
 - [26] https://github.com/Deividy/curso-nodejs-2018/blob/master/.eslintrc
 <a id='ref-27'></a>
 - [27] https://github.com/Deividy/curso-nodejs-2018/blob/master/.vimrc
+<a id='ref-27'></a>
+- [28] http://docs.libuv.org/en/v1.x/design.html
