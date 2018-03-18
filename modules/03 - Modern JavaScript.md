@@ -250,18 +250,19 @@ new (function JustAContext () {
 Acima os exemplos são *auto-explicativos*, execute eles em sua maquina, edite e tire suas próprias conclusões. ;)
 
 <a id='newjs-arrayiterables'></a>
-## Array iterables
+## Funções para manipular arrays
 
-No spec do ECMA5[[ref]](#ref) foram introduzidos novos array iterables como `forEach`, `reduce` e `map`. São funcoes bem simples que iteram um array, todas elas recebem uma funcao de iterable que eh passada por todos os itens do array, veremos alguns exemplos:
+Novas funções para manipulação de arrays também foram introduzidas no ES6, iremos mostrar aqui `forEach`, `reduce` e `map`. 
 
+São simples funções que tinhamos a oportunidade de usar antes apenas com bibliotecas, veja alguns exemplos:
+
+[arrow-functions.js](../examples/module-3/array-functions.js)
 ```javascript
 
 const myArray = [ 1, 2, 3, 4, 5 ];
 
 myArray.forEach((item) => console.log(item)); // 1, 2, 3, 4, 5
-
 const newArray = myArray.map((item) => item + 1); // [ 2, 3, 4, 5, 6 ]
-
 const total = myArray.reduce((accumulator, item) => accumulator + item) // 10
 ```
 
