@@ -18,13 +18,13 @@ Irei resumir os escopos **Global**, **Local** e **Block**, no final iremos falar
 
 O escopo global, em Node.js, significa uma váriavel setada no objeto `global`, você pode iniciar uma váriavel global da seguinte forma:
 
-[global-scope-app.js](../examples/module-3/1-global-scope-app.js)
+[global-scope-app.js](../examples/module-3/global-scope-app.js)
 ```javascript
 global.foo = 'speedyforce'
 require('./bar');
 ```
 
-[global-scope-module.js](../examples/module-3/1-global-scope-module.js)
+[global-scope-module.js](../examples/module-3/global-scope-module.js)
 ```javascript
 console.log(foo);
 ```
@@ -43,7 +43,7 @@ Entendo que a primeira vista essas palavras parecem bem complicadas, mas com alg
 
 Considere o seguinte código:
 
-[local-scope.js](../examples/module-3/3-local-scope.js)
+[local-scope.js](../examples/module-3/local-scope.js)
 ```javascript
 foo(); // prints 'foo'
 function foo() { console.log('foo'); }
@@ -70,7 +70,7 @@ Block scope são escopos criados por qualquer `{}`, com a óbvia excessao de fun
 
 Por exemplo, podemos definir um block scope da seguinte forma:
 
-[block-scope.js](../examples/module-3/4-block-scope.js)
+[block-scope.js](../examples/module-3/block-scope.js)
 ```javascript
 {
     console.log("I'm in a block scope!");
@@ -99,7 +99,7 @@ Uma closure significa uma função que tem acesso a uma variável definida em um
 
 Com um exemplo fica mais fácil:
 
-[closure.js](../examples/module-3/5-closure.js)
+[closure.js](../examples/module-3/closure.js)
 ```javascript
 function myFirstClosure (initialValue) {
     let myValue = initialValue;
@@ -131,6 +131,7 @@ No início, não existia nada além de *var*, a partir do *ES6* foram introduzid
 
 `const` define uma variável que não pode ser alterada, porém isso não nos da o conceito de *imutabilidade* por completo, pois podemos definir um objeto como `const` e alterar suas propriedades, considere o seguinte código:
 
+[variables.js](../examples/module-3/variables.js)
 ```javascript
 const myFirstConst = 'foo';
 myFirstConst = 'bar'; // TypeError: Assignment to constant variable.
