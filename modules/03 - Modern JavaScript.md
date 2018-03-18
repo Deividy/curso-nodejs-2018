@@ -18,14 +18,13 @@ Irei resumir os escopos **Global**, **Local** e **Block**, no final iremos falar
 
 O escopo global, em Node.js, significa uma váriavel setada no objeto `global`, você pode iniciar uma váriavel global da seguinte forma:
 
-[`examples/module-3/1-global-scope-app.js`](../examples/module-3/1-global-scope-app.js)
+[examples/module-3/1-global-scope-app.js](../examples/module-3/1-global-scope-app.js)
 ```javascript
 global.foo = 'speedyforce'
-
 require('./bar');
 ```
 
-[`examples/module-3/2-global-scope-module.js`](../examples/module-3/1-global-scope-module.js)
+[examples/module-3/2-global-scope-module.js](../examples/module-3/1-global-scope-module.js)
 ```javascript
 console.log(foo);
 ```
