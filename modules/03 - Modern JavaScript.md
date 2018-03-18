@@ -1,5 +1,6 @@
 <a id='modern-javascript'></a>
 # 3) JavaScript moderno
+> “Talk is cheap. Show me the code.” - Linus Torvalds
 
 O JavaScript não é nada moderno e tem um longa história, porém, está em constante mudança e por aqui veremos algumas das mais novas *features* que temos disponíveis na versão atual do Node.js.
 
@@ -7,8 +8,6 @@ Você irá aprender conceitos sobre escopo no JavaScript, `const` e `let`, `arro
 *Sei que existe bem mais para se aprender sobre ES6, quero apenas passar um overview de algumas técnicas mais usadas por mim.*
 
 Caso queira um estudo mais aprofundado, na [referência](#reference) tem vários links repletos de conteúdo gratuito.
-
-> “Talk is cheap. Show me the code.” - Linus Torvalds
 
 <a id='variable-scope'></a>
 ## Escopo de variáveis em JavaScript
