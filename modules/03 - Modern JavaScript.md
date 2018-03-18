@@ -103,63 +103,79 @@ Uma closure significa uma função que tem acesso a uma variável definida em um
 Com um exemplo fica mais fácil:
 
 ```javascript
-function initBar (initialValue) {
-  const bar = initialValue;
-  return function foo () {
-    return bar;
-  }
+function myFirstClosure (initialValue) {
+    let myValue = initialValue;
+
+    return {
+        get () { return myValue; },
+        set (val) { myValue = val; }
+    };
 }
 
-const bar = initBar('foo');
-console.log(bar()) // foo
+const firstClosure = myFirstClosure('Learning closures is fun!');
+
+console.log(firstClosure.get()); // Learning closures is fun!
+console.log(firstClosure.myValue); // undefined
+
+firstClosure.set('May the speedy force be with you');
+console.log(firstClosure.get()); // May the speedy force be with you
+console.log(firstClosure.myValue); // undefined
 ```
 
-Acima definimos a variável `bar` dentro do initBar e retornamos uma outra funcao para o caller interagir, nao importa o que o caller faca, ele nao ira conseguir mudar a variavel bar diretamente, ele tem que chamar o `initBar()` para alterar o seu valor. <br />
-Essa e uma forma de emularmos variaveis privadas em JavaScript, classes usam esse conceito extensamente.
+Acima definimos a variável `myValue` dentro do escopo da função `myFirstClosure`, ela não é exposta para o *caller*. <br />
+A função retorna apenas um objeto com dois metódos, `set` e `get`, o único jeito de acessarmos a variável `myValue` é usando algum desses métodos. 
+
+O fato da variável `myValue` não ser exposta e a função `myFirstClosure` retornar um objeto (poderia ser uma função) que pode manipular essa variável define uma closure.
 
 <a id='newjs-constletvar'></a>
 ## var, const e let
-No início, não existia nada além de var, a partir do ECMAScript6 foram introduzidos let e const na especificação, `const` e `let` são variável de **block scope**, diferente de `var`.
+No início, não existia nada além de var, a partir do *ES6* foram introduzidos let e const na especificação, `const` e `let` são variável de **block scope**, diferente de `var` que é de local scope como vimos acima.
 
-[descricao mais detalhada e aprofundamento]
-
-> **Exercício** <br />
-> Observe o código abaixo, note o uso de `var` e reescreva o mesmo código usando `const` e `let`, preferindo o uso de `const`.
+`const` define uma variável que não pode ser alterada, porém isso não nos da o conceito de *imutabilidade* por completo, pois podemos definir um objeto como `const` e alterar suas propriedades, considere o seguitne código:
 
 ```javascript
-var secret = 'This is a secret';
-
-function passwordPlusSecret (password) {
-    var newPassword = password + secret;
-    return newPassword;
-}
-
-function genTwoVisits () {
-    var visits = 0;
-    var newPassword = passwordPlusSecret(visits);
-    console.log(newPassword); // > 0This is a secret
-
-    visits++;
-    var newPassword2 = passwordPlusSecret(visits);
-    console.log(newPassword2); // > 1This is a secret
-}
-genTwoVisits();
-
-// ---
-
-for (var i = 0; i < 5; ++i) {
-    (function (id) {
-        setTimeout(() => console.log(id), 1);
-    })(i);
-}
-
-// this is broken, it should print the same of last example
-// while you're changing vars to const/let, fix this! :)
-for (var i = 0; i < 5; ++i) {
-    setTimeout(() => console.log(i), 1);
-}
+const myFirstConst = 'foo';
+myFirstConst = 'bar'; // TypeError: Assignment to constant variable.
 ```
 
+Porém, o seguinte código é válido:
+
+```javascript
+const mySecondConst = { foo: 'bar' };
+mySecondConst.foo = 'zaz';
+console.log(mySecondConst); // { foo: 'zaz' }
+```
+
+`let` se comporta mais parecido com `var`, com a diferença de ser *block scope*.<br />
+Considere o seguinte exemplo:
+
+```javascript
+let myFirstLet = 'foo';
+myFirstLet = 'bar';
+
+console.log(myFirstLet);
+
+{
+    let mySecondLet = 'foo';
+}
+console.log(mySecondLet); // ReferenceError: mySecondLet is not defined
+```
+
+`var` é parecido com `let`, porém ele usa *local scope*, hoje em dia não é aconselhável o uso de `var` já que `const` e `let` podem te dar o mesmo efeito com **maior clareza**.
+
+Veremos como `var` funciona na prática:
+
+```javascript
+var myFirstVar = 'foo';
+myFirstVar = 'bar';
+
+console.log(myFirstVar);
+
+{
+    var mySecondVar = 'foo';
+}
+console.log(mySecondVar); // foo
+```
 
 <a id='newjs-arrowfunctions'></a>
 ## Arrow functions
