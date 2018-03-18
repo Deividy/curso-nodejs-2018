@@ -36,3 +36,11 @@
 - [03] https://github.com/coreybutler/nvm-windows
 - [04] https://github.com/coreybutler/nvm-windows#this-is-not-the-same-thing-as-nvm-which-is-a-completely-separate-project-for-maclinux-only
 - [05] https://github.com/coreybutler/nvm-windows/releases
+
+# Módulo 3 - JavaScript moderno
+- [00] http://exploringjs.com/es6
+- [01] https://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript
+- [02] https://stackoverflow.com/questions/1047454/what-is-lexical-scope
+- [03] https://www.w3schools.com/js/js_hoisting.asp
+- [04] http://exploringjs.com/es6/ch_iteration.html
+- [05] http://exploringjs.com/es6/ch_destructuring.html
