@@ -112,7 +112,7 @@ nvm on
 ![nvm windows install](../images/nvm-windows-install-7.jpg)
 ![nvm windows install](../images/nvm-windows-install-8.jpg)
 
-Para maiores informações você pode acessar o repósitorio deles[[03]](ttps://github.com/coreybutler/nvm-windows).
+Para maiores informações você pode acessar o repósitorio deles[[03]](https://github.com/coreybutler/nvm-windows).
 
 # Referência
 
