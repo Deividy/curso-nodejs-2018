@@ -45,6 +45,11 @@ sudo ln -s /opt/node-v8.10.0-linux-x64/bin/npm /usr/bin/
 sudo ln -s /opt/node-v8.10.0-linux-x64/bin/npx /usr/bin/
 ```
 
+![linux install](../images/linux-install-1.png)
+![linux install](../images/linux-install-2.png)
+![linux install](../images/linux-install-3.png)
+![linux install](../images/linux-install-4.png)
+
 ## Gerenciador de versão
 
 Caso você queira trabalhar com múltiplas versões do Node.js e/ou atualizar de maneira segura e rápida sua versão local, você pode usar um *gerenciador de versão*.
