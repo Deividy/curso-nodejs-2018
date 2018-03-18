@@ -127,7 +127,7 @@ O fato da variável `myValue` não ser exposta e a função `myFirstClosure` ret
 
 <a id='newjs-constletvar'></a>
 ## var, const e let
-No início, não existia nada além de *var*, a partir do *ES6* foram introduzidos *let* e *const* na especificação, `const` e `let` são variável de **block scope**, diferente de `var` que é de local scope como vimos acima.
+No início, não existia nada além de *var*, a partir do *ES6* foram introduzidos *let* e *const* na especificação, `const` e `let` são variável de **block scope**, diferente de `var`.
 
 `const` define uma variável que não pode ser alterada, porém isso não nos da o conceito de *imutabilidade* por completo, pois podemos definir um objeto como `const` e alterar suas propriedades, considere o seguinte código:
 
@@ -137,7 +137,7 @@ const myFirstConst = 'foo';
 myFirstConst = 'bar'; // TypeError: Assignment to constant variable.
 ```
 
-Porém, o esse código é válido:
+Porém, o código abaixo é válido:
 
 ```javascript
 const mySecondConst = { foo: 'bar' };
@@ -160,7 +160,7 @@ console.log(myFirstLet);
 console.log(mySecondLet); // ReferenceError: mySecondLet is not defined
 ```
 
-`var` é parecido com `let`, difere em ser uma variável de *local scope*, hoje em dia **não é aconselhável o uso de `var`** já que `const` e `let` tem o mesmo efeito com **maior clareza**.
+Hoje em dia **não é aconselhável o uso de `var`** já que `const` e `let` tem o mesmo efeito com **maior clareza**.
 
 Veremos como `var` funciona na prática:
 
