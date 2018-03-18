@@ -37,7 +37,7 @@ Conhecimento básico em JavaScript, sistemas operacionais e terminal (ou cmd).
    - [macOS](modules/02%20-%20Install.md#macos)
    - [Windows](modules/02%20-%20Install.md#windows)
    - [Linux](modules/02%20-%20Install.md#linux)
-   - [Gerenciador de versão](modules/02%20-%20Install.md#nvm)
+   - [Gerenciador de versão](modules/02%20-%20Install.md#nvm)
 3. [JavaScript moderno](#newjs)
    - [Escopo de variáveis](#newjs-variableescope)
    - [var, const e let](#newjs-constletvar)
