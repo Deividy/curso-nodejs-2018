@@ -16,8 +16,16 @@ Para instalar no macOS você pode simplesmente acessar o site oficial[[01]](http
 
 Para instalar no Windows você pode simplesmente acessar o site oficial[[01]](https://nodejs.org/en/download/), baixar o instalador para Windows e seguir os passos.
 
-
-![open installer](../images/windows-install-1.jpg)
+![windows install](../images/windows-install-0.jpg)
+![windows install](../images/windows-install-1.jpg)
+![windows install](../images/windows-install-2.jpg)
+![windows install](../images/windows-install-3.jpg)
+![windows install](../images/windows-install-4.jpg)
+![windows install](../images/windows-install-5.jpg)
+![windows install](../images/windows-install-6.jpg)
+![windows install](../images/windows-install-7.jpg)
+![windows install](../images/windows-install-8.jpg)
+![windows install](../images/windows-install-9.jpg)
 
 <a id="getting-ready-linux"></a>
 ## Linux
