@@ -302,6 +302,39 @@ const myFirstIterator = {
 for (let value of myFirstIterator) {
     console.log(value);
 }
+
+class MyFirstClassIteraction {
+    constructor () {
+        this.values = [];
+    }
+
+    push (value) {
+        this.values.push(value);
+        return this;
+    }
+
+    [Symbol.iterator] () {
+        let step = 0;
+
+        return {
+            next: () => {
+                return {
+                    done: this.values.length === step,
+                    value: this.values[step++]
+                };
+            }
+        };
+    }
+}
+
+const iteractingClasses = new MyFirstClassIteraction();
+iteractingClasses.push('Hey you')
+                 .push(null)
+                 .push('Ta curtindo?');
+
+for (let value of iteractingClasses) {
+    console.log(value);
+}
 ```
 
 Para maiores informações, acesse a referência[[04]](http://exploringjs.com/es6/ch_iteration.html).
