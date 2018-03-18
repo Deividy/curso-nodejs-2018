@@ -67,6 +67,16 @@ Além de que alguns detalhes serão citados em inglês para você criar familiar
 
 O `.eslintrc` e `.vimrc` usados podem ser encontrados na referência([[26]](https://github.com/Deividy/curso-nodejs-2018/blob/master/.eslintrc), [[27]](https://github.com/Deividy/curso-nodejs-2018/blob/master/.vimrc)) e na [raíz desse repositorio](https://github.com/Deividy/curso-nodejs-2018/).
 
+---
+
+# Exercícios
+
+## 1) Escreva o que você entendeu sobre a história do Node.js.
+
+## 2) Copie o arquivo `.eslintrc` e coloque para rodar junto com seu editor de textos
+
+---
+
 # Referências
 
 <a id='ref-1'></a>
