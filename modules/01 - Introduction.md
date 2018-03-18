@@ -52,7 +52,7 @@ Node.js internamente:
 ![node.js system](https://blog.deividy.com/img/event-loop.png)
 
 
-libuv Event Loop:
+Event Loop libuv:
 
 ![libuv loop iteration](http://docs.libuv.org/en/v1.x/_images/loop_iteration.png)
 
