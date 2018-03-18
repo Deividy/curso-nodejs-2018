@@ -131,14 +131,14 @@ O fato da variável `myValue` não ser exposta e a função `myFirstClosure` ret
 ## var, const e let
 No início, não existia nada além de *var*, a partir do *ES6* foram introduzidos *let* e *const* na especificação, `const` e `let` são variável de **block scope**, diferente de `var` que é de local scope como vimos acima.
 
-`const` define uma variável que não pode ser alterada, porém isso não nos da o conceito de *imutabilidade* por completo, pois podemos definir um objeto como `const` e alterar suas propriedades, considere o seguitne código:
+`const` define uma variável que não pode ser alterada, porém isso não nos da o conceito de *imutabilidade* por completo, pois podemos definir um objeto como `const` e alterar suas propriedades, considere o seguinte código:
 
 ```javascript
 const myFirstConst = 'foo';
 myFirstConst = 'bar'; // TypeError: Assignment to constant variable.
 ```
 
-Porém, o seguinte código é válido:
+Porém, o esse código é válido:
 
 ```javascript
 const mySecondConst = { foo: 'bar' };
@@ -161,7 +161,7 @@ console.log(myFirstLet);
 console.log(mySecondLet); // ReferenceError: mySecondLet is not defined
 ```
 
-`var` é parecido com `let`, porém ele usa *local scope*, hoje em dia não é aconselhável o uso de `var` já que `const` e `let` podem te dar o mesmo efeito com **maior clareza**.
+`var` é parecido com `let`, porém ele usa *local scope*, hoje em dia **não é aconselhável o uso de `var`** já que `const` e `let` podem te dar o mesmo efeito com **maior clareza**.
 
 Veremos como `var` funciona na prática:
 
@@ -179,10 +179,16 @@ console.log(mySecondVar); // foo
 
 <a id='newjs-arrowfunctions'></a>
 ## Arrow functions
-Arrow functions são funções definidas usando o operador `=>` ao invés do tradicional modo `function(){}`.<br />
-Além de encurtar as definições, arrow functions são uteís pois não iniciam um lexical scoping, isso significa que o escopo da função sera herdado de seu criador, ao contrario de normal functions. Um detalhe dessa implementacao é que arrow functions nao podem ser usadas como constructor, usando *new* keyword.
+
+Arrow functions são funções definidas usando o operador `=>` ao invés do tradicional modo `function(){}`.
+
+Além de encurtar as definições, arrow functions são uteís pois não iniciam um lexical scoping, isso significa que o escopo da função será herdado de seu criador, ao contrario de normal functions. Um detalhe dessa implementação é que arrow functions não podem ser usadas como constructor (usando *new* keyword).
 
 Alguns exemplos abaixo mostram a diferença:
+
+```javascript
+
+```
 
 <a id='newjs-arrayiterables'></a>
 ## Array iterables
