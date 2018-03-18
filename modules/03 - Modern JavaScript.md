@@ -275,11 +275,36 @@ Com o ES6 foi introduzido um novo mecanismo para iterar dados: *iteration*[[04]]
 
 O metódo `for of` usa esses conceitos para iterar os dados, qualquer estrutura de dados que implemente o `Symbol.iterator` pode ser iterado com `for of...`.
 
-Considere os exemplos:
+O método `Symbol.iterator` definido em seu objeto, é obrigado a retornar um objeto com o método `next(){}`.
+O `next(){}`, por sua tem que retornar um objeto com `{ done: true|false, value: value-of-your-obj }`.
 
+Conside os seguintes exemplos:
+
+[iteration.js](../examples/module-3/iteration.js)
 ```javascript
+const myFirstIterator = {
+    dataSource: [
+        'This is a simple data source',
+        'May the speedy force be with you'
+    ],
 
+    step: 0,
+    [Symbol.iterator] () {
+        return {
+            next () {
+                const value = myFirstIterator.dataSource[myFirstIterator.step++];
+                return { done: !value, value };
+            }
+        };
+    }
+}
+
+for (let value of myFirstIterator) {
+    console.log(value);
+}
 ```
+
+Para maiores informações, acesse a referência[[04]](http://exploringjs.com/es6/ch_iteration.html).
 
 ### Destructuring
 
