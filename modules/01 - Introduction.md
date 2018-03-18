@@ -69,11 +69,12 @@ O `.eslintrc` e `.vimrc` usados podem ser encontrados na referência([[26]](http
 
 ---
 
-# Exercícios
+## Exercícios
 
-## 1) Escreva o que você entendeu sobre a história do Node.js.
+### 1) Escreva, com suas palavras, o que você entendeu sobre a história do Node.js.
 
-## 2) Copie o arquivo `.eslintrc` e coloque para rodar junto com seu editor de textos
+
+### 2) Copie o arquivo `.eslintrc` e coloque para rodar junto com seu editor de textos.
 
 ---
 
