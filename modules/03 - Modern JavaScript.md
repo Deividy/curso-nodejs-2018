@@ -160,7 +160,7 @@ console.log(myFirstLet);
 console.log(mySecondLet); // ReferenceError: mySecondLet is not defined
 ```
 
-`var` é parecido com `let`, porém ele usa *local scope*, hoje em dia **não é aconselhável o uso de `var`** já que `const` e `let` podem te dar o mesmo efeito com **maior clareza**.
+`var` é parecido com `let`, difere em ser uma variável de *local scope*, hoje em dia **não é aconselhável o uso de `var`** já que `const` e `let` tem o mesmo efeito com **maior clareza**.
 
 Veremos como `var` funciona na prática:
 
