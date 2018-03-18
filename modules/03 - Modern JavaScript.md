@@ -37,7 +37,7 @@ node 1-global-scope-app.js # will print: 'speedyforce'
 ### Local scope
 
 No JavaScript, toda função (com excessão de arrow functions), cria um novo lexical scope[[02]](https://stackoverflow.com/questions/1047454/what-is-lexical-scope), e isso é o que conhecemos como *local scope*. <br />
-Algo peculiar é que váriaveis (`var`) e funções de um local scope são *hoisted*[[03]](https://blog.deividy.com/post/2018-02-04-javascript-hoisting.html) no topo de seu escopo.
+Algo peculiar é que váriaveis (`var`) e funções de um local scope são *hoisted*[[03]](https://www.w3schools.com/js/js_hoisting.asp) no topo de seu escopo.
 
 Entendo que a primeira vista essas palavras parecem bem complicadas, mas com alguns exemplos fica mais simples.
 
@@ -46,7 +46,7 @@ Considere o seguinte código:
 [local-scope.js](../examples/module-3/3-local-scope.js)
 ```javascript
 foo(); // prints 'foo'
-function foo() { console.log('foo');
+function foo() { console.log('foo'); }
 
 console.log(bar); // prints undefined
 var bar = 'foo';
@@ -56,7 +56,7 @@ O compilador JavaScript quando vê uma definicão de variável usando `var` ou u
 
 ```javascript
 var bar;
-function foo() { console.log('foo');
+function foo() { console.log('foo'); }
 
 foo(); // prints 'foo'
 console.log(bar); // prints undefined
@@ -70,7 +70,7 @@ Block scope são escopos criados por qualquer `{}`, com a óbvia excessao de fun
 
 Por exemplo, podemos definir um block scope da seguinte forma:
 
-[block-scope.js](../examples/module-3/4-block-scope.js#L1-L3)
+[block-scope.js](../examples/module-3/4-block-scope.js)
 ```javascript
 {
     console.log("I'm in a block scope!");
@@ -222,21 +222,8 @@ http://exploringjs.com/es6/ch_destructuring.html
 http://exploringjs.com/es6/ch_generators.html
 
 
-### Stay foolish, stay hungry
-
-Continue faminto! A especificacao ECMA vem evoluindo rapido, em menos de 5 anos mudou MUITA coisa, entao nao pare de estudar e aprender, para esse capitulo deixarei um desafio 'simples' (he he he :D). <br />
-
-Refatore o codigo abaixo escrito em javascript legacy para usar os novos conceitos que voce aprendeu:
-
-
-```javascript
-
-code legacy
-
-```
-
 # Referência
 
 - [01] https://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript
 - [02] https://stackoverflow.com/questions/1047454/what-is-lexical-scope
-- [03] https://blog.deividy.com/post/2018-02-04-javascript-hoisting.html
+- [03] https://www.w3schools.com/js/js_hoisting.asp
