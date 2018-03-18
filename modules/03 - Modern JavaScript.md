@@ -96,11 +96,9 @@ console.log(n) // ReferenceError
 
 ### Closure
 
-Closure pode ser um nome meio estranho a primeira vista, mas significa algo muito simples.
+Uma closure é uma função(ou objeto) que tem acesso a uma variável definida em um escopo acima, de forma que somente esse objeto consegue modificar e acessar a variável.
 
-Uma closure significa uma função que tem acesso a uma variável definida em um escopo acima, ou seja, somente essa função consegue modificar e acessar a variável.
-
-Com um exemplo fica mais fácil:
+Por exemplo:
 
 [closure.js](../examples/module-3/closure.js)
 ```javascript
