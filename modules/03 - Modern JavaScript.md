@@ -54,7 +54,6 @@ var bar = 'foo';
 
 O compilador JavaScript quando vê uma definicão de variável usando `var` ou um *statement* de função move suas declaracões para o ínicio de seu contexto, esse código é executado da seguinte forma:
 
-[local-scope.js](../examples/module-3/3-local-scope.js#L7-L13)
 ```javascript
 var bar;
 function foo() { console.log('foo');
@@ -84,8 +83,6 @@ Isso é um block scope, agora qualquer `if (true) { }` ou `for () { }` cria um b
 Na prática, isso significa que uma `var` definida em um block scope eh visível fora do block scope, enquanto let e const não.
 
 Considere o seguinte código:
-
-[block-scope.js](../examples/module-3/4-block-scope.js#L18-L22)
 ```javascript
 for (var i = 0; i < 5; ++i) {}
 console.log(i) // 5
@@ -102,6 +99,7 @@ Uma closure significa uma função que tem acesso a uma variável definida em um
 
 Com um exemplo fica mais fácil:
 
+[closure.js](../examples/module-3/5-closure.js)
 ```javascript
 function myFirstClosure (initialValue) {
     let myValue = initialValue;
