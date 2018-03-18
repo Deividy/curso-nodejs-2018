@@ -167,7 +167,6 @@ Veremos como `var` funciona na prática:
 ```javascript
 var myFirstVar = 'foo';
 myFirstVar = 'bar';
-
 console.log(myFirstVar);
 
 {
@@ -181,7 +180,7 @@ console.log(mySecondVar); // foo
 
 Arrow functions são funções definidas usando o operador `=>` ao invés do tradicional modo `function(){}`.
 
-Além de encurtar as definições, arrow functions são uteís pois não iniciam um lexical scoping, isso significa que o escopo da função será herdado de seu criador, ao contrario de normal functions. Um detalhe dessa implementação é que arrow functions não podem ser usadas como constructor (usando *new* keyword).
+Além de encurtar as definições, arrow functions não iniciam um lexical scoping, isso significa que o escopo da função será herdado de seu criador, são *anônimas* por definição e arrow functions não podem ser usadas como constructor (usando *new* keyword).
 
 Alguns exemplos abaixo mostram a diferença:
 
