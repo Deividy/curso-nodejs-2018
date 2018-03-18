@@ -250,7 +250,7 @@ new (function JustAContext () {
 Acima os exemplos são *auto-explicativos*, execute eles em sua maquina, edite e tire suas próprias conclusões. ;)
 
 <a id='newjs-arrayiterables'></a>
-## Funções para manipular arrays
+## Manipulação de arrays
 
 Novas funções para manipulação de arrays também foram introduzidas no ES6, iremos mostrar aqui `forEach`, `reduce` e `map`. 
 
@@ -268,11 +268,18 @@ const total = myArray.reduce((accumulator, item) => accumulator + item) // 10
 
 ### Iterables e iterators
 
-http://2ality.com/2015/02/es6-iteration.html
+Com o ES6 foi introduzido um novo mecanismo para iterar dados: *iteration*[[04]](http://exploringjs.com/es6/ch_iteration.html), que consistem em dois conceitos:
 
-#### Métodos que usam iterables
+ - Um *iterable* é uma estrutura de dados, pode ser qualquer tipo de objeto. Implementamos o metodo `Symbol.iterator` para dizer que esse objeto pode ser usado para iteração
+ - Um *iterator* é um ponteiro usado para percorrer os elemento da estrutura de dados.
 
-#### Criando um iterable
+O metódo `for of` usa esses conceitos para iterar os dados, qualquer estrutura de dados que implemente o `Symbol.iterator` pode ser iterado com `for of...`.
+
+Considere os exemplos:
+
+```javascript
+
+```
 
 ### Destructuring
 
@@ -289,3 +296,4 @@ http://exploringjs.com/es6/ch_generators.html
 - [01] https://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript
 - [02] https://stackoverflow.com/questions/1047454/what-is-lexical-scope
 - [03] https://www.w3schools.com/js/js_hoisting.asp
+- [04] http://exploringjs.com/es6/ch_iteration.html
