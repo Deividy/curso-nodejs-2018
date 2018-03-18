@@ -1,17 +1,17 @@
 # 3) JavaScript moderno
 
-O JavaScript não é nada moderno e tem um longa história, como vimos na introdução, porém, está em constante mudança e por aqui veremos algumas das mais novas *features* que temos disponíveis na versão atual do Node.js.
+O JavaScript não é nada moderno e tem um longa história, porém, está em constante mudança e por aqui veremos algumas das mais novas *features* que temos disponíveis na versão atual do Node.js.
 
 Você irá aprender conceitos sobre escopo no JavaScript, `const` e `let`, `arrow functions`, `iterables` e no final terá algumas dicas de como continuar o aprendizando.
 
-> "Stay foolish, stay hungry" - Steve Jobs
+> “Talk is cheap. Show me the code.” - Linus Torvalds
 
 <a id='newjs-lexicalscope'></a>
 ## Escopo de variáveis em JavaScript
 
 Existem diversas maneiras de definir um escopo em JavaScript. <br/>
+Caso queira mais detalhes e a respeito, tem uma pergunta no stackoverflow[[01]](https://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript) repleta de comentários.
 
-Caso queira mais detalhes e a respeito, tem uma pergunta no stackoverflow[[01]](https://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript) repleta de comentários informativos. <br />
 Irei por aqui sumarizar os escopos **Global**, **Local** e **Block**, além de uma prévia sobre **Closure**.
 
 ### Global scope
