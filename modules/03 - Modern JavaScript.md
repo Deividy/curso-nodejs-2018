@@ -35,12 +35,12 @@ node 1-global-scope-app.js # will print: 'speedyforce'
 
 ### Local scope
 
-No JavaScript, toda função (com excessão de arrow functions), cria um novo lexical scope[[32]](#ref-32), e isso é o que conhecemos como *local scope*. <br />
-Algo peculiar é que váriaveis (`var`) e funções de um local scope são *hoisted*[[33]](#ref-33) no topo de seu escopo.
+No JavaScript, toda função (com excessão de arrow functions), cria um novo lexical scope[[02]](https://stackoverflow.com/questions/1047454/what-is-lexical-scope), e isso é o que conhecemos como *local scope*. <br />
+Algo peculiar é que váriaveis (`var`) e funções de um local scope são *hoisted*[[03]](https://blog.deividy.com/post/2018-02-04-javascript-hoisting.html) no topo de seu escopo.
 
-Entendo que a primeira vista essas palavras parecem bem complicadas, mas com alguns exemplos fica mais simples. <br />
-Considere o seguinte codigo:
+Entendo que a primeira vista essas palavras parecem bem complicadas, mas com alguns exemplos fica mais simples.
 
+Considere o seguinte código:
 
 [local-scope.js](../examples/module-3/3-local-scope.js)
 ```javascript
@@ -51,8 +51,9 @@ console.log(bar); // prints undefined
 var bar = 'foo';
 ```
 
-O compilador JavaScript quando vê uma definicão de variavel usando `var` ou uma definicao de funcao com `function` move suas declaracões para o inicio de seu contexto, esse código na verdade é executado da seguinte forma:
+O compilador JavaScript quando vê uma definicão de variável usando `var` ou um *statement* de função move suas declaracões para o ínicio de seu contexto, esse código é executado da seguinte forma:
 
+[local-scope.js](../examples/module-3/3-local-scope.js#L7-L13)
 ```javascript
 var bar;
 function foo() { console.log('foo');
@@ -65,7 +66,8 @@ bar = 'foo';
 
 ### Block scope
 
-Block scope são escopos criados por qualquer `{}`, com a obvia excessao de funçoes que vimos em local scope. <br />
+Block scope são escopos criados por qualquer `{}`, com a óbvia excessao de funções que vimos em local scope.
+
 Por exemplo, podemos definir um block scope da seguinte forma:
 
 [block-scope.js](../examples/module-3/4-block-scope.js#L1-L3)
@@ -75,12 +77,12 @@ Por exemplo, podemos definir um block scope da seguinte forma:
 }
 ```
 
-Isso é um block scope, agora qualquer `if (true) { }` ou `for () { }` tem um block scope, uma regra simples de lembrar é: *Se temos um `{}` definicao nao e uma `function` ou `class` isso e um block scope*.
+Isso é um block scope, agora qualquer `if (true) { }` ou `for () { }` cria um block scope, uma regra simples de lembrar é: *Se temos um `{}` e não é uma `function` ou `class` isso e um block scope*.
 
-`let` e `const` sao variaveis de block scope, enquanto `var` e variavel de local scope. <br />
-Na pratica, isso significa que uma var definida em um block scope eh visivel fora do block scope, enquanto let e const nao.
+`let` e `const` são variáveis de block scope, enquanto `var` representa o local scope. <br />
+Na prática, isso significa que uma `var` definida em um block scope eh visível fora do block scope, enquanto let e const não.
 
-Considere o seguinte codigo:
+Considere o seguinte código:
 
 [block-scope.js](../examples/module-3/4-block-scope.js#L18-L22)
 ```javascript
@@ -93,8 +95,11 @@ console.log(n) // ReferenceError
 
 ### Closure
 
-Closure pode ser um nome meio estranho a primeira vista, mas significa algo muito simples. <br />
-Uma closure e uma funcao que tem acesso a uma variavel que nao e exposta, por exemplo:
+Closure pode ser um nome meio estranho a primeira vista, mas significa algo muito simples.
+
+Uma closure significa uma função que tem acesso a uma variável definida em um escopo acima, ou seja, somente essa função consegue modificar e acessar a variável.
+
+Com um exemplo fica mais fácil:
 
 ```javascript
 function initBar (initialValue) {
@@ -108,18 +113,8 @@ const bar = initBar('foo');
 console.log(bar()) // foo
 ```
 
-No exemplo, definimos a variavel `bar` dentro do initBar e retornamos uma outra funcao para o caller interagir, nao importa o que o caller faca, ele nao ira conseguir mudar a variavel bar diretamente, ele tem que chamar o `initBar()` para alterar o seu valor. <br />
+Acima definimos a variável `bar` dentro do initBar e retornamos uma outra funcao para o caller interagir, nao importa o que o caller faca, ele nao ira conseguir mudar a variavel bar diretamente, ele tem que chamar o `initBar()` para alterar o seu valor. <br />
 Essa e uma forma de emularmos variaveis privadas em JavaScript, classes usam esse conceito extensamente.
-
-#### 1) Exercício
-
-blabla
-
-```javascript
-
-console.log('foo');
-
-```
 
 <a id='newjs-constletvar'></a>
 ## var, const e let
@@ -244,3 +239,5 @@ code legacy
 # Referência
 
 - [01] https://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript
+- [02] https://stackoverflow.com/questions/1047454/what-is-lexical-scope
+- [03] https://blog.deividy.com/post/2018-02-04-javascript-hoisting.html
