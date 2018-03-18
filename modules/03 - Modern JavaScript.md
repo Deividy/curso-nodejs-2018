@@ -29,6 +29,7 @@ require('./bar');
 console.log(foo);
 ```
 
+Execute o arquivo `global-scope-app.js`:
 ```shell
 node 1-global-scope-app.js # will print: 'speedyforce'
 ```
