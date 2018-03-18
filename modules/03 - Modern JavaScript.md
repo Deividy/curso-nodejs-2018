@@ -2,7 +2,9 @@
 
 O JavaScript não é nada moderno e tem um longa história, porém, está em constante mudança e por aqui veremos algumas das mais novas *features* que temos disponíveis na versão atual do Node.js.
 
-Você irá aprender conceitos sobre escopo no JavaScript, `const` e `let`, `arrow functions`, `iterables` e no final terá algumas dicas de como continuar o aprendizando.
+Você irá aprender conceitos sobre escopo no JavaScript, `const` e `let`, `arrow functions`, `iterables` e no final terá algumas dicas de como continuar o aprendizando. <br />
+Sei que existe (*bem*) mais coisas para se aprender sobre ES6, quero apenas passar um overview de algumas técnicas mais usadas por mim. <br />
+Caso queira um estudo aprofundado na [referência](#reference) tem vários links repletos de conteúdo gratuito.
 
 > “Talk is cheap. Show me the code.” - Linus Torvalds
 
@@ -341,17 +343,42 @@ Para maiores informações, acesse a referência[[04]](http://exploringjs.com/es
 
 ### Destructuring
 
-http://exploringjs.com/es6/ch_destructuring.html
+*Destructuring* é uma maneira fácil e conveniente de extrair valores de um array ou objeto.
+
+Para extrair valores de um objeto:
+
+[destructuring.js](../examples/module-3/destructuring.js)
+```javascript
+const user = { name: 'Deividy Metheler Zachetti', email: 'deividyz@gmail.com' };
+
+const { name, email } = user; // destructuring! :P
+console.log(name, email);
+```
+
+Para extrair valores de um array:
+```javascript
+const userNames = [ 'deividy', 'speedy', 'foo', 'bar', 'ana' ];
+
+const [ firstUserName, secondUserName, ...others ] = userNames;
+
+console.log(firstUserName); // deividy
+console.log(secondUserName); // speedy
+console.log(others); // [ 'foo', 'bar', 'ana' ]
+```
+
+Para um estudo mais aprofundado, acesse a referência[[05]](http://exploringjs.com/es6/ch_destructuring.html).
 
 
 ### Generators
 
 http://exploringjs.com/es6/ch_generators.html
 
-
+<a id='reference'></a>
 # Referência
 
+- [00] http://exploringjs.com/es6
 - [01] https://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript
 - [02] https://stackoverflow.com/questions/1047454/what-is-lexical-scope
 - [03] https://www.w3schools.com/js/js_hoisting.asp
 - [04] http://exploringjs.com/es6/ch_iteration.html
+- [05] http://exploringjs.com/es6/ch_destructuring.html
