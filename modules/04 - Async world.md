@@ -174,5 +174,7 @@ readAndProcessFiles(function (err, allContent) {
 }
 ```
 
+Note como o código acima faz **exatamente a mesma coisa** que o anterior só que é mais **flexível** e **claro**, podemos adicionar mais arquivos sem nenhuma modificação na nossa função de `concatAllFiles`.
+
 # Referência
 - [01] https://nodejs.org/api/process.html#process_event_uncaughtexception
