@@ -502,6 +502,24 @@ printPoorKarmaLoginNames();
 printGreatKarmaLoginNames();
 ```
 
+### 3) Complete a função de *iterator* de modo ao console.log imprimir um nome por linha ('Speedy', 'Deividy', 'Ana')
+
+```javascript
+const players = {
+    speedy: 'Speedy',
+    deividy: 'Deividy',
+    ana: 'Ana',
+
+    [Symbol.iterator]: () => {
+        // ...
+    }
+};
+
+for (let playerName of players) {
+    console.log(playerName);
+}
+```
+
 ---
 
 <a id='reference'></a>
