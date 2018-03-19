@@ -248,13 +248,13 @@ readFilePromise(process.argv[1]).then((data) => {
 console.log("I'm just starting ;)");
 ```
 
-Note no exemplo acima que o efeito é o mesmo que usando o callbacks, o log *"I'm just starting ;)"* é mostrado antes do *"I'm done."*.
+Note no exemplo acima que o efeito é o mesmo que usando o callback, o log *"I'm just starting ;)"* é mostrado antes do *"I'm done."*.
 
 ### Promise hell
 
 Importante dizermos que do mesmo jeito que existe callback hell, existe o inferno das promises. >)
 
-Da mesma forma que o callback hell acontece por programadores que não estão familiarizado com a linguagem, ocorre o mesmo com promises.
+Como vimos, callback hell acontece por programadores que não estão familiarizados com a linguagem, o mesmo acontece com promises.[[08]](https://medium.com/@pyrolistical/how-to-get-out-of-promise-hell-8c20e0ab0513)
 
 # Referência
 - [01] http://www.i-programmer.info/programming/theory/6040-what-is-asynchronous-programming.html
@@ -264,3 +264,4 @@ Da mesma forma que o callback hell acontece por programadores que não estão fa
 - [05] https://nodejs.org/api/process.html#process_event_uncaughtexception
 - [06] http://callbackhell.com/
 - [07] https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261
+- [08] https://medium.com/@pyrolistical/how-to-get-out-of-promise-hell-8c20e0ab0513
