@@ -453,8 +453,7 @@ const logins = [
     { name: 'deividy', karma: 900 },
     { name: 'ana', karma: 1200 },
     { name: 'foo', karma: 1 },
-    { name: 'bar', karma: 2 },
-
+    { name: 'bar', karma: 2 }
 ];
 
 function loginWithGreatKarma (login) {
