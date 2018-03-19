@@ -41,7 +41,7 @@ try {
 }
 ```
 
-Se voce executar o codigo acima, ira ver que mesmo estando fechado em um `try/catch` ainda temos uma uncaughtException[[ref]](ref), ou seja, nosso catch *não funcionou*. <br />
+Se voce executar o codigo acima, ira ver que mesmo estando fechado em um `try/catch` ainda temos uma uncaughtException[[01]](https://nodejs.org/api/process.html#process_event_uncaughtexception), ou seja, nosso catch *não funcionou*. <br />
 
 Com isso em mente, surgiu o pattern de enviarmos o erro como o primeiro parametro da função e o retorno como segundo, considere o código abaixo:
 
@@ -98,3 +98,6 @@ O Node.js provem o module util[[ref]](#ref), que tem um metodo chamado `promisif
 ```javascript
 ...
 ```
+
+# Referência
+- [01] https://nodejs.org/api/process.html#process_event_uncaughtexception
