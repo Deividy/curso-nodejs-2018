@@ -16,51 +16,55 @@ A maior confusão na cabeça das pessoas está em entender que o código que est
 
 Veremos aqui o modelo padrão de *callback* para você entender bem como isso tudo funciona, depois passaremos para *Promise* e enfim para *async / await*.
 
-### Callback
+## Callback
 
-Uma forma de tirarmos proveito da programacao assincrona e mandar uma funcao que sera executada quando terminar o processamento, esse conceito eh chamado de callback, considere o seguinte codigo:
+O modelo mais simples para programação assíncrona é *callbacks*, callback é simplesmente uma função que será executada após completar uma ação, por exemplo:
 
 ```javascript
-
-function callback () { console.log('ready!'); }
+function callback () { console.log('I will be the last'); }
 setTimeout(callback, 1000);
+console.log('I wil lbe first!');
 ```
 
-Aqui definimos um callback que sera executado depois de um segundo. <br />
-A comunidade Node.js criou um (anti)pattern para cuidar de erros, como um erro pode ocorrer dentro de uma funcao assincrona temos que cuidar dele, e simplesmente mandar um `try{ } catch { }` nao funciona pois o codigo eh executado em outra thread, e o try catch vai pegar excessoes apenas no codigo local, considere o seguinte:
+Para algumas pessoas é muito dificil assimilar que o log `'I wil lbe first!'` sera mostrado antes do `'I will be the last'`, já que o callback foi definido antes, e chamado para executar antes.
+
+### Tratamento de erros Node.js
+
+Node.js criou um (*anti*)pattern para cuidar de erros, como um erro pode ocorrer dentro de uma função assíncrona temos que cuidar dele, e simplesmente mandar um `try{ } catch { }` nao funciona pois o código eh executado em outra thread, considere o seguinte:
 
 ```javascript
 try {
-function callback () { throw new Error('OH NO'); }
-  setTimeout(callback, 1000);
+    function callback () { throw new Error('OH NO'); }
+    setTimeout(callback, 1000);
 } catch (ex) {
- console.log("i will never be hit :/"
+   console.log("i will never be hit :/")
 }
 ```
 
-Se voce executar o codigo acima, ira ver que mesmo tendo fechado em um try/catch nosso codigo ainda levamos uma uncaughtException[[ref]](ref), ou seja, nosso catch nao funcionou. <br />
-Com isso em mente, surgiu o pattern de enviarmos o erro como o primeiro parametro da funcao e o retorno como segundo, considere o codigo abaixo:
+Se voce executar o codigo acima, ira ver que mesmo estando fechado em um `try/catch` ainda temos uma uncaughtException[[ref]](ref), ou seja, nosso catch *não funcionou*. <br />
+
+Com isso em mente, surgiu o pattern de enviarmos o erro como o primeiro parametro da função e o retorno como segundo, considere o código abaixo:
 
 ```javascript
 
 function callback (err, result) {
-  if (err) return console.error(err);
-  console.log(result);
+    if (err) return console.error(err);
+    console.log(result);
 }
 setTimeout(() => {
-  callback('OH NO');
+    callback('OH NO');
 }, 1000);
 
 setTimeout(() => {
-  callback(null, 'Oh good!');
+    callback(null, 'Oh good!');
 }, 1000);
 ```
 
-No primeiro `setTimeout` retornamos um erro para o callback e na segunda retornamos ok, esse é o padrao da comunidade Node.js e dos modulos internos do node, primeiro argumento de um callback eh sempre um erro e os proximos a resposta que queremos, isso gera e plorifera problemas na cabeca dos devs, muitos devs esquecem de cuidar do primeiro argumento e consequentemente ficam com erros 'perdidos' por seu script. <br />
+No primeiro `setTimeout` retornamos um erro para o callback e na segunda retornamos ok, esse é o padrão de callbacks do Node.js, o primeiro argumento de um callback é sempre um erro e os próximos a resposta que queremos.
 
-#### Callback hell
+### Callback hell
 
-O famoso callback hell acontece nao pelo paradigma da linguagem e de callbacks mas sim pelo fato dos desenvolvedores nao entenderem muito ebm o codigo que estao escrevendo. Quero frisar isso **callbackhell acontece pelo fato de desenvolvedores nao entenderem muito bem a linguagem e o paradigma**. <br />
+O famoso callback hell acontece não pelo paradigma da linguagem e de callbacks mas sim pelo fato dos desenvolvedores nao entenderem muito ebm o codigo que estao escrevendo. Quero frisar isso **callbackhell acontece pelo fato de desenvolvedores nao entenderem muito bem a linguagem e o paradigma**. <br />
 Digo isso pois, nao adianta nada voce achar que o problema do callback hell esta no callback e comecar a usar promises ou ateh mesmo o async / await, seu codigo vai continuar um *inferno*.
 
 Existe muito codigo bom e facil de ler usando callback, o proprio core do node usa extensivamente e é muito bem escrito [[ref]](#ref).
