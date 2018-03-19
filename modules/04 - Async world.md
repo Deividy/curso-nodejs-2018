@@ -51,7 +51,7 @@ Isso acontece pois quando chamamos a função `readFile` o Node.js envia para a 
 Muitas pessoas acham que uma função de callback retorna algum valor, mas isso não acontece, um callback é apenas uma função que sera chamada quando termina de executar uma ação, ele *não retorna valor nenhum*, logo codigos como `const foo = callback()`, **estão errados**.
 
 
-### Tratamento de erros Node.js
+### Tratamento de erros em Node.js
 
 Node.js criou um *anti-pattern* para cuidar de erros.  <br />
 Um erro pode ocorrer dentro de uma função assíncrona e temos que cuidar dele, simplesmente mandar um `try{ } catch { }` não funciona pois o código é executado em outra thread, considere o seguinte:
