@@ -89,7 +89,7 @@ No primeiro `setTimeout` retornamos um erro para o callback e na segunda retorna
 
 ### Callback hell
 
-Para começar, quero deixar bem claro que **callback hell não é causado pelo estilo da programação do Node.js e sim por desenvolvedores que não entendem muito bem o que estão fazendo**. <br />
+Para começar, quero deixar bem claro que **callback hell não é causado pelo estilo da programação do Node.js e sim por desenvolvedores que não entendem muito bem o que estão fazendo**.[[06]](http://callbackhell.com/) <br />
 Eu quero dizer que não adianta nada você evitar programação com callback usando *Promises* ou até mesmo *async / await* se você não entender como callbacks funcionam, como o JavaScript funciona, seu código vai continuar um *inferno*, só vai mudar o nome dele.
 
 Darei alguns exemplos de callback hell por aqui e resolverei eles usando próprios callbacks mas de uma forma que um **humano entenda**.
@@ -185,3 +185,4 @@ Note como o código acima faz **exatamente a mesma coisa** que o anterior só qu
 - [03] https://www.quora.com/Is-Node-js-single-threaded
 - [04] https://stackoverflow.com/questions/25399725/nodejs-get-async-return-value-callback
 - [05] https://nodejs.org/api/process.html#process_event_uncaughtexception
+- [06] http://callbackhell.com/
