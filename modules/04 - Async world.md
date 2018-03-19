@@ -252,7 +252,7 @@ Note no exemplo acima que o efeito é o mesmo que usando o callback, o log *"I'm
 
 ### Promise hell
 
-Importante dizermos que do mesmo jeito que existe callback hell, existe o inferno das promises. >)
+Importante dizermos que do mesmo jeito que existe callback hell, existe o promise hell. 
 
 Como vimos, callback hell acontece por programadores que não estão familiarizados com a linguagem, o mesmo acontece com promises.[[08]](https://medium.com/@pyrolistical/how-to-get-out-of-promise-hell-8c20e0ab0513)
 
