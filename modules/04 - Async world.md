@@ -99,7 +99,7 @@ Darei alguns exemplos de callback hell por aqui e resolverei eles usando própri
 // welcome to CALLBACKHELL! :)
 const fs = require('fs');
 
-function reandAndProcessFiles (callback) {
+function readAndProcessFiles (callback) {
     fs.readFile('file1.txt', function (err, data) {
         if (err) return callback(err);
         
@@ -120,11 +120,11 @@ function reandAndProcessFiles (callback) {
                     callback(null, allContent);
                 });
            });
-        })
+        });
     });
 }
 
-reandAndProcessFiles(function (err, allContent) {
+readAndProcessFiles(function (err, allContent) {
     if (err) throw new Error(err);
     console.log(allContent);
 });
@@ -132,7 +132,47 @@ reandAndProcessFiles(function (err, allContent) {
 
 Note como o código acima toma uma forma de *"pirâmide deitada"*, mesmo fazendo um processamento simples, fica muito difícil de ler e entender o que esta acontecendo, e pode ficar pior caso o desenvolvedor adicione mais arquivos ou algum outro processamento assíncrono.
 
-Podemos, porem, reescrever esse mesmo 
+Podemos, porém, reescrever esse mesmo código da seguinte forma usando *functional programming*:
+
+```javascript
+const fs = require('fs');
+
+// recursive and not a pure function
+// this will change the filesToProcess array
+function concatAllFiles (filesToProcess, currentData, callback) {
+    fs.readFile(filesToProcess.shift(), (err, data) => {
+        if (err) return callback(err);
+
+        currentData += data.toString();
+
+        // no more files to process, just return
+        if (filesToProcess.length === 0) {
+            return callback(null, currentData);
+        }
+
+        concatAllFiles(filesToProcess, currentData, callback);
+    });
+}
+
+function readAndProcessFiles (callback) {
+    const filesToProcess = [ 'file1.txt', 'file2.txt', 'file3.txt' ];
+    const startContent = '';
+
+    concatAllFiles(filesToProcess, startContent, (err, allContent) => {
+        if (err) return callback(err);
+
+        fs.writeFile('all-files-together.txt', allContent, (err) => {
+            callback(err, allContent);
+        });
+    });
+}
+
+readAndProcessFiles(function (err, allContent) {
+    if (err) throw new Error(err);
+
+    console.log(allContent);
+}
+```
 
 # Referência
 - [01] https://nodejs.org/api/process.html#process_event_uncaughtexception
