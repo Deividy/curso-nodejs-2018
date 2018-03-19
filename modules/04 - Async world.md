@@ -42,11 +42,11 @@ fs.readFile('./callback.js', function (err, data) {
 console.log("I'm just starting ;)");
 ```
 
-Veja que no exemplo acima usamos um `throw`, a idéia é "explodir" mesmo se rolar erro, e note que "I'm just starting ;)" é mostrado antes do "I'm done".
+Note que no exemplo acima usamos um `throw`, a idéia é "explodir" mesmo se rolar erro, e veja que *"I'm just starting ;)"* é mostrado antes do *"I'm done"*.
 
 Isso acontece pois quando chamamos a função `readFile` o Node.js envia para a fila o nosso comando junto com o callback e continua a execução do script, apenas quando termina de ler o arquivo ele volta para o mundo JavaScript e executa nossa função.
 
-Muitas pessoas acham que uma função de callback retorna algum valor, mas isso não acontece, um callback é apenas uma função que sera chamada quando termina de executar uma ação, ele *não retorna valor nenhum*.
+Muitas pessoas acham que uma função de callback retorna algum valor, mas isso não acontece, um callback é apenas uma função que sera chamada quando termina de executar uma ação, ele *não retorna valor nenhum*, logo codigos como `const foo = callback()`, **estão errados**.
 
 
 ### Tratamento de erros Node.js
