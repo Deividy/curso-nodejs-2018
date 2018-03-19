@@ -20,6 +20,7 @@ Veremos aqui o modelo padrão de *callback* para você entender bem como isso tu
 
 O modelo mais simples para programação assíncrona é *callbacks*, callback é simplesmente uma função que será executada após completar uma ação, por exemplo:
 
+[callback-1.js](../exercises/module-4/callback-1.js)
 ```javascript
 function callback () { console.log('I will be the last'); }
 setTimeout(callback, 1000);
@@ -31,10 +32,11 @@ Para algumas pessoas é muito dificil assimilar que o log `'I wil lbe first!'` s
 
 Talvez esse código tenha parecido óbvio para você, vou dar um exemplo mais *tricky*:
 
+[callback-2.js](../exercises/module-4/callback-2.js)
 ```javascript
 const fs = require('fs');
 
-fs.readFile('./callback.js', function (err, data) {
+fs.readFile(process.argv[1], function (err, data) {
     if (err) throw new Error(err);
 
     console.log("I'm done.");
@@ -54,6 +56,7 @@ Muitas pessoas acham que uma função de callback retorna algum valor, mas isso 
 Node.js criou um *anti-pattern* para cuidar de erros.  <br />
 Um erro pode ocorrer dentro de uma função assíncrona e temos que cuidar dele, simplesmente mandar um `try{ } catch { }` não funciona pois o código é executado em outra thread, considere o seguinte:
 
+[callback-1.js](../exercises/module-4/callback-1.js)
 ```javascript
 try {
     function callback () { throw new Error('OH NO'); }
@@ -91,8 +94,8 @@ Eu quero dizer que não adianta nada você evitar programação com callback usa
 
 Darei alguns exemplos de callback hell por aqui e resolverei eles usando próprios callbacks mas de uma forma que um **humano entenda**.
 
+[callback-hell-1.js](../exercises/module-4/callback-hell-1.js)
 ```javascript
-
 // welcome to CALLBACKHELL! :)
 const fs = require('fs');
 
@@ -106,7 +109,7 @@ function reandAndProcessFiles (callback) {
             
             const contentFile2 = data.toString();
             
-            fs.readFile('file2.txt', function (err, data) {
+            fs.readFile('file3.txt', function (err, data) {
                 if (err) return callback(err);
                 
                 const contentFile3 = data.toString();
