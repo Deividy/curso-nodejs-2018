@@ -30,7 +30,8 @@ Para algumas pessoas é muito dificil assimilar que o log `'I wil lbe first!'` s
 
 ### Tratamento de erros Node.js
 
-Node.js criou um (*anti*)pattern para cuidar de erros, como um erro pode ocorrer dentro de uma função assíncrona temos que cuidar dele, e simplesmente mandar um `try{ } catch { }` nao funciona pois o código eh executado em outra thread, considere o seguinte:
+Node.js criou um *anti-pattern* para cuidar de erros.  <br />
+Um erro pode ocorrer dentro de uma função assíncrona temos que cuidar dele, e simplesmente mandar um `try{ } catch { }` não funciona pois o código é executado em outra thread, considere o seguinte:
 
 ```javascript
 try {
@@ -41,9 +42,9 @@ try {
 }
 ```
 
-Se voce executar o codigo acima, ira ver que mesmo estando fechado em um `try/catch` ainda temos uma uncaughtException[[01]](https://nodejs.org/api/process.html#process_event_uncaughtexception), ou seja, nosso catch *não funcionou*. <br />
+Se voce executar o codigo acima, ira ver que mesmo estando fechado em um `try/catch` ainda temos uma uncaughtException[[01]](https://nodejs.org/api/process.html#process_event_uncaughtexception), ou seja, nosso catch *não funcionou*.
 
-Com isso em mente, surgiu o pattern de enviarmos o erro como o primeiro parametro da função e o retorno como segundo, considere o código abaixo:
+Com isso em mente, surgiu o pattern de enviarmos o erro como o primeiro paramêtro da função e o retorno como segundo, considere o código abaixo:
 
 ```javascript
 
@@ -64,40 +65,8 @@ No primeiro `setTimeout` retornamos um erro para o callback e na segunda retorna
 
 ### Callback hell
 
-O famoso callback hell acontece não pelo paradigma da linguagem e de callbacks mas sim pelo fato dos desenvolvedores nao entenderem muito ebm o codigo que estao escrevendo. Quero frisar isso **callbackhell acontece pelo fato de desenvolvedores nao entenderem muito bem a linguagem e o paradigma**. <br />
-Digo isso pois, nao adianta nada voce achar que o problema do callback hell esta no callback e comecar a usar promises ou ateh mesmo o async / await, seu codigo vai continuar um *inferno*.
-
-Existe muito codigo bom e facil de ler usando callback, o proprio core do node usa extensivamente e é muito bem escrito [[ref]](#ref).
-
-Vou dar um exemplo e uma resolucao de um callback hell:
-
-```javascript
-
-```
-
-> Exercicio:
-> foo
-
-### Promise
-
-https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261
-
-Uma definicao simples sobre promise eh: Promise eh um objeto em javascript que pode produzir um valor no futuro, um valor resolvido ou nao resolvido (rejeitado ou erro). Tipo uma promessa mesmo. :)
-
-
-### async / await
-
-https://javascript.info/async-await
-
-### Promisify com async / await
-
-Agora que ja sabemos o que eh callback, promise e async await, veremos uma forma de transformar callbacks em promises e com isso usarmos com async await.
-
-O Node.js provem o module util[[ref]](#ref), que tem um metodo chamado `promisify`, ele basicamente transforma uma funcao com o padrao de callback(err, value) em uma promise, podemos usar esse meotod para transformar funcoes em promises ou podemos fazer na mao, darei exemplo das duas formas:
-
-```javascript
-...
-```
+Para começar, quero deixar bem claro que **callback hell não é causado pelo estilo da programação do Node.js e sim por desenvolvedores que não entendem muito bem o que estão fazendo**. <br />
+Eu quero dizer que não adianta nada você evitar programação com callback usando *Promises* ou até mesmo *async / await* se você não entender como callbacks funcionam, como o JavaScript funciona, seu código vai continuar um *inferno*, só vai mudar o nome dele.
 
 # Referência
 - [01] https://nodejs.org/api/process.html#process_event_uncaughtexception
