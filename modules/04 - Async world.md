@@ -32,7 +32,7 @@ Para algumas pessoas é muito dificil assimilar que o log `'I wil lbe first!'` s
 
 Talvez esse código tenha parecido óbvio para você, vou dar um exemplo mais *tricky*:
 
-[callback-2.js](../exercises/module-4/callback-2.js)
+[callback-2.js](../examples/module-4/callback-2.js)
 ```javascript
 const fs = require('fs');
 
@@ -56,7 +56,7 @@ Muitas pessoas acham que uma função de callback retorna algum valor, mas isso 
 Node.js criou um *anti-pattern* para cuidar de erros.  <br />
 Um erro pode ocorrer dentro de uma função assíncrona e temos que cuidar dele, simplesmente mandar um `try{ } catch { }` não funciona pois o código é executado em outra thread, considere o seguinte:
 
-[callback-1.js](../exercises/module-4/callback-1.js)
+[callback-1.js](../examples/module-4/callback-1.js)
 ```javascript
 try {
     function callback () { throw new Error('OH NO'); }
@@ -94,7 +94,7 @@ Eu quero dizer que não adianta nada você evitar programação com callback usa
 
 Darei alguns exemplos de callback hell por aqui e resolverei eles usando próprios callbacks mas de uma forma que um **humano entenda**.
 
-[callback-hell-1.js](../exercises/module-4/callback-hell-1.js)
+[callback-hell-1.js](../examples/module-4/callback-hell-1.js)
 ```javascript
 // welcome to CALLBACKHELL! :)
 const fs = require('fs');
@@ -134,7 +134,7 @@ Note como o código acima toma uma forma de *"pirâmide deitada"*, mesmo fazendo
 
 Podemos, porém, reescrever esse mesmo código da seguinte forma usando *functional programming*:
 
-[callback-hell-1fix.js](../exercises/module-4/callback-hell-1fix.js)
+[callback-hell-1fix.js](../examples/module-4/callback-hell-1fix.js)
 ```javascript
 const fs = require('fs');
 
