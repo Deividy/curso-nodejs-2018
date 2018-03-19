@@ -10,9 +10,9 @@ Se parar para pensar um pouco, nossa mente funciona de forma assíncrona, quando
 Agora, no mundo dos computadores a programação assíncrona existe desde antes da era digital (sim, antes dos computadores)[[01]](http://www.i-programmer.info/programming/theory/6040-what-is-asynchronous-programming.html). <br />
 A maioria das linguagens de programação assíncrona se apoia no conceito de thread, uma thread é basicamente um processo ou uma parte de código que é executada de forma independente, o kernel (C++)[[02]](https://stackoverflow.com/questions/28999765/how-does-the-linux-kernel-handle-asynchronous-i-o-aio-requests), por exemplo, consiste de várias threads, temos a thread da UI que é responsável por exibir informações na tela do seu dispositivo, uma outra para capturar input, e muitas outras threads responsáveis por acesso ao disco, acesso a network, garbage collector, etc.
 
-O Node.js usa esse mesmo conceito internamente, temos apenas uma thread responsável por processar o código JavaScript, mas o Node gerencia muitas outras threads internamente, quando mandamos ler um arquivo no disco a thread principal JavaScript compila o código e manda para outra thread de acesso ao disco, e volta a procurar códigos JavaScript para compilar, e só quando aquele acesso ao disco terminar ele entra na fila para voltar para a thread principal.
+O Node.js usa esse mesmo conceito internamente, temos apenas uma thread responsável por processar o código JavaScript, mas o Node gerencia outras threads internamente[[03]](https://www.quora.com/Is-Node-js-single-threaded), quando mandamos ler um arquivo no disco a thread principal JavaScript compila o código e manda para outra thread de acesso ao disco, e volta a procurar códigos JavaScript para compilar, e só quando aquele acesso ao disco terminar ele entra na fila para voltar para a thread principal.
 
-A maior confusão na cabeça das pessoas está em entender que o código que está abaixo da chamada para uma função assíncrona não necessariamente será executado após aquela função.
+A maior confusão na cabeça das pessoas está em entender que o código que está abaixo da chamada para uma função assíncrona não necessariamente será executado após aquela função e que um *callback não retorna valor nenhum*[[04]](https://stackoverflow.com/questions/25399725/nodejs-get-async-return-value-callback)
 
 Veremos aqui o modelo padrão de *callback* para você entender bem como isso tudo funciona, depois passaremos para *Promise* e enfim para *async / await*.
 
@@ -66,7 +66,7 @@ try {
 }
 ```
 
-Se você executar o código acima, verá que mesmo estando fechado em um `try/catch` ainda temos uma uncaughtException[[03]](https://nodejs.org/api/process.html#process_event_uncaughtexception), ou seja, nosso catch *não funcionou*.
+Se você executar o código acima, verá que mesmo estando fechado em um `try/catch` ainda temos uma uncaughtException[[05]](https://nodejs.org/api/process.html#process_event_uncaughtexception), ou seja, nosso catch *não funcionou*.
 
 Com isso em mente, surgiu o pattern de enviarmos o erro como o primeiro paramêtro da função e o retorno como segundo, considere o código abaixo:
 
@@ -182,4 +182,6 @@ Note como o código acima faz **exatamente a mesma coisa** que o anterior só qu
 # Referência
 - [01] http://www.i-programmer.info/programming/theory/6040-what-is-asynchronous-programming.html
 - [02] https://stackoverflow.com/questions/28999765/how-does-the-linux-kernel-handle-asynchronous-i-o-aio-requests
-- [03] https://nodejs.org/api/process.html#process_event_uncaughtexception
+- [03] https://www.quora.com/Is-Node-js-single-threaded
+- [04] https://stackoverflow.com/questions/25399725/nodejs-get-async-return-value-callback
+- [05] https://nodejs.org/api/process.html#process_event_uncaughtexception
