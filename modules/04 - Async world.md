@@ -8,7 +8,7 @@ Vamos pensar em um exemplo simples do mundo real, imagina que você tem que faze
 Se parar para pensar um pouco, nossa mente funciona de forma assíncrona, quando pensamos em algo, pensamos na 'thread' principal nossa, mas muitas vezes deixamos esse pensamento de lado e vamos fazer outras coisas, mais tarde no dia voltamos com outras ideias para esse mesmo pensamento, isso é um modelo assíncrono de pensar.
 
 Agora, no mundo dos computadores a programação assíncrona existe desde antes da era digital (sim, antes dos computadores)[[01]](http://www.i-programmer.info/programming/theory/6040-what-is-asynchronous-programming.html). <br />
-A maioria das linguagens de programação assíncrona se apoia no conceito de thread, uma thread é basicamente um processo ou uma parte de código que é executada de forma independente, o kernel (C++), por exemplo, consiste de várias threads, temos a thread da UI que é responsável por exibir informações na tela do seu dispositivo, uma outra para capturar input, e muitas outras threads responsáveis por acesso ao disco, acesso a network, garbage collector, etc.
+A maioria das linguagens de programação assíncrona se apoia no conceito de thread, uma thread é basicamente um processo ou uma parte de código que é executada de forma independente, o kernel (C++)[[02]](https://stackoverflow.com/questions/28999765/how-does-the-linux-kernel-handle-asynchronous-i-o-aio-requests), por exemplo, consiste de várias threads, temos a thread da UI que é responsável por exibir informações na tela do seu dispositivo, uma outra para capturar input, e muitas outras threads responsáveis por acesso ao disco, acesso a network, garbage collector, etc.
 
 O Node.js usa esse mesmo conceito internamente, temos apenas uma thread responsável por processar o código JavaScript, mas o Node gerencia muitas outras threads internamente, quando mandamos ler um arquivo no disco a thread principal JavaScript compila o código e manda para outra thread de acesso ao disco, e volta a procurar códigos JavaScript para compilar, e só quando aquele acesso ao disco terminar ele entra na fila para voltar para a thread principal.
 
@@ -66,7 +66,7 @@ try {
 }
 ```
 
-Se você executar o código acima, verá que mesmo estando fechado em um `try/catch` ainda temos uma uncaughtException[[02]](https://nodejs.org/api/process.html#process_event_uncaughtexception), ou seja, nosso catch *não funcionou*.
+Se você executar o código acima, verá que mesmo estando fechado em um `try/catch` ainda temos uma uncaughtException[[03]](https://nodejs.org/api/process.html#process_event_uncaughtexception), ou seja, nosso catch *não funcionou*.
 
 Com isso em mente, surgiu o pattern de enviarmos o erro como o primeiro paramêtro da função e o retorno como segundo, considere o código abaixo:
 
@@ -181,4 +181,5 @@ Note como o código acima faz **exatamente a mesma coisa** que o anterior só qu
 
 # Referência
 - [01] http://www.i-programmer.info/programming/theory/6040-what-is-asynchronous-programming.html
-- [02] https://nodejs.org/api/process.html#process_event_uncaughtexception
+- [02] https://stackoverflow.com/questions/28999765/how-does-the-linux-kernel-handle-asynchronous-i-o-aio-requests
+- [03] https://nodejs.org/api/process.html#process_event_uncaughtexception
