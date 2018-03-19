@@ -211,6 +211,23 @@ wait(5)
     });
 ```
 
+Note que a função `wait` retorna um `new Promise()`, esse é o padrão ao usar promises, você tem que retornar uma instância de `Promise`, note também que a chamada de `new Promise((resolve, reject) => { })` recebe uma função que aceita dois argumentos (que também são funções), são os métodos de `resolve` e `reject`. 
+
+Usamos esses dois métodos quando queremos resolver a promise, podemos dizer que a promise foi bem sucedida chamando a primeira função *(`resolve`)* ou que falhou chamando a segunda função *(`reject`)*.
+
+Observe que o paramêtro para uma `new Promise` é apenas uma função, e poderiamos ter chamado seus argumentos de qualquer coisa, a seguinte função tem exatamente o mesmo efeito do exemplo anterior:
+
+```javascript
+const wait = (secs) => {
+    function myPromiseFn (resolvedor, rejeitor) {
+        if (secs > 4) return rejeitor("Can't wait 4 secs!");
+        setTimeout(resolvedor, secs * 1000);
+    }
+    
+    return new Promise(myPromiseFn);
+};
+```
+
 # Referência
 - [01] http://www.i-programmer.info/programming/theory/6040-what-is-asynchronous-programming.html
 - [02] https://stackoverflow.com/questions/28999765/how-does-the-linux-kernel-handle-asynchronous-i-o-aio-requests
