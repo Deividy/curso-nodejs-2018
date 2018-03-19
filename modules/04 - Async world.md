@@ -177,7 +177,39 @@ readAndProcessFiles(function (err, allContent) {
 
 Note como o código acima faz **exatamente a mesma coisa** que o anterior só que é mais **flexível** e **claro**, podemos adicionar mais arquivos sem nenhuma modificação na nossa função de `concatAllFiles`.
 
-## Promises
+## Promise
+
+Uma `Promise` é um objeto que pode produzir um valor no futuro, esse valor pode ser resolvido ou não. Uma promise pode estar em um dos 3 estágios: *fulfilled*, *rejected* ou *pending*[[07]](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261).
+
+- `fullfiled` é quando chamamos a fução `resolve()` de uma `Promise`.
+- `rejected` é quando chamamos a fução `reject()` de uma `Promise`.
+- `pending` é quando a `Promise` ainda não foi `fullfiled` ou `rejected`.
+
+O padrão de promises foi definido pela especificação da comunidade Promises/A+[[08]](https://promisesaplus.com/implementations).
+
+Uma promise retorna um objeto com os métodos `.then` e `.catch`, assim que chamamos o método `.then` a promise é executada, caso ocorra algum erro na promise o método `.catch` será chamado, isso é parecido com executarmos um código dentro de um bloco `try/catch`.
+
+Considere o seguinte exemplo:
+
+```javascript
+const wait = (secs) => {
+    return new Promise((resolve, reject) => {
+        if (secs > 4) return reject("Can't wait 4 secs!");
+        setTimeout(resolve, secs * 1000);
+    });
+}
+
+console.log('waiting 2 secs...');
+wait(2).then(() => console.log('waited 2 secs'));
+
+console.log("Trying to wait 5 secs...");
+wait(5)
+    .then(() => console.log("I will never work :("))
+    .catch((err) => {
+        console.error("Error in promise:");
+        console.error(err);
+    });
+```
 
 # Referência
 - [01] http://www.i-programmer.info/programming/theory/6040-what-is-asynchronous-programming.html
@@ -186,3 +218,4 @@ Note como o código acima faz **exatamente a mesma coisa** que o anterior só qu
 - [04] https://stackoverflow.com/questions/25399725/nodejs-get-async-return-value-callback
 - [05] https://nodejs.org/api/process.html#process_event_uncaughtexception
 - [06] http://callbackhell.com/
+- [07] https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261
