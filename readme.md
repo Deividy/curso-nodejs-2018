@@ -50,7 +50,6 @@ Conhecimento básico em JavaScript, sistemas operacionais e terminal (ou cmd).
    - [Callback]()
    - [Promise]()
    - [async / await]()
-   - [Promisify]()
 5. [Gerenciamento de modulos]()
    - [npm]()
    - [npx]()
