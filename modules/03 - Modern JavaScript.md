@@ -488,6 +488,7 @@ function printAllLoginNames () {
     console.log(logins.map(loginNameMap));
 }
 
+printTotalKarma();
 function printTotalKarma () {
     const totalKarma = logins.reduce(function (accumulator, login) {
         return accumulator + login.karma;
@@ -500,7 +501,6 @@ function printTotalKarma () {
 printAllLoginNames();
 printPoorKarmaLoginNames();
 printGreatKarmaLoginNames();
-printTotalKarma();
 ```
 
 ---
