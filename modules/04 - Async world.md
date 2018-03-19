@@ -28,10 +28,31 @@ console.log('I wil lbe first!');
 
 Para algumas pessoas é muito dificil assimilar que o log `'I wil lbe first!'` sera mostrado antes do `'I will be the last'`, já que o callback foi definido antes, e chamado para executar antes.
 
+
+Talvez esse código tenha parecido óbvio para você, vou dar um exemplo mais *tricky*:
+
+```javascript
+const fs = require('fs');
+
+fs.readFile('./callback.js', function (err, data) {
+    if (err) throw new Error(err);
+
+    console.log("I'm done.");
+});
+console.log("I'm just starting ;)");
+```
+
+Veja que no exemplo acima usamos um `throw`, a idéia é "explodir" mesmo se rolar erro, e note que "I'm just starting ;)" é mostrado antes do "I'm done".
+
+Isso acontece pois quando chamamos a função `readFile` o Node.js envia para a fila o nosso comando junto com o callback e continua a execução do script, apenas quando termina de ler o arquivo ele volta para o mundo JavaScript e executa nossa função.
+
+Muitas pessoas acham que uma função de callback retorna algum valor, mas isso não acontece, um callback é apenas uma função que sera chamada quando termina de executar uma ação, ele *não retorna valor nenhum*.
+
+
 ### Tratamento de erros Node.js
 
 Node.js criou um *anti-pattern* para cuidar de erros.  <br />
-Um erro pode ocorrer dentro de uma função assíncrona temos que cuidar dele, e simplesmente mandar um `try{ } catch { }` não funciona pois o código é executado em outra thread, considere o seguinte:
+Um erro pode ocorrer dentro de uma função assíncrona e temos que cuidar dele, simplesmente mandar um `try{ } catch { }` não funciona pois o código é executado em outra thread, considere o seguinte:
 
 ```javascript
 try {
@@ -42,7 +63,7 @@ try {
 }
 ```
 
-Se voce executar o codigo acima, ira ver que mesmo estando fechado em um `try/catch` ainda temos uma uncaughtException[[01]](https://nodejs.org/api/process.html#process_event_uncaughtexception), ou seja, nosso catch *não funcionou*.
+Se você executar o código acima, verá que mesmo estando fechado em um `try/catch` ainda temos uma uncaughtException[[01]](https://nodejs.org/api/process.html#process_event_uncaughtexception), ou seja, nosso catch *não funcionou*.
 
 Com isso em mente, surgiu o pattern de enviarmos o erro como o primeiro paramêtro da função e o retorno como segundo, considere o código abaixo:
 
