@@ -12,7 +12,7 @@ A maioria das linguagens de programação assíncrona se apoia no conceito de th
 
 O Node.js usa esse mesmo conceito internamente, temos apenas uma thread responsável por processar o código JavaScript, mas o Node gerencia outras threads internamente[[03]](https://www.quora.com/Is-Node-js-single-threaded), quando mandamos ler um arquivo no disco a thread principal JavaScript compila o código e manda para outra thread de acesso ao disco, e volta a procurar códigos JavaScript para compilar, e só quando aquele acesso ao disco terminar ele entra na fila para voltar para a thread principal.
 
-A maior confusão na cabeça das pessoas está em entender que o código que está abaixo da chamada para uma função assíncrona não necessariamente será executado após aquela função e que um *callback não retorna valor nenhum*[[04]](https://stackoverflow.com/questions/25399725/nodejs-get-async-return-value-callback)
+A maior confusão na cabeça das pessoas está em entender que o código que está abaixo da chamada para uma função assíncrona não necessariamente será executado após aquela função e que um *callback não retorna valor nenhum*[[04]](https://stackoverflow.com/questions/25399725/nodejs-get-async-return-value-callback).
 
 Veremos aqui o modelo padrão de *callback* para você entender bem como isso tudo funciona, depois passaremos para *Promise* e enfim para *async / await*.
 
