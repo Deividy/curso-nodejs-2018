@@ -254,7 +254,24 @@ Note no exemplo acima que o efeito é o mesmo que usando o callback, o log *"I'm
 
 Importante dizermos que do mesmo jeito que existe callback hell, existe o promise hell. 
 
-Como vimos, callback hell acontece por programadores que não estão familiarizados com a linguagem, o mesmo acontece com promises.[[08]](https://medium.com/@pyrolistical/how-to-get-out-of-promise-hell-8c20e0ab0513)
+Como vimos, callback hell acontece por programadores que não estão familiarizados com a linguagem, o mesmo acontece com promises[[08]](https://medium.com/@pyrolistical/how-to-get-out-of-promise-hell-8c20e0ab0513).
+
+```javascript
+const fs = require('fs');
+const util = require('util');
+
+const readFilePromise = util.promisify(fs.readFile);
+```
+
+Note no exemplo acima o uso de `util.promisify`, essa é a primeira vez que vemos esse método em nosso curso, falaremos mais a respeito na próxima sessão.
+
+Observe o quão hell e complicado esse código ficou, por mais que ele funcione, ele está feio e difícil de ler, podemos reescrever ele da seguinte forma:
+
+```javascript
+
+```
+
+### Promisify
 
 # Referência
 - [01] http://www.i-programmer.info/programming/theory/6040-what-is-asynchronous-programming.html
