@@ -502,7 +502,7 @@ printPoorKarmaLoginNames();
 printGreatKarmaLoginNames();
 ```
 
-### 3) Complete a função de *iterator* de modo ao console.log imprimir um nome por linha ('Speedy', 'Deividy', 'Ana')
+### 3) Complete a função de *iterator* de modo ao `console.log` imprimir um nome por linha.
 
 ```javascript
 const players = {
