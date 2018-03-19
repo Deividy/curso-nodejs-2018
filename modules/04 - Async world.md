@@ -89,7 +89,45 @@ No primeiro `setTimeout` retornamos um erro para o callback e na segunda retorna
 Para começar, quero deixar bem claro que **callback hell não é causado pelo estilo da programação do Node.js e sim por desenvolvedores que não entendem muito bem o que estão fazendo**. <br />
 Eu quero dizer que não adianta nada você evitar programação com callback usando *Promises* ou até mesmo *async / await* se você não entender como callbacks funcionam, como o JavaScript funciona, seu código vai continuar um *inferno*, só vai mudar o nome dele.
 
-Darei alguns classicos exemplos de callback hell por aqui e resolverei eles usando próprios callbacks mas de uma forma que um **humano entenda**.
+Darei alguns exemplos de callback hell por aqui e resolverei eles usando próprios callbacks mas de uma forma que um **humano entenda**.
+
+```javascript
+
+// welcome to CALLBACKHELL! :)
+const fs = require('fs');
+
+function reandAndProcessFiles (callback) {
+    fs.readFile('file1.txt', function (err, data) {
+        if (err) return callback(err);
+        
+        const contentFile1 = data.toString();
+        fs.readFile('file2.txt', function (err, data) {
+            if (err) return callback(err);
+            
+            const contentFile2 = data.toString();
+            
+            fs.readFile('file2.txt', function (err, data) {
+                if (err) return callback(err);
+                
+                const contentFile3 = data.toString();
+                const allContent = contentFile1 + contentFile2 + contentFile3;
+                
+                fs.writeFile('all-files-together.txt', allContent, function (err) {
+                    if (err) return callback(err);
+                    callback(null, allContent);
+                });
+           });
+        })
+    });
+}
+
+reandAndProcessFiles(function (err, allContent) {
+    if (err) throw new Error(err);
+    console.log(allContent);
+});
+```
+
+Note como o código acima toma uma forma de *"pirâmide"*, mesmo fazendo um processamento simples, fica muito dificil de ler e entender o que esta acontecendo, e pode ficar pior caso o desenvolvedor adicione mais arquivos ou algum outro processamento assíncrono.
 
 # Referência
 - [01] https://nodejs.org/api/process.html#process_event_uncaughtexception
