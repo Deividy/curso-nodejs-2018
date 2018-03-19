@@ -228,6 +228,34 @@ const wait = (secs) => {
 };
 ```
 
+Podemos inclusive englobar uma função, que originalmente usa callback, em uma promise:
+
+```javascript
+const fs = require('fs');
+
+const readFilePromise = (filename) => {
+    return new Promise((resolve, reject) => {
+        fs.readFile(filename, function (err, data) {
+            if (err) return reject(err);
+            resolve(data);
+        });
+    });
+};
+
+readFilePromise(process.argv[1]).then((data) => {
+    console.log("I'm done.");
+});
+console.log("I'm just starting ;)");
+```
+
+Note no exemplo acima que o efeito é o mesmo que usando o callbacks, o log *"I'm just starting ;)"* é mostrado antes do *"I'm done."*.
+
+### Promise hell
+
+Importante dizermos que do mesmo jeito que existe callback hell, existe o inferno das promises. >)
+
+Da mesma forma que o callback hell acontece por programadores que não estão familiarizado com a linguagem, ocorre o mesmo com promises.
+
 # Referência
 - [01] http://www.i-programmer.info/programming/theory/6040-what-is-asynchronous-programming.html
 - [02] https://stackoverflow.com/questions/28999765/how-does-the-linux-kernel-handle-asynchronous-i-o-aio-requests
