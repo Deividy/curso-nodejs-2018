@@ -127,7 +127,9 @@ reandAndProcessFiles(function (err, allContent) {
 });
 ```
 
-Note como o código acima toma uma forma de *"pirâmide"*, mesmo fazendo um processamento simples, fica muito dificil de ler e entender o que esta acontecendo, e pode ficar pior caso o desenvolvedor adicione mais arquivos ou algum outro processamento assíncrono.
+Note como o código acima toma uma forma de *"pirâmide deitada"*, mesmo fazendo um processamento simples, fica muito difícil de ler e entender o que esta acontecendo, e pode ficar pior caso o desenvolvedor adicione mais arquivos ou algum outro processamento assíncrono.
+
+Podemos, porem, reescrever esse mesmo 
 
 # Referência
 - [01] https://nodejs.org/api/process.html#process_event_uncaughtexception
