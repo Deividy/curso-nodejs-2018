@@ -134,6 +134,7 @@ Note como o código acima toma uma forma de *"pirâmide deitada"*, mesmo fazendo
 
 Podemos, porém, reescrever esse mesmo código da seguinte forma usando *functional programming*:
 
+[callback-hell-1fix.js](../exercises/module-4/callback-hell-1fix.js)
 ```javascript
 const fs = require('fs');
 
