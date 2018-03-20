@@ -219,7 +219,7 @@ promiseTest3.then((value) => {
 });
 ```
 
-No exemplo acima, iniciamos duas promises e logamos seus estados, observe que até chamarmos o método `resolve` ou `reject` ela continua com o estado de `<pending>`, enquanto a `promiseTest3` já tem o seu estado *(`fullfiled`)* logo de inicio, pois não tem nenhum timeout e chamamos o método `resolve()` assim que executamos o `new Promise(...)`.
+No exemplo acima, iniciamos duas promises e logamos seus estados, observe que até chamarmos o método `resolve` ou `reject` ela continua com o estado de `<pending>`, enquanto a `promiseTest3` já tem o seu estado *(`fullfiled`)* logo de inicio, pois não tem nenhum timeout e chamamos o método `resolve()` assim que executamos o `new Promise(...)`, repare também que mesmo a promise estando *fullfiled* o método `.then` e chamado.
 
 Agora um exemplo de um simples *wait* em promises:
 
