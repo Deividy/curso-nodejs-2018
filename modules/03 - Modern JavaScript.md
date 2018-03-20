@@ -1,6 +1,6 @@
 <a id='modern-javascript'></a>
 # 3) JavaScript moderno
-> “Talk is cheap. Show me the code.” - Linus Torvalds
+> "Talk is cheap. Show me the code." - Linus Torvalds
 
 O JavaScript não é nada moderno e tem um longa história, porém, está em constante mudança e por aqui veremos algumas das mais novas *features* que temos disponíveis na versão atual do Node.js.
 
