@@ -1,6 +1,6 @@
 <a id='introduction'></a>
 # Introducão
-> First, solve the problem. Then, write the code. - John Johnson
+> "First, solve the problem. Then, write the code." - John Johnson
 
 Antes de falarmos sobre código e começarmos a por a mão na massa, precisamos conhecer um pouco da história e do funcionamento interno das tecnologias que estamos usando. <br />
 Faremos uma viagem pela história do *JavaScript*, *ECMAScript* e *Node.js*, veremos também como o *Node.js* se comporta intermanete com seu *EventLoop*, no final teremos o padrão de código usado no curso.
