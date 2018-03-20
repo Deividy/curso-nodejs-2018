@@ -214,6 +214,9 @@ const promiseTest3 = new Promise((resolve, reject) => {
     resolve('Learning promises is fun :P');
 });
 console.log(promiseTest3); // Promise { 'Learning promises is fun :P' }
+promiseTest3.then((value) => {
+    console.log(value); // "Learning promises is fun :P"
+});
 ```
 
 No exemplo acima, iniciamos duas promises e logamos seus estados, observe que até chamarmos o método `resolve` ou `reject` ela continua com o estado de `<pending>`, enquanto a `promiseTest3` já tem o seu estado *(`fullfiled`)* logo de inicio, pois não tem nenhum timeout e chamamos o método `resolve()` assim que executamos o `new Promise(...)`.
