@@ -464,6 +464,18 @@ async function testAsyncWithPromise () {
 
 testAsyncWithPromise().then((val) => console.log(val));
 ```
+---
+
+<a id='exercises'></a>
+## Exercícios
+
+### 1) Usando apenas *callbacks*, **não** use *promises* ou *async / await* para esse exercício, fuja do callback hell abaixo:
+
+```javascript
+
+```
+
+---
 
 # Referência
 - [01] http://www.i-programmer.info/programming/theory/6040-what-is-asynchronous-programming.html
