@@ -189,6 +189,7 @@ O padrão de promises foi definido pela especificação da comunidade Promises/A
 
 Uma promise retorna um objeto com os métodos `.then` e `.catch`, assim que chamamos o método `.then` (ou `.catch`) a promise é executada, caso ocorra algum erro na promise o método `.catch` será chamado, isso é parecido com executarmos um código dentro de um bloco `try/catch`.
 
+[promises.js](../examples/module-4/promises.js)
 ```javascript
 const promiseTest = new Promise((resolve, reject) => {
     setTimeout(() => resolve('done!'), 100);
@@ -213,7 +214,6 @@ No exemplo acima, iniciamos duas promises e logamos seus estados, observe que en
 
 Agora um exemplo de um simples *wait* em promises:
 
-[promises.js](../examples/module-4/promises.js)
 ```javascript
 const wait = (secs) => {
     return new Promise((resolve, reject) => {
