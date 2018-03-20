@@ -415,10 +415,44 @@ Observe que tivemos que definir uma função que chama a sí própria como `asyn
 
 Mais uma coisa legal de *async functions* é que agora nossas funções assíncronas **podem retornar valor**, ao invés de chamarmos o callback, podemos simplesmente usar o `return value` igual uma função síncrona. \o/
 
-Veja mais alguns exemplos de async functions:
+async functions em uma class:
 
 ```javascript
+class RpgGame {
+    constructor () {
+        this.players = [ ];
+    }
 
+    async loadPlayers () {
+        const players = await readFilePromise('players.txt');
+        this.players = JSON.parse(players.toString());
+    }
+
+    async savePlayers () {
+        const playersString = JSON.stringify(this.players);
+        await writeFilePromise('players.txt', playersString);
+    }
+
+    async addPlayer (playerName) {
+        this.players.push(playerName);
+        await this.savePlayers();
+    }
+}
+
+(async function () {
+    const rpg = new RpgGame();
+
+    try {
+        await rpg.loadPlayers();
+    } catch (ex) {
+        // maybe file is corrupt, we want to keep the flow even if we can't
+        // load the players, so we'll just log here
+        console.error(ex);
+    }
+
+    await rpg.addPlayer(`speedy, force ${new Date().getTime()}`);
+    console.log(rpg.players);
+})();
 ```
 
 **Curiosidade**, como async functions no final se tornam promises, podemos chamar uma função `async` do mesmo jeito que chamamos promises:
