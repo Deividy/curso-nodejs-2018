@@ -373,6 +373,47 @@ Ela assume que o último argumento da função é um callback e cria uma promise
 
 Finalmente chegamos no famoso *async / await".
 
+A implementação atual de async / await no V8 é com base no uso de promises e generators[[13]](https://stackoverflow.com/questions/46908575/async-await-native-implementations).
+
+Toda promise pode ser chamada com `await promise` no lugar de chamarmos then, vamos reescrever o exemplo de promises em async/await para termos uma ideia:
+
+```javascript
+const fs = require('fs');
+const util = require('util');
+
+const readFilePromise = util.promisify(fs.readFile);
+const writeFilePromise  = util.promisify(fs.writeFile);
+
+async function readAndProcessFiles () {
+    let allContent = '';
+
+    allContent += await readFilePromise('file1.txt');
+    allContent += await readFilePromise('file2.txt');
+    allContent += await readFilePromise('file3.txt');
+
+    await writeFilePromise('all-files-together.txt', allContent);
+    return allContent;
+}
+
+(async () => {
+    try {
+        console.log(await readAndProcessFiles());
+    } catch (ex) {
+        console.error(ex);
+    }
+}
+```
+
+Note no exemplo acima que ele faz exatamente a mesma coisa que os exemplos anteriores, só que com *menos código*, sem contar que fica claro o que está acontecendo.
+
+Observe que tivemos que definir uma função que chama a sí própria como `async`, isso é necessário pois só podemos usar a *keyword* `await` dentro de uma função declarada como `async`, se tentassemos usar `await readAndProcessFiles()` sem a async function, receberiamos um erro `SyntaxError: Unexpected identifier`.
+
+Veja mais alguns exemplos de async functions:
+
+```javascript
+
+```
+
 # Referência
 - [01] http://www.i-programmer.info/programming/theory/6040-what-is-asynchronous-programming.html
 - [02] https://stackoverflow.com/questions/28999765/how-does-the-linux-kernel-handle-asynchronous-i-o-aio-requests
