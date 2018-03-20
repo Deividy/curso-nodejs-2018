@@ -188,7 +188,7 @@ Uma `Promise` é um objeto que pode produzir um valor no futuro, esse valor pode
 
 O padrão de promises foi definido pela especificação da comunidade Promises/A+[[09]](https://promisesaplus.com/implementations).
 
-Uma promise retorna um objeto com os métodos `.then` e `.catch`, assim que chamamos o método `.then` (ou `.catch`) a promise é executada, caso ocorra algum erro na promise o método `.catch` será chamado, isso é parecido com executarmos um código dentro de um bloco `try/catch`.
+Uma promise retorna um objeto com os métodos `.then` e `.catch`, assim que executamos o `new Promise()` a promise é executada, caso ocorra algum erro na promise o método `.catch` será chamado, isso é parecido com executarmos um código dentro de um bloco `try/catch`.
 
 [promises.js](../examples/module-4/promises.js)
 ```javascript
@@ -209,9 +209,14 @@ const promiseTest2 = new Promise((resolve, reject) => {
 promiseTest2.catch(() => {
     console.log(promiseTest2); // Promise { <rejected> 'fail!' }
 });
+
+const promiseTest3 = new Promise((resolve, reject) => {
+    resolve('Learning promises is fun :P');
+});
+console.log(promiseTest3); // Promise { 'Learning promises is fun :P' }
 ```
 
-No exemplo acima, iniciamos duas promises e logamos seus estados, observe que enquanto não executamos o `.then` ou `.catch`, a promise não é iniciada, e até chamarmos o método `resolve` ou `reject` ela continua com o estado de `<pending>`.
+No exemplo acima, iniciamos duas promises e logamos seus estados, observe que até chamarmos o método `resolve` ou `reject` ela continua com o estado de `<pending>`, enquanto a `promiseTest3` já tem o seu estado *(`fullfiled`)* logo de inicio, pois não tem nenhum timeout e chamamos o método `resolve()` assim que executamos o `new Promise(...)`.
 
 Agora um exemplo de um simples *wait* em promises:
 
