@@ -18,6 +18,11 @@ promiseTest2.catch(() => {
     console.log(promiseTest2); // Promise { <rejected> 'fail!' }
 });
 
+const promiseTest3 = new Promise((resolve, reject) => {
+    resolve('Learning promises is fun :P');
+});
+console.log(promiseTest3); // Promise { 'Learning promises is fun :P' }
+
 const wait = (secs) => {
     return new Promise((resolve, reject) => {
         if (secs > 4) return reject("Can't wait 4 secs!");
