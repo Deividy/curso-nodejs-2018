@@ -41,3 +41,21 @@ readFilePromise(process.argv[1]).then((data) => {
 });
 
 console.log("read: I'm just starting ;)");
+
+const promiseTest = new Promise((resolve, reject) => {
+    setTimeout(() => resolve('done!'), 100);
+});
+
+console.log(promiseTest); // Promise { <pending> }
+promiseTest.then(() => {
+    console.log(promiseTest); // Promise { 'done' }
+});
+console.log(promiseTest); // Promise { <pending> }
+
+const promiseTest2 = new Promise((resolve, reject) => {
+    setTimeout(() => reject('fail!'), 100);
+});
+
+promiseTest2.catch(() => {
+    console.log(promiseTest2); // Promise { <rejected> 'fail!' }
+});
