@@ -23,6 +23,10 @@ const promiseTest3 = new Promise((resolve, reject) => {
 });
 console.log(promiseTest3); // Promise { 'Learning promises is fun :P' }
 
+promiseTest3.then((value) => {
+    console.log(value); // "Learning promises is fun :P"
+});
+
 const wait = (secs) => {
     return new Promise((resolve, reject) => {
         if (secs > 4) return reject("Can't wait 4 secs!");
