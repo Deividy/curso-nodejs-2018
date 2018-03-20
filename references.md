@@ -44,3 +44,19 @@
 - [03] https://www.w3schools.com/js/js_hoisting.asp
 - [04] http://exploringjs.com/es6/ch_iteration.html
 - [05] http://exploringjs.com/es6/ch_destructuring.html
+
+
+# Módulo 4 - Programação assíncrona
+- [01] http://www.i-programmer.info/programming/theory/6040-what-is-asynchronous-programming.html
+- [02] https://stackoverflow.com/questions/28999765/how-does-the-linux-kernel-handle-asynchronous-i-o-aio-requests
+- [03] https://www.quora.com/Is-Node-js-single-threaded
+- [04] https://stackoverflow.com/questions/25399725/nodejs-get-async-return-value-callback
+- [05] https://www.joyent.com/node-js/production/design/errors
+- [06] https://nodejs.org/api/process.html#process_event_uncaughtexception
+- [07] http://callbackhell.com/
+- [08] https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261
+- [09] https://promisesaplus.com/implementations
+- [10] https://medium.com/@pyrolistical/how-to-get-out-of-promise-hell-8c20e0ab0513
+- [11] https://nodejs.org/api/util.html
+- [12] https://github.com/nodejs/node/blob/1d2fd8b6/lib/internal/util.js#L295-L333
+- [13] https://stackoverflow.com/questions/46908575/async-await-native-implementations
