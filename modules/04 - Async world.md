@@ -290,10 +290,39 @@ Importante dizermos que do mesmo jeito que existe callback hell, existe o promis
 Como vimos, callback hell acontece por programadores que não estão familiarizados com a linguagem, o mesmo acontece com promises[[10]](https://medium.com/@pyrolistical/how-to-get-out-of-promise-hell-8c20e0ab0513).
 
 ```javascript
+// welcome to PROMISE HELL :D
 const fs = require('fs');
 const util = require('util');
 
 const readFilePromise = util.promisify(fs.readFile);
+const writeFilePromise  = util.promisify(fs.writeFile);
+
+function readAndProcessFiles () {
+    return new Promise((resolve, reject) => {
+        readFilePromise('file1.txt').then((data) => {
+            const contentFile1 = data.toString();
+
+            readFilePromise('file2.txt').then((data) => {
+                const contentFile2 = data.toString();
+
+                readFilePromise('file3.txt').then((data) => {
+                    const contentFile3 = data.toString();
+                    const allContent = contentFile1 + contentFile2 + contentFile3;
+
+                    writeFilePromise('all-files-together', allContent)
+                        .then(() => resolve(allContent))
+                        .catch(reject);
+                }).catch(reject);
+            }).catch(reject);
+        }).catch(reject);
+    });
+}
+
+readAndProcessFiles().then((allContent) => {
+    console.log(allContent);
+}).catch((err) => {
+    throw new Error(err);
+});
 ```
 
 Note no exemplo acima o uso de `util.promisify`, essa é a primeira vez que vemos esse método em nosso curso, falaremos mais a respeito na próxima sessão.
@@ -301,10 +330,48 @@ Note no exemplo acima o uso de `util.promisify`, essa é a primeira vez que vemo
 Observe o quão hell e complicado esse código ficou, por mais que ele funcione, ele está feio e difícil de ler, podemos reescrever ele da seguinte forma:
 
 ```javascript
+const fs = require('fs');
+const util = require('util');
 
+const readFilePromise = util.promisify(fs.readFile);
+const writeFilePromise  = util.promisify(fs.writeFile);
+
+function readAndProcessFiles () {
+    let allContent = '';
+
+    return new Promise((resolve, reject) => {
+        return readFilePromise('file1.txt')
+                    .then((data) => allContent += data)
+                    .then(() => readFilePromise('file2.txt'))
+                    .then((data) => allContent += data)
+                    .then(() => readFilePromise('file3.txt'))
+                    .then((data) => allContent += data)
+                    .then(() => writeFilePromise(
+                        'all-files-together.txt',
+                        allContent
+                    ))
+                    .then(() => resolve(allContent))
+                    .catch(reject);
+    });
+}
+
+
+readAndProcessFiles().then((allContent) => {
+    console.log(allContent);
+}).catch((err) => {
+    throw new Error(err);
+}
 ```
 
 ### Promisify
+
+Como vimos nos exemplos anteriores, o módulo util[[11]](https://nodejs.org/api/util.html) nos provém uma função chamada `promisify()` que é útil para transformarmos uma função com callback em uma *promise*.
+
+Ela básicamente assume que o ultimo argumento da função é um callback e cria uma promise em volta disso, similar com o exemplo que fizemos antes de usar o *promisify*, caso queira saber exatamente como ela funciona, abra o repositório do Node.js e leia a função[[12]](https://github.com/nodejs/node/blob/1d2fd8b6/lib/internal/util.js#L295-L333), aconselho sempre procurar direto na fonte, abrir o repositorio do que você está utilizado e ver como as pessoas implementaram determinada função, isso te dara um dominio muito maior da tecnologia além de espantar de vez o medo de códigos. :)
+
+## async / await
+
+Finalmente chegamos no famoso *async / await".
 
 # Referência
 - [01] http://www.i-programmer.info/programming/theory/6040-what-is-asynchronous-programming.html
@@ -317,3 +384,5 @@ Observe o quão hell e complicado esse código ficou, por mais que ele funcione,
 - [08] https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261
 - [09] https://promisesaplus.com/implementations
 - [10] https://medium.com/@pyrolistical/how-to-get-out-of-promise-hell-8c20e0ab0513
+- [11] https://nodejs.org/api/util.html
+- [12] https://github.com/nodejs/node/blob/1d2fd8b6/lib/internal/util.js#L295-L333
