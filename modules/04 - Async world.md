@@ -421,6 +421,16 @@ Veja mais alguns exemplos de async functions:
 
 ```
 
+**Curiosidade**, como async functions no final se tornam promises, podemos chamar uma função `async` do mesmo jeito que chamamos promises:
+
+```javascript
+async function testAsyncWithPromise () {
+    return 'COOL';
+}
+
+testAsyncWithPromise().then((val) => console.log(val));
+```
+
 # Referência
 - [01] http://www.i-programmer.info/programming/theory/6040-what-is-asynchronous-programming.html
 - [02] https://stackoverflow.com/questions/28999765/how-does-the-linux-kernel-handle-asynchronous-i-o-aio-requests
