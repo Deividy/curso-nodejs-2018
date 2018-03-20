@@ -1,4 +1,5 @@
 const fs = require('fs');
+
 function crazyTimeouts (callback) {
     setTimeout(() => {
         console.log('ok, we waited 100ms');
@@ -8,11 +9,11 @@ function crazyTimeouts (callback) {
             console.log('now, waiting 300ms...');
 
             setTimeout(() => {
-                console.log("PHEW, now we'll read us :)");
+                console.log("PHEW, now, we'll read us :)");
 
                 fs.readFile(process.argv[1], (err, res) => {
                     if (err) return callback(err);
-                    console.log('now write us (crazy?) :)');
+                    console.log('now, write us (crazy?) :)');
 
                     fs.writeFile(process.argv[1], res, (err) => {
                         if (err) return callback(err);
