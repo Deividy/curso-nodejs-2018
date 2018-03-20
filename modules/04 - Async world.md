@@ -191,6 +191,7 @@ Uma promise retorna um objeto com os métodos `.then` e `.catch`, assim que cham
 
 Considere o seguinte exemplo:
 
+[promises.js](../examples/module-4/promises.js)
 ```javascript
 const wait = (secs) => {
     return new Promise((resolve, reject) => {
