@@ -508,7 +508,7 @@ crazyTimeouts((err, res) => {
 }
 ```
 
-### 2) Escreva a função `sleep` usando `async`, ela deve espera N secs e continuar a execução do script, de modo que o *"DONE"* seja mostrado após 5 segundos.
+### 2) Escreva a função `sleep` usando `async`, ela deve espera N secs e continuar a execução do script, de modo que a mensagem *"DONE :)"* seja mostrada após 5 segundos.
 
 ```javascript
 async function sleep (secs) {
