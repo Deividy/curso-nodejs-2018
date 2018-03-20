@@ -1,3 +1,4 @@
+<a id='async-world'></a>
 # 4) Programação assíncrona
 > "Programs must be written for people to read, and only incidentally for machines to execute." - Abelson / Sussman
 
@@ -17,6 +18,7 @@ A maior confusão na cabeça das pessoas está em entender que o código que est
 
 Veremos aqui o modelo padrão de *callback* para você entender bem como isso tudo funciona, depois passaremos para *Promise* e enfim para *async / await*.
 
+<a id='callback'></a>
 ## Callback
 
 O modelo mais simples para programação assíncrona é *callbacks*, callback é simplesmente uma função que será executada após completar uma ação, por exemplo:
@@ -178,6 +180,7 @@ readAndProcessFiles(function (err, allContent) {
 
 Note como o código acima faz **exatamente a mesma coisa** que o anterior só que é mais **flexível** e **claro**, podemos adicionar mais arquivos sem nenhuma modificação na nossa função de `concatAllFiles`.
 
+<a id='promise'></a>
 ## Promise
 
 Uma `Promise` é um objeto que pode produzir um valor no futuro, esse valor pode ser resolvido ou não. Uma promise pode estar em um dos 3 estágios: *fulfilled*, *rejected* ou *pending*[[08]](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261).
@@ -371,6 +374,7 @@ Como vimos nos exemplos anteriores, o módulo util[[11]](https://nodejs.org/api/
 
 Ela assume que o último argumento da função é um callback e cria uma promise em volta disso, similar com o exemplo que fizemos antes de usar o *promisify*, caso queira saber exatamente como ela funciona, abra o repositório do Node.js e leia a função[[12]](https://github.com/nodejs/node/blob/1d2fd8b6/lib/internal/util.js#L295-L333), aconselho sempre procurar direto na fonte e ver como as pessoas implementaram determinada função, isso te dara um dominio muito maior da tecnologia além de espantar de vez o medo de códigos, pode ser a diferença entre você realmente entender um problema (e resolver) ou ficar estagnado. *;)*
 
+<a id='async-await'></a>
 ## async / await
 
 Finalmente chegamos no famoso *async / await*.
