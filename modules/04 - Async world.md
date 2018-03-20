@@ -187,9 +187,31 @@ Uma `Promise` é um objeto que pode produzir um valor no futuro, esse valor pode
 
 O padrão de promises foi definido pela especificação da comunidade Promises/A+[[09]](https://promisesaplus.com/implementations).
 
-Uma promise retorna um objeto com os métodos `.then` e `.catch`, assim que chamamos o método `.then` a promise é executada, caso ocorra algum erro na promise o método `.catch` será chamado, isso é parecido com executarmos um código dentro de um bloco `try/catch`.
+Uma promise retorna um objeto com os métodos `.then` e `.catch`, assim que chamamos o método `.then` (ou `.catch`) a promise é executada, caso ocorra algum erro na promise o método `.catch` será chamado, isso é parecido com executarmos um código dentro de um bloco `try/catch`.
 
-Considere o seguinte exemplo:
+```javascript
+const promiseTest = new Promise((resolve, reject) => {
+    setTimeout(() => resolve('done!'), 100);
+});
+
+console.log(promiseTest); // Promise { <pending> }
+promiseTest.then(() => {
+    console.log(promiseTest); // Promise { 'done' }
+});
+console.log(promiseTest); // Promise { <pending> }
+
+const promiseTest2 = new Promise((resolve, reject) => {
+    setTimeout(() => reject('fail!'), 100);
+});
+
+promiseTest2.catch(() => {
+    console.log(promiseTest2); // Promise { <rejected> 'fail!' }
+});
+```
+
+No exemplo acima, iniciamos duas promises e logamos seus estados, observe que enquanto não executamos o `.then` ou `.catch`, a promise não é iniciada, e até chamarmos o método `resolve` ou `reject` ela continua com o estado de `<pending>`.
+
+Agora um exemplo de um simples *wait* em promises:
 
 [promises.js](../examples/module-4/promises.js)
 ```javascript
