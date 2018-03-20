@@ -53,7 +53,7 @@ Muitas pessoas acham que uma função de callback retorna algum valor, mas isso 
 
 ### Tratamento de erros em Node.js
 
-Node.js criou um *anti-pattern* para cuidar de erros.  <br />
+Node.js criou um *anti-pattern* para cuidar de erros[[05]](https://www.joyent.com/node-js/production/design/errors).  <br />
 Um erro pode ocorrer dentro de uma função assíncrona e temos que cuidar dele, simplesmente mandar um `try{ } catch { }` não funciona pois o código é executado em outra thread, considere o seguinte:
 
 [callback-1.js](../examples/module-4/callback-1.js)
@@ -66,7 +66,7 @@ try {
 }
 ```
 
-Se você executar o código acima, verá que mesmo estando fechado em um `try/catch` ainda temos uma uncaughtException[[05]](https://nodejs.org/api/process.html#process_event_uncaughtexception), ou seja, nosso catch *não funcionou*.
+Se você executar o código acima, verá que mesmo estando fechado em um `try/catch` ainda temos uma uncaughtException[[06]](https://nodejs.org/api/process.html#process_event_uncaughtexception), ou seja, nosso catch *não funcionou*.
 
 Com isso em mente, surgiu o pattern de enviarmos o erro como o primeiro paramêtro da função e o retorno como segundo, considere o código abaixo:
 
@@ -89,7 +89,7 @@ No primeiro `setTimeout` retornamos um erro para o callback e na segunda retorna
 
 ### Callback hell
 
-Para começar, quero deixar bem claro que **callback hell não é causado pelo estilo da programação do Node.js e sim por desenvolvedores que não entendem muito bem o que estão fazendo**.[[06]](http://callbackhell.com/) <br />
+Para começar, quero deixar bem claro que **callback hell não é causado pelo estilo da programação do Node.js e sim por desenvolvedores que não entendem muito bem o que estão fazendo**.[[07]](http://callbackhell.com/) <br />
 Eu quero dizer que não adianta nada você evitar programação com callback usando *Promises* ou até mesmo *async / await* se você não entender como callbacks funcionam, como o JavaScript funciona, seu código vai continuar um *inferno*, só vai mudar o nome dele.
 
 Darei alguns exemplos de callback hell por aqui e resolverei eles usando próprios callbacks mas de uma forma que um **humano entenda**.
@@ -179,13 +179,13 @@ Note como o código acima faz **exatamente a mesma coisa** que o anterior só qu
 
 ## Promise
 
-Uma `Promise` é um objeto que pode produzir um valor no futuro, esse valor pode ser resolvido ou não. Uma promise pode estar em um dos 3 estágios: *fulfilled*, *rejected* ou *pending*[[07]](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261).
+Uma `Promise` é um objeto que pode produzir um valor no futuro, esse valor pode ser resolvido ou não. Uma promise pode estar em um dos 3 estágios: *fulfilled*, *rejected* ou *pending*[[08]](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261).
 
 - `fullfiled` é quando chamamos a fução `resolve()` de uma `Promise`.
 - `rejected` é quando chamamos a fução `reject()` de uma `Promise`.
 - `pending` é quando a `Promise` ainda não foi `fullfiled` ou `rejected`.
 
-O padrão de promises foi definido pela especificação da comunidade Promises/A+[[08]](https://promisesaplus.com/implementations).
+O padrão de promises foi definido pela especificação da comunidade Promises/A+[[09]](https://promisesaplus.com/implementations).
 
 Uma promise retorna um objeto com os métodos `.then` e `.catch`, assim que chamamos o método `.then` a promise é executada, caso ocorra algum erro na promise o método `.catch` será chamado, isso é parecido com executarmos um código dentro de um bloco `try/catch`.
 
@@ -254,7 +254,7 @@ Note no exemplo acima que o efeito é o mesmo que usando o callback, o log *"I'm
 
 Importante dizermos que do mesmo jeito que existe callback hell, existe o promise hell. 
 
-Como vimos, callback hell acontece por programadores que não estão familiarizados com a linguagem, o mesmo acontece com promises[[08]](https://medium.com/@pyrolistical/how-to-get-out-of-promise-hell-8c20e0ab0513).
+Como vimos, callback hell acontece por programadores que não estão familiarizados com a linguagem, o mesmo acontece com promises[[10]](https://medium.com/@pyrolistical/how-to-get-out-of-promise-hell-8c20e0ab0513).
 
 ```javascript
 const fs = require('fs');
@@ -278,7 +278,9 @@ Observe o quão hell e complicado esse código ficou, por mais que ele funcione,
 - [02] https://stackoverflow.com/questions/28999765/how-does-the-linux-kernel-handle-asynchronous-i-o-aio-requests
 - [03] https://www.quora.com/Is-Node-js-single-threaded
 - [04] https://stackoverflow.com/questions/25399725/nodejs-get-async-return-value-callback
-- [05] https://nodejs.org/api/process.html#process_event_uncaughtexception
-- [06] http://callbackhell.com/
-- [07] https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261
-- [08] https://medium.com/@pyrolistical/how-to-get-out-of-promise-hell-8c20e0ab0513
+- [05] https://www.joyent.com/node-js/production/design/errors
+- [06] https://nodejs.org/api/process.html#process_event_uncaughtexception
+- [07] http://callbackhell.com/
+- [08] https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261
+- [09] https://promisesaplus.com/implementations
+- [10] https://medium.com/@pyrolistical/how-to-get-out-of-promise-hell-8c20e0ab0513
