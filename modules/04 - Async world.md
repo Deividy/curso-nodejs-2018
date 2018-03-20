@@ -367,7 +367,7 @@ readAndProcessFiles().then((allContent) => {
 
 Como vimos nos exemplos anteriores, o módulo util[[11]](https://nodejs.org/api/util.html) nos provém uma função chamada `promisify()` que é útil para transformarmos uma função com callback em uma *promise*.
 
-Ela básicamente assume que o ultimo argumento da função é um callback e cria uma promise em volta disso, similar com o exemplo que fizemos antes de usar o *promisify*, caso queira saber exatamente como ela funciona, abra o repositório do Node.js e leia a função[[12]](https://github.com/nodejs/node/blob/1d2fd8b6/lib/internal/util.js#L295-L333), aconselho sempre procurar direto na fonte, abrir o repositorio do que você está utilizado e ver como as pessoas implementaram determinada função, isso te dara um dominio muito maior da tecnologia além de espantar de vez o medo de códigos. :)
+Ela assume que o último argumento da função é um callback e cria uma promise em volta disso, similar com o exemplo que fizemos antes de usar o *promisify*, caso queira saber exatamente como ela funciona, abra o repositório do Node.js e leia a função[[12]](https://github.com/nodejs/node/blob/1d2fd8b6/lib/internal/util.js#L295-L333), aconselho sempre procurar direto na fonte e ver como as pessoas implementaram determinada função, isso te dara um dominio muito maior da tecnologia além de espantar de vez o medo de códigos, pode ser a diferença entre você realmente entender um problema (e resolver) ou ficar estagnado. *;)*
 
 ## async / await
 
