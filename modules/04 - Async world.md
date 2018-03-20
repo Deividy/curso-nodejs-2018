@@ -95,7 +95,7 @@ Eu quero dizer que não adianta nada você evitar programação com callback usa
 
 Darei alguns exemplos de callback hell por aqui e resolverei eles usando próprios callbacks mas de uma forma que um **humano entenda**.
 
-[callback-hell-1.js](../examples/module-4/callback-hell-1.js)
+[callback-hell.js](../examples/module-4/callback-hell.js)
 ```javascript
 // welcome to CALLBACKHELL! :)
 const fs = require('fs');
@@ -135,7 +135,7 @@ Note como o código acima toma uma forma de *"pirâmide deitada"*, mesmo fazendo
 
 Podemos, porém, reescrever esse mesmo código da seguinte forma usando *functional programming*:
 
-[callback-hell-1fix.js](../examples/module-4/callback-hell-1fix.js)
+[callback-hell-fix.js](../examples/module-4/callback-hell-fix.js)
 ```javascript
 const fs = require('fs');
 
@@ -289,6 +289,7 @@ Importante dizermos que do mesmo jeito que existe callback hell, existe o promis
 
 Como vimos, callback hell acontece por programadores que não estão familiarizados com a linguagem, o mesmo acontece com promises[[10]](https://medium.com/@pyrolistical/how-to-get-out-of-promise-hell-8c20e0ab0513).
 
+[promise-hell.js](../examples/module-4/promise-hell.js)
 ```javascript
 // welcome to PROMISE HELL :D
 const fs = require('fs');
@@ -329,6 +330,7 @@ Note no exemplo acima o uso de `util.promisify`, essa é a primeira vez que vemo
 
 Observe o quão hell e complicado esse código ficou, por mais que ele funcione, ele está feio e difícil de ler, podemos reescrever ele da seguinte forma:
 
+[promise-hell-fix.js](../examples/module-4/promise-hell-fix.js)
 ```javascript
 const fs = require('fs');
 const util = require('util');
@@ -377,6 +379,7 @@ A implementação atual de async / await no V8 é com base no uso de promises e 
 
 Toda promise pode ser chamada com `await promise` no lugar de chamarmos then, vamos reescrever o exemplo de promises em async/await para termos uma ideia:
 
+[async-await.js](../examples/module-4/async-await.js)
 ```javascript
 const fs = require('fs');
 const util = require('util');
