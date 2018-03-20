@@ -46,7 +46,7 @@ Conhecimento básico em JavaScript, sistemas operacionais e terminal (ou cmd).
    - [Iterables e Iterators](modules/03%20-%20Modern%20JavaScript.md#iteration)
    - [Destructuring](modules/03%20-%20Modern%20JavaScript.md#destructuring)
    - [Generators](modules/03%20-%20Modern%20JavaScript.md#generators)
-4. [Funções assíncronas](modules/04%20-%20Async%20world.md#async-world)
+4. [Programação assíncrona](modules/04%20-%20Async%20world.md#async-world)
    - [Callback](modules/04%20-%20Async%20world.md#callback)
    - [Promise](modules/04%20-%20Async%20world.md#promise)
    - [async / await](modules/04%20-%20Async%20world.md#async-await)
