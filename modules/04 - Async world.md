@@ -413,6 +413,8 @@ Note no exemplo acima que ele faz exatamente a mesma coisa que os exemplos anter
 
 Observe que tivemos que definir uma função que chama a sí própria como `async`, isso é necessário pois só podemos usar a *keyword* `await` dentro de uma função declarada como `async`, se tentassemos usar `await readAndProcessFiles()` sem a async function, receberiamos um erro `SyntaxError: Unexpected identifier`.
 
+Mais uma coisa legal de *async functions* é que agora nossas funções assíncronas **podem retornar valor**, ao invés de chamarmos o callback, podemos simplesmente usar o `return value` igual uma função síncrona. \o/
+
 Veja mais alguns exemplos de async functions:
 
 ```javascript
