@@ -191,37 +191,6 @@ O padrão de promises foi definido pela especificação da comunidade Promises/A
 Uma promise retorna um objeto com os métodos `.then` e `.catch`, assim que executamos o `new Promise()` a promise é executada, caso ocorra algum erro na promise o método `.catch` será chamado, isso é parecido com executarmos um código dentro de um bloco `try/catch`.
 
 [promises.js](../examples/module-4/promises.js)
-```javascript
-const promiseTest = new Promise((resolve, reject) => {
-    setTimeout(() => resolve('done!'), 100);
-});
-
-console.log(promiseTest); // Promise { <pending> }
-promiseTest.then(() => {
-    console.log(promiseTest); // Promise { 'done' }
-});
-console.log(promiseTest); // Promise { <pending> }
-
-const promiseTest2 = new Promise((resolve, reject) => {
-    setTimeout(() => reject('fail!'), 100);
-});
-
-promiseTest2.catch(() => {
-    console.log(promiseTest2); // Promise { <rejected> 'fail!' }
-});
-
-const promiseTest3 = new Promise((resolve, reject) => {
-    resolve('Learning promises is fun :P');
-});
-console.log(promiseTest3); // Promise { 'Learning promises is fun :P' }
-promiseTest3.then((value) => {
-    console.log(value); // "Learning promises is fun :P"
-});
-```
-
-No exemplo acima, iniciamos duas promises e logamos seus estados, observe que até chamarmos o método `resolve` ou `reject` ela continua com o estado de `<pending>`, enquanto a `promiseTest3` já tem o seu estado *(`fullfiled`)* logo de inicio, pois não tem nenhum timeout e chamamos o método `resolve()` assim que executamos o `new Promise(...)`, repare também que mesmo a promise estando *fullfiled* o método `.then` e chamado.
-
-Agora um exemplo de um simples *wait* em promises:
 
 ```javascript
 const wait = (secs) => {
@@ -281,6 +250,38 @@ console.log("I'm just starting ;)");
 ```
 
 Note no exemplo acima que o efeito é o mesmo que usando o callback, o log *"I'm just starting ;)"* é mostrado antes do *"I'm done."*.
+
+Para um maior entendimento de promises, considere o seguinte exemplo:
+
+```javascript
+const promiseTest = new Promise((resolve, reject) => {
+    setTimeout(() => resolve('done!'), 100);
+});
+
+console.log(promiseTest); // Promise { <pending> }
+promiseTest.then(() => {
+    console.log(promiseTest); // Promise { 'done' }
+});
+console.log(promiseTest); // Promise { <pending> }
+
+const promiseTest2 = new Promise((resolve, reject) => {
+    setTimeout(() => reject('fail!'), 100);
+});
+
+promiseTest2.catch(() => {
+    console.log(promiseTest2); // Promise { <rejected> 'fail!' }
+});
+
+const promiseTest3 = new Promise((resolve, reject) => {
+    resolve('Learning promises is fun :P');
+});
+console.log(promiseTest3); // Promise { 'Learning promises is fun :P' }
+promiseTest3.then((value) => {
+    console.log(value); // "Learning promises is fun :P"
+});
+```
+
+No exemplo acima, iniciamos duas promises e logamos seus estados, observe que até chamarmos o método `resolve` ou `reject` ela continua com o estado de `<pending>`, enquanto a `promiseTest3` já tem o seu estado *(`fullfiled`)* logo de inicio, pois não tem nenhum timeout e chamamos o método `resolve()` assim que executamos o `new Promise(...)`, repare também que mesmo a promise estando *fullfiled* o método `.then` e chamado.
 
 ### Promise hell
 
