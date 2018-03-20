@@ -93,7 +93,7 @@ No primeiro `setTimeout` retornamos um erro para o callback e na segunda retorna
 Para começar, quero deixar bem claro que **callback hell não é causado pelo estilo da programação do Node.js e sim por desenvolvedores que não entendem muito bem o que estão fazendo**[[07]](http://callbackhell.com/). <br />
 Eu quero dizer que não adianta nada você evitar programação com callback usando *Promises* ou até mesmo *async / await* se você não entender como callbacks funcionam, como o JavaScript funciona, seu código vai continuar um *inferno*, só vai mudar o nome dele.
 
-Darei alguns exemplos de callback hell por aqui e resolverei eles usando próprios callbacks mas de uma forma que um **humano entenda**.
+Por exemplo, considere o seguinte *inferno*:
 
 [callback-hell.js](../examples/module-4/callback-hell.js)
 ```javascript
@@ -133,7 +133,7 @@ readAndProcessFiles(function (err, allContent) {
 
 Note como o código acima toma uma forma de *"pirâmide deitada"*, mesmo fazendo um processamento simples, fica muito difícil de ler e entender o que esta acontecendo, e pode ficar pior caso o desenvolvedor adicione mais arquivos ou algum outro processamento assíncrono.
 
-Podemos, porém, reescrever esse mesmo código da seguinte forma usando *functional programming*:
+Podemos, reescrever esse mesmo código da seguinte forma usando *functional programming*:
 
 [callback-hell-fix.js](../examples/module-4/callback-hell-fix.js)
 ```javascript
