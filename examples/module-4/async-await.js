@@ -25,3 +25,8 @@ async function readAndProcessFiles () {
 
 // await readAndProcessFiles();
 
+async function testAsyncWithPromise () {
+    return 'COOL';
+}
+
+testAsyncWithPromise().then((val) => console.log(val));
