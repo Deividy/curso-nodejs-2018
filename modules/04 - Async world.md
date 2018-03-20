@@ -432,3 +432,4 @@ Veja mais alguns exemplos de async functions:
 - [10] https://medium.com/@pyrolistical/how-to-get-out-of-promise-hell-8c20e0ab0513
 - [11] https://nodejs.org/api/util.html
 - [12] https://github.com/nodejs/node/blob/1d2fd8b6/lib/internal/util.js#L295-L333
+- [13] https://stackoverflow.com/questions/46908575/async-await-native-implementations
