@@ -373,14 +373,16 @@ Como vimos nos exemplos anteriores, o módulo util[[11]](https://nodejs.org/api/
 
 Ela assume que o último argumento da função é um callback e cria uma promise em volta disso, similar com o exemplo que fizemos antes de usar o *promisify*, caso queira saber exatamente como ela funciona, abra o repositório do Node.js e leia a função[[12]](https://github.com/nodejs/node/blob/1d2fd8b6/lib/internal/util.js#L295-L333), aconselho sempre procurar direto na fonte e ver como as pessoas implementaram determinada função, isso te dara um dominio muito maior da tecnologia além de espantar de vez o medo de códigos, pode ser a diferença entre você realmente entender um problema (e resolver) ou ficar estagnado. *;)*
 
+<a id='generators'></a>
+## Generators
+[historia e generators com promises]
+
 <a id='async-await'></a>
 ## async / await
 
 Seja bem-vindo *async / await*!
 
-[historia...]
-
-A implementação atual de async / await no V8 é com base no uso de promises e generators[[13]](https://stackoverflow.com/questions/46908575/async-await-native-implementations).
+`async / await` é um modelo mais limpo de programação assíncrona, a implementação atual de async / await no V8 é com base no uso de promises e generators[[13]](https://stackoverflow.com/questions/46908575/async-await-native-implementations).
 
 Toda promise pode ser chamada com `await promise` no lugar de chamarmos `.then()` podemos usar o retorno direto, e no lugar de `.catch()`, podemos colocar um `try/catch` em volta da função *(lembra que para callbacks isso não funcionava? VIVA `await`!)*.
 
