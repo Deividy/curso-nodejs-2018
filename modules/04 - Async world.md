@@ -376,7 +376,7 @@ Ela assume que o último argumento da função é um callback e cria uma promise
 <a id='generators'></a>
 ## Generators
 
-Agora que já vimos em JavaScript moderno o básico de generators, vimos como callbacks funcionam, entendemos promises, está na hora de usarmos generators para cuidar de funções assíncronas.
+Agora que já vimos em JavaScript moderno o básico de generators, vimos como callbacks funcionam, entendemos promises, está na hora de mostrarmos como generators podem trabalhar junto com promises para *simular* um modelo mais síncrono de programação.
 
 Considere o seguinte exemplo:
 
@@ -411,8 +411,13 @@ asyncify(function* () {
     console.log("WAIT 1 sec...");
     yield wait(1);
 });
+```
 
+A função de `asyncify` definida acima (por *silesky*[[14]](https://gist.github.com/silesky/5c43ad2964054579ba202a65294859cd#file-blog_asyncify-js)) nos da uma idéia de como podemos usar generators e promises para pausar e continuar o flow.
 
+Porém, esse approach tem alguns problemas óbvios como *error handling* e *return values*:
+
+```javascript
 // what about return?
 const returnValuePromise = () => {
     return new Promise((resolve, reject) => resolve('value'));
@@ -428,13 +433,15 @@ const errorPromise = () => {
 }
 asyncify(function* () {
     // Well, with our functions errors are gone, unhandled promise rejections :x
-    console.log(yield errorPromise());
+    try {
+        console.log(yield errorPromise());
+    } catch (ex) {
+        console.error(ex);
+    }
 }
 ```
 
-A função de `asyncify` definida acima (por *silesky*[[14]](https://gist.github.com/silesky/5c43ad2964054579ba202a65294859cd#file-blog_asyncify-js)) nos da uma idéia de como podemos usar generators e promises para pausar e continuar o flow.
-
-Porém, esse approach tem alguns problemas óbvios como *error handling* e *return values*, precisamos de algo mais low level...
+Precisamos de algo mais estável, estamos perto de algo muito bom...
 
 <a id='async-await'></a>
 ## async / await
