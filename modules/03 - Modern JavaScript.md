@@ -1,4 +1,3 @@
-<a id='modern-javascript'></a>
 # 3) JavaScript moderno
 > "Talk is cheap. Show me the code." - Linus Torvalds
 

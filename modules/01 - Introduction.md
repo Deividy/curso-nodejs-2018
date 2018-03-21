@@ -1,4 +1,3 @@
-<a id='introduction'></a>
 # Introducão
 > "First, solve the problem. Then, write the code." - John Johnson
 

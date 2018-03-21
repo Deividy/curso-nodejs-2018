@@ -1,4 +1,3 @@
-<a id='getting-ready'></a>
 # 2) Instalação do Node.js
 
 > "Good software, like wine, takes time." - Joel Spolsky
