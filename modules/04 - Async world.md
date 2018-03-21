@@ -380,6 +380,7 @@ Agora que já vimos em JavaScript moderno o básico de generators, vimos como ca
 
 Considere o seguinte exemplo:
 
+[generators.js](../examples/module-4/generators.js)
 ```javascript
 function asyncify (generatorFn) {
     const myIterator = generatorFn();
