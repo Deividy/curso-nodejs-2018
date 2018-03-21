@@ -31,3 +31,4 @@ Tudo o que vimos até agora é relacionado mais a JavaScript ou a história e in
 - https://nodejs.org/api/esm.html
 - https://github.com/nodejs/node-eps/pull/60/files
 - https://github.com/nodejs/node-eps/blob/master/002-es-modules.md
+- http://requirejs.org/docs/commonjs.html
