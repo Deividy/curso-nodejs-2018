@@ -78,6 +78,8 @@ O link para o arquivo que cuida do carregamento de módulos no Node.js está na 
 
 ## npm
 
+npm é o maior registro de softwares do mundo [[09]](https://docs.npmjs.com/getting-started/what-is-npm)
+
 ## npx
 
 ## Criando um módulo
