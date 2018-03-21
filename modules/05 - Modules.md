@@ -9,9 +9,77 @@ No final você ira aprender a criar o seu próprio módulo e publicar no *npm re
 
 ## CommonJS module
 
+*CommonJS Module* é o padrão no Node.js e consiste em 3 objetos que são *injetados* em seu script, são os objetos de: `exports`, `require` e `module`[[05]](https://blog.risingstack.com/node-js-at-scale-module-system-commonjs-require/). 
+
+Um módulo em CJS consiste em:
+
+[cjs-example-multiply]()
+```javascript
+function multiply (a, b) {
+    return a * b;
+}
+
+module.exports = multiply;
+```
+
+[cjs-example]()
+```javascript
+const multiply = require('./cjs-example-multiply');
+
+console.log(multiply(10, 42)); // 420
+```
+
+Por baixo dos panos, o módulo `cjs-example-multiply` se torna:
+
+```javascript
+(function (exports, require, module, __filename, __dirname) {
+    function multiply (a, b) {
+        return a * b;
+     }
+
+     module.exports = multiply;
+});
+
+```
+
+É por isso que temos acesso as variáveis `exports`, `require`, `module`, `__filename` e `__dirname`. Elas são injetadas em seu script.
+
+`exports` é basicamente uma referência para o mesmo objeto que `module.exports`[[06]](https://stackoverflow.com/questions/7137397/module-exports-vs-exports-in-node-js), essa é a resposta curta, na prática eles são um pouco diferentes, `exports` serve como um *alias* para um objeto, podemos definir propriedades alí que irá para dentro de `module.exports`, porém, apenas o `module.exports` é exportado, isso significa que:
+
+[cjs-exports-example-module]()
+```javascript
+exports.foo = 'foo';
+console.log(module.exports.foo); // 'foo'
+
+exports = 'bar';
+```
+
+[cjs-exports-example]()
+```javascript
+const foo = require('./cjs-exports-example-module');
+console.log(foo); // { foo: 'foo' }
+```
+
+[cjs-module-exports-example-module]()
+```javascript
+exports.foo = 'foo';
+console.log(module.exports.foo); // 'foo'
+
+module.exports = 'bar';
+```
+
+[cjs-module-exports-example]()
+```javascript
+const foo = require('./cjs-module-exports-example-module');
+console.log(foo); // 'bar'
+```
+
+Para maiores informações de como funciona internamente o gerenciamento de módulos no Node.js, você pode acessar direto o código fonte[[07]](https://github.com/nodejs/node/blob/master/lib/internal/modules/cjs/loader.js) e ler tudo ali. *;)*
+
+
 ## ECMASCript Modules
 
-ECMAScript Modules são atualmente o padrão em browsers[[05]](https://jakearchibald.com/2017/es-modules-in-browsers/)
+ECMAScript Modules são atualmente o padrão em browsers[[08]](https://jakearchibald.com/2017/es-modules-in-browsers/)
 
 post com diferencas between: https://hackernoon.com/node-js-tc-39-and-modules-a1118aecf95e
 
@@ -33,7 +101,10 @@ post com diferencas between: https://hackernoon.com/node-js-tc-39-and-modules-a1
 - [02] https://gist.github.com/jkrems/769a8cd8806f7f57903b641c74b5f08a
 - [03] https://nodejs.org/api/esm.html
 - [04] https://gist.github.com/ceejbot/b49f8789b2ab6b09548ccb72813a1054
-- [05] https://jakearchibald.com/2017/es-modules-in-browsers/
+- [05] https://blog.risingstack.com/node-js-at-scale-module-system-commonjs-require/
+- [06] https://stackoverflow.com/questions/7137397/module-exports-vs-exports-in-node-js
+- [07] https://github.com/nodejs/node/blob/master/lib/internal/modules/cjs/loader.js
+- [08] https://jakearchibald.com/2017/es-modules-in-browsers/
 
 - https://nodejs.org/docs/latest/api/modules.html#modules_module_exports
 - https://blog.risingstack.com/node-js-at-scale-module-system-commonjs-require/
