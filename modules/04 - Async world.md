@@ -375,7 +375,14 @@ Ela assume que o último argumento da função é um callback e cria uma promise
 
 <a id='generators'></a>
 ## Generators
-[historia e generators com promises]
+
+Agora que já vimos em JavaScript moderno o básico de generators, vimos como callbacks funcionam, entendemos promises, está na hora de usarmos generators para cuidar de funções assíncronas.
+
+Considere o seguinte exemplo:
+
+```javascript
+
+```
 
 <a id='async-await'></a>
 ## async / await
