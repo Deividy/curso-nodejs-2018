@@ -1,4 +1,3 @@
-<a id='async-world'></a>
 # 4) Programação assíncrona
 > "Programs must be written for people to read, and only incidentally for machines to execute." - Abelson / Sussman
 
