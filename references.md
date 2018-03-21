@@ -30,14 +30,14 @@
 - [27] https://github.com/Deividy/curso-nodejs-2018/blob/master/.vimrc
 - [28] http://docs.libuv.org/en/v1.x/design.html
 
-# Módulo 2 - Instalação do Node.js
+## Módulo 2 - Instalação do Node.js
 - [01] https://nodejs.org/en/download/
 - [02] https://github.com/creationix/nvm
 - [03] https://github.com/coreybutler/nvm-windows
 - [04] https://github.com/coreybutler/nvm-windows#this-is-not-the-same-thing-as-nvm-which-is-a-completely-separate-project-for-maclinux-only
 - [05] https://github.com/coreybutler/nvm-windows/releases
 
-# Módulo 3 - JavaScript moderno
+## Módulo 3 - JavaScript moderno
 - [00] http://exploringjs.com/es6
 - [01] https://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript
 - [02] https://stackoverflow.com/questions/1047454/what-is-lexical-scope
@@ -46,7 +46,7 @@
 - [05] http://exploringjs.com/es6/ch_destructuring.html
 
 
-# Módulo 4 - Programação assíncrona
+## Módulo 4 - Programação assíncrona
 - [01] http://www.i-programmer.info/programming/theory/6040-what-is-asynchronous-programming.html
 - [02] https://stackoverflow.com/questions/28999765/how-does-the-linux-kernel-handle-asynchronous-i-o-aio-requests
 - [03] https://www.quora.com/Is-Node-js-single-threaded
