@@ -3,19 +3,19 @@
 Finalmente conteúdo específico do Node.js. \o/ <br />
 Tudo o que vimos até agora é relacionado mais a JavaScript ou a história e instalação do Node.js.
 
-Vamos falar aqui sobre CommonJS Modules e ESM proposal.
-
 ## CommonJS module
 
 ### module.exports
 
 ### export
 
-## ESM Proposal
+## ECMASCript Modules
 
 ## npm
 
 ## npx
+
+## Criando um módulo
 
 ---
 
