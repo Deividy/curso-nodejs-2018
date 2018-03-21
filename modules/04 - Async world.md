@@ -379,6 +379,8 @@ Ela assume que o último argumento da função é um callback e cria uma promise
 
 Seja bem-vindo *async / await*!
 
+[historia...]
+
 A implementação atual de async / await no V8 é com base no uso de promises e generators[[13]](https://stackoverflow.com/questions/46908575/async-await-native-implementations).
 
 Toda promise pode ser chamada com `await promise` no lugar de chamarmos `.then()` podemos usar o retorno direto, e no lugar de `.catch()`, podemos colocar um `try/catch` em volta da função *(lembra que para callbacks isso não funcionava? VIVA `await`!)*.
