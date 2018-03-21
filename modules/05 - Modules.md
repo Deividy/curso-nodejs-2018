@@ -9,11 +9,11 @@ No final você ira aprender a criar o seu próprio módulo e publicar no *npm re
 
 ## CommonJS module
 
-### module.exports
-
-### export
-
 ## ECMASCript Modules
+
+ECMAScript Modules são atualmente o padrão em browsers[[05]](https://jakearchibald.com/2017/es-modules-in-browsers/)
+
+post com diferencas between: https://hackernoon.com/node-js-tc-39-and-modules-a1118aecf95e
 
 ## npm
 
@@ -33,6 +33,7 @@ No final você ira aprender a criar o seu próprio módulo e publicar no *npm re
 - [02] https://gist.github.com/jkrems/769a8cd8806f7f57903b641c74b5f08a
 - [03] https://nodejs.org/api/esm.html
 - [04] https://gist.github.com/ceejbot/b49f8789b2ab6b09548ccb72813a1054
+- [05] https://jakearchibald.com/2017/es-modules-in-browsers/
 
 - https://nodejs.org/docs/latest/api/modules.html#modules_module_exports
 - https://blog.risingstack.com/node-js-at-scale-module-system-commonjs-require/
