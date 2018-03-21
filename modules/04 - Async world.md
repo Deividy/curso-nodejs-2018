@@ -377,7 +377,7 @@ Ela assume que o último argumento da função é um callback e cria uma promise
 <a id='async-await'></a>
 ## async / await
 
-Finalmente chegamos no famoso *async / await*.
+Seja bem-vindo *async / await*!
 
 A implementação atual de async / await no V8 é com base no uso de promises e generators[[13]](https://stackoverflow.com/questions/46908575/async-await-native-implementations).
 
