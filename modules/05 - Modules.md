@@ -4,7 +4,7 @@ Node.js usa para controle de módulo internamente o *CommonJs*[[01]](http://wiki
 
 Na referência tem o link do proposal bem detalhado[[04]](https://gist.github.com/ceejbot/b49f8789b2ab6b09548ccb72813a1054).
 
-Veremos aqui como funciona o CommonJS Module e ECMAScript Module, além de conhecermos a história e entendermos a respeito do `npm` e `npx`. <br />
+Veremos aqui como funciona o CommonJS Module, além de conhecermos a história e entendermos a respeito do `npm` e `npx`. <br />
 No final você ira aprender a criar o seu próprio módulo e publicar no *npm registry*.
 
 ## CommonJS module
@@ -74,14 +74,7 @@ const foo = require('./cjs-module-exports-example-module');
 console.log(foo); // 'bar'
 ```
 
-Para maiores informações de como funciona internamente o gerenciamento de módulos no Node.js, você pode acessar direto o código fonte[[07]](https://github.com/nodejs/node/blob/master/lib/internal/modules/cjs/loader.js) e ler tudo ali. *;)*
-
-
-## ECMASCript Modules
-
-ECMAScript Modules são atualmente o padrão em browsers[[08]](https://jakearchibald.com/2017/es-modules-in-browsers/)
-
-post com diferencas between: https://hackernoon.com/node-js-tc-39-and-modules-a1118aecf95e
+O link para o arquivo que cuida do carregamento de módulos no Node.js está na referência[[07]](https://github.com/nodejs/node/blob/master/lib/internal/modules/cjs/loader.js).
 
 ## npm
 
