@@ -381,15 +381,67 @@ Agora que já vimos em JavaScript moderno o básico de generators, vimos como ca
 Considere o seguinte exemplo:
 
 ```javascript
+function asyncify (generatorFn) {
+    const myIterator = generatorFn();
 
+    // recursive function that continue to feed itself
+    // yielded Promises until there are none left
+    const runNext = ({ value, done }) => {
+        if (done) return;
+        value.then(() => runNext(myIterator.next()))
+    };
+
+    runNext(myIterator.next());
+}
+
+const wait = (secs) => {
+    return new Promise((resolve, reject) => {
+        if (secs > 4) return reject("Can't wait 4 secs!");
+        setTimeout(resolve, secs * 1000);
+    });
+};
+
+asyncify(function* () {
+    console.log("WAIT 1 sec...");
+    yield wait(1);
+
+    console.log("WAIT 2 secs...");
+    yield wait(2);
+
+    console.log("WAIT 1 sec...");
+    yield wait(1);
+});
+
+
+// what about return?
+const returnValuePromise = () => {
+    return new Promise((resolve, reject) => resolve('value'));
+};
+asyncify(function* () {
+    // return values dont work in our cool model :x
+    console.log(yield returnValuePromise());
+});
+
+// what about an error?
+const errorPromise = () => {
+    return new Promise((resolve, reject) => reject(new Error('bum!')));
+}
+asyncify(function* () {
+    // Well, with our functions errors are gone, unhandled promise rejections :x
+    console.log(yield errorPromise());
+}
 ```
+
+A função de `asyncify` definida acima (por *silesky*[[14]](https://gist.github.com/silesky/5c43ad2964054579ba202a65294859cd#file-blog_asyncify-js)) nos da uma idéia de como podemos usar generators e promises para pausar e continuar o flow.
+
+Porém, esse approach tem alguns problemas óbvios como *error handling* e *return values*, precisamos de algo mais low level...
 
 <a id='async-await'></a>
 ## async / await
 
-Seja bem-vindo *async / await*!
+*async / await* to the rescue! :D
 
-`async / await` é um modelo mais limpo de programação assíncrona, a implementação atual de async / await no V8 é com base no uso de promises e generators[[13]](https://stackoverflow.com/questions/46908575/async-await-native-implementations).
+Modelo mais limpo de programação assíncrona, a implementação atual de async / await no V8 é com base no uso de promises e generators[[13]](https://stackoverflow.com/questions/46908575/async-await-native-implementations), lembra um pouco com o que vimos anteriormente, mas em um nível mais baixo.
 
 Toda promise pode ser chamada com `await promise` no lugar de chamarmos `.then()` podemos usar o retorno direto, e no lugar de `.catch()`, podemos colocar um `try/catch` em volta da função *(lembra que para callbacks isso não funcionava? VIVA `await`!)*.
 
