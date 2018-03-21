@@ -51,7 +51,7 @@ Conhecimento básico em JavaScript, sistemas operacionais e terminal (ou cmd).
    - [Promise](modules/04%20-%20Async%20world.md#promise)
    - [Generators](modules/04%20-%20Async%20world.md#generators)
    - [async / await](modules/04%20-%20Async%20world.md#async-await)
-5. [Gerenciamento de modulos]()
+5. [Gerenciamento de módulos]()
    - [CommonJS]()
    - [ESM Proposal]()
    - [npm]()
