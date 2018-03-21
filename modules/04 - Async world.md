@@ -538,6 +538,9 @@ async function testAsyncWithPromise () {
 
 testAsyncWithPromise().then((val) => console.log(val));
 ```
+
+**Curiosidade 2** Os módulos do core do Node.js não retornam promises intencionalmente, discussão pode ser encontrada no github[[14]](https://github.com/nodejs/node/issues/11)
+
 ---
 
 <a id='exercises'></a>
@@ -613,3 +616,4 @@ main();
 - [11] https://nodejs.org/api/util.html
 - [12] https://github.com/nodejs/node/blob/1d2fd8b6/lib/internal/util.js#L295-L333
 - [13] https://stackoverflow.com/questions/46908575/async-await-native-implementations
+- [14] https://github.com/nodejs/node/issues/11
