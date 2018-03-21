@@ -6,3 +6,6 @@ Tudo o que vimos até agora é relacionado mais a JavaScript ou a história e in
 - https://nodejs.org/docs/latest/api/modules.html#modules_module_exports
 - https://blog.risingstack.com/node-js-at-scale-module-system-commonjs-require/
 - https://gist.github.com/ceejbot/b49f8789b2ab6b09548ccb72813a1054
+- https://nodejs.org/api/esm.html
+- https://github.com/nodejs/node-eps/pull/60/files
+- https://github.com/nodejs/node-eps/blob/master/002-es-modules.md
