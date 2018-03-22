@@ -93,5 +93,6 @@ Conhecimento básico em JavaScript, sistemas operacionais e terminal (ou cmd).
 10. [Conclusão]()
 11. [Referência](references.md)
 
+---
 
-:v: :v:
+*May the speedy force be with you.* :v:
