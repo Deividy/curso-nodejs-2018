@@ -92,7 +92,7 @@ Por causa dessa confusão, iremos nos focar em *CJS* modules, que é o padrão a
 
 ## npm
 
-npm é o maior registro de softwares do mundo [[10]](https://docs.npmjs.com/getting-started/what-is-npm)
+Nascido em NNNN, acabou se tornando o maior registro de softwares do mundo [[10]](https://docs.npmjs.com/getting-started/what-is-npm) em pouquissimo tempo.
 
 ## npx
 
@@ -116,6 +116,7 @@ npm é o maior registro de softwares do mundo [[10]](https://docs.npmjs.com/gett
 - [08] https://www.quora.com/Is-everything-an-object-in-Javascript
 - [09] https://github.com/nodejs/node/blob/master/lib/internal/modules/cjs/loader.js
 - [10] https://jakearchibald.com/2017/es-modules-in-browsers/
+- [11] https://docs.npmjs.com/getting-started/what-is-npm
 
 ---
 
