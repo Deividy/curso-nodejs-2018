@@ -88,8 +88,7 @@ ESM *(como é conhecido pelos chegados)* se tornou o padrão em browsers[[10]](h
 
 Porém, como ESM e CJS são dois module loaders completamente diferentes, temos algumas peculiaridades em usar os dois juntos, no momento, com Node.js, modulos usando *ESM* tem que ter a extensão `.mjs`, o que de certa forma é feio e temos que ter cuidado ao usar um com o outro[[ref]](), outra opção a usar nativamente ESM é usar babel[[ref]]() ou algum outro *thirdy part module*[[ref]]().
 
-Por causa dessa confusão, iremos aqui falar apenas do básico e nos focar em *CJS* modules, que é o padrão e não será removido[[ref]]().
-
+Por causa dessa confusão, iremos aqui falar apenas do básico e nos focar em *CJS* modules, que é o padrão atual, não será removido[[ref]]() e é obrigatório o entendimento para usar Node.js, já que os modulos do core usam isso e a maior parte da comunidade também.
 
 ## npm
 
