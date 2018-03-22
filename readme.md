@@ -94,4 +94,5 @@ Conhecimento básico em JavaScript, sistemas operacionais e terminal (ou cmd).
 
 ---
 
+<div align=right>
 *May the speedy force be with you.* :v:
