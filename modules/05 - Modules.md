@@ -79,11 +79,11 @@ console.log(cjsModuleExportsExample); // This will work?
 
 Notou a diferença? Quando usamos o `module.exports = 'This will work?'` o único *objeto*[[08]](https://www.quora.com/Is-everything-an-object-in-Javascript) a ser exportado foi a string *'This will work'*.
 
-Caso tenha interesse em ver como o Node.js cuida do load de modules para CJS internamente, veja o link na referência[[07]](https://github.com/nodejs/node/blob/master/lib/internal/modules/cjs/loader.js).
+Caso tenha interesse em ver como o Node.js cuida do load de modules para CJS internamente, veja o link na referência[[09]](https://github.com/nodejs/node/blob/master/lib/internal/modules/cjs/loader.js).
 
 ## npm
 
-npm é o maior registro de softwares do mundo [[09]](https://docs.npmjs.com/getting-started/what-is-npm)
+npm é o maior registro de softwares do mundo [[10]](https://docs.npmjs.com/getting-started/what-is-npm)
 
 ## npx
 
@@ -105,7 +105,8 @@ npm é o maior registro de softwares do mundo [[09]](https://docs.npmjs.com/gett
 - [06] https://blog.risingstack.com/node-js-at-scale-module-system-commonjs-require/
 - [07] https://stackoverflow.com/questions/7137397/module-exports-vs-exports-in-node-js
 - [08] https://www.quora.com/Is-everything-an-object-in-Javascript
-- [09] https://www.quora.com/Is-everything-an-object-in-Javascript
+- [09] https://github.com/nodejs/node/blob/master/lib/internal/modules/cjs/loader.js
+- [10] https://www.quora.com/Is-everything-an-object-in-Javascript
 
 ---
 
@@ -120,5 +121,4 @@ npm é o maior registro de softwares do mundo [[09]](https://docs.npmjs.com/gett
 
 - [05] https://blog.risingstack.com/node-js-at-scale-module-system-commonjs-require/
 - [06] https://stackoverflow.com/questions/7137397/module-exports-vs-exports-in-node-js
-- [07] https://github.com/nodejs/node/blob/master/lib/internal/modules/cjs/loader.js
 - [08] https://jakearchibald.com/2017/es-modules-in-browsers/
