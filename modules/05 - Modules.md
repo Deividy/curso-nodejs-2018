@@ -99,7 +99,9 @@ ESM *(como é conhecido pelos chegados)* se tornou o padrão em browsers[[10]](h
 - *Lexical*
 - file URI scheme
 
-Porém, como ESM e CJS são dois module loaders completamente diferentes, temos algumas peculiaridades em usar os dois juntos, no momento, com Node.js, modulos usando *ESM* tem que ter a extensão `.mjs`[[12]](https://nodejs.org/api/esm.html), outra opção é o *@std/esm*[[13]](https://github.com/standard-things/esm).
+Porém, como ESM e CJS são dois module loaders completamente diferentes, temos algumas peculiaridades em usar os dois juntos, no momento, com Node.js, modulos usando *ESM* tem que ter a extensão `.mjs`[[12]](https://nodejs.org/api/esm.html), outra opção é usar o *@std/esm*[[13]](https://github.com/standard-things/esm).
+
+Um módulo em *ESM* consiste em:
 
 ## npm
 
