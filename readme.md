@@ -10,7 +10,7 @@ Ao finaliza-lo você terá conhecimentos suficientes para construir um processo 
 
 Muitos cursos e materiais sobre Node.js abordam apenas frameworks e módulos da comunidade, muitas pessoas acham que essa tecnologia é usada apenas para desenvolver aplicativos para web ou servidores http, com esse curso tenho a missão de levar para você o conhecimento interno, mostrando a grande variedade de aplicações que é possível desenvolver com a tecnologia, além de passar ideias e conceitos para sobreviver na *selva*.
 
-Sem *firulas* e com muita mão na massa. :pencil:
+Sem *firulas* e com muita mão na massa.
 
 ### Por que free e unlicensed ?
 
