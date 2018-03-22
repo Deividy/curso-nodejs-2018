@@ -1,12 +1,12 @@
 # 5) Módulos em Node.js
 
-Node.js usa para controle de módulo internamente o *CommonJs*[[01]](http://wiki.commonjs.org/wiki/Modules/1.1.1), com o ES6 surgiu o ECMAScript Modules[[02]](https://gist.github.com/jkrems/769a8cd8806f7f57903b641c74b5f08a), existem varias discussões a respeito da implementação no Node.js e atualmente a feature está disponível como experimental[[03]](https://nodejs.org/api/esm.html).
+Node.js usa para controle de módulo internamente o *CommonJs*[[01]](http://wiki.commonjs.org/wiki/Modules/1.1.1), com o ES6 surgiu o ECMAScript Modules[[02]](https://gist.github.com/jkrems/769a8cd8806f7f57903b641c74b5f08a), existem várias discussões a respeito da implementação no Node.js e atualmente a feature está disponível como experimental[[03]](https://nodejs.org/api/esm.html).
 
 Na referência tem o link do proposal bem detalhado[[04]](https://gist.github.com/ceejbot/b49f8789b2ab6b09548ccb72813a1054) além de um post de *James M Snell*[[09]](https://hackernoon.com/node-js-tc-39-and-modules-a1118aecf95e) sobre as diferenças de *CJS* e *ECM*.
 
-Veremos aqui como funciona o CommonJS Module, uma rápida visita em ECMAScript Module, iremos conhecer a história e entendermos a respeito do `npm`, e conhecer o novo `npx`.
+Veremos aqui como funciona o CommonJS Module, uma rápida visita em ECMAScript Module, iremos conhecer a história e entendermos a respeito do `npm`, além de conhecer o novo `npx`.
 
-No final você ira aprender a criar o seu próprio módulo e publicar no *npm registry*.
+No final você aprenderá a criar o seu próprio módulo e publicar no *npm registry*.
 
 ## CommonJS module
 
@@ -14,7 +14,7 @@ No final você ira aprender a criar o seu próprio módulo e publicar no *npm re
 
 Um módulo em CJS consiste em:
 
-[cjs-example-multiply]()
+[cjs-example-multiply.js](../examples/module-5/cjs-example-multiply.js)
 ```javascript
 function multiply (a, b) {
     return a * b;
@@ -23,7 +23,7 @@ function multiply (a, b) {
 module.exports = multiply;
 ```
 
-[cjs-example]()
+[cjs-example.js](../examples/module-5/cjs-example.js)
 ```javascript
 const multiply = require('./cjs-example-multiply');
 
@@ -43,39 +43,43 @@ Por baixo dos panos, o módulo `cjs-example-multiply` se torna:
 
 ```
 
-É por isso que temos acesso as variáveis `exports`, `require`, `module`, `__filename` e `__dirname`. Elas são injetadas em seu script.
+É por isso que temos acesso as variáveis `exports`, `require`, `module`, `__filename` e `__dirname`. Elas são injetadas em nosso script.
 
-`exports` é basicamente uma referência para o mesmo objeto que `module.exports`[[06]](https://stackoverflow.com/questions/7137397/module-exports-vs-exports-in-node-js), essa é a resposta curta, na prática eles são um pouco diferentes, `exports` serve como um *alias* para um objeto, podemos definir propriedades alí que irá para dentro de `module.exports`, porém, apenas o `module.exports` é exportado, isso significa que:
+`exports` é basicamente uma referência para o mesmo objeto que `module.exports`[[06]](https://stackoverflow.com/questions/7137397/module-exports-vs-exports-in-node-js), essa é a resposta curta, mas na prática eles são um pouco diferentes, `exports` serve como um *alias* para um objeto, podemos definir propriedades alí que iram para dentro de `module.exports`, porém, apenas o `module.exports` é exportado, isso significa que:
 
-[cjs-exports-example-module]()
+[cjs-exports-example-module.js](../examples/module-5/cjs-exports-example-module.js)
 ```javascript
-exports.foo = 'foo';
-console.log(module.exports.foo); // 'foo'
+exports.foo = 'Cool, dude!';
+console.log(module.exports.foo); // 'Cool, dude!'
 
-exports = 'bar';
+exports = 'This will work?';
 ```
 
-[cjs-exports-example]()
+[cjs-exports-example.js](../examples/module-5/cjs-exports-example.js)
 ```javascript
-const foo = require('./cjs-exports-example-module');
-console.log(foo); // { foo: 'foo' }
+const cjsExportsExample = require('./cjs-exports-example-module');
+console.log(cjsExportsExample); // { foo: 'Cool, dude!' }
 ```
 
-[cjs-module-exports-example-module]()
-```javascript
-exports.foo = 'foo';
-console.log(module.exports.foo); // 'foo'
+Podemos notar no exemplo acima que, mesmo setando o `exports = 'This will work?'`, a string *'This will work?'* não foi exportada, veremos agora o mesmo exemplo usando `module.exports`:
 
-module.exports = 'bar';
+[cjs-module-exports-example-module.js](../examples/module-5/cjs-module-exports-example-module.js)
+```javascript
+exports.foo = 'Cool, dude!';
+console.log(module.exports.foo); // 'Cool, dude!'
+
+module.exports = 'This will work?';
 ```
 
-[cjs-module-exports-example]()
+[cjs-module-exports-example.js](../examples/module-5/cjs-module-exports-example.js)
 ```javascript
-const foo = require('./cjs-module-exports-example-module');
-console.log(foo); // 'bar'
+const cjsModuleExportsExample = require('./cjs-module-exports-example-module');
+console.log(cjsModuleExportsExample); // This will work?
 ```
 
-O link para o arquivo que cuida do carregamento de módulos no Node.js está na referência[[07]](https://github.com/nodejs/node/blob/master/lib/internal/modules/cjs/loader.js).
+Notou a diferença? Quando usamos o `module.exports = 'This will work?'` o único *objeto*[[09]](https://www.quora.com/Is-everything-an-object-in-Javascript) a ser exportado foi a string *'This will work'*.
+
+Caso tenha interesse em ver como o Node.js cuida do load de modules para CJS internamente, veja o link na referência[[07]](https://github.com/nodejs/node/blob/master/lib/internal/modules/cjs/loader.js).
 
 ## npm
 
@@ -101,6 +105,7 @@ npm é o maior registro de softwares do mundo [[09]](https://docs.npmjs.com/gett
 - [06] https://stackoverflow.com/questions/7137397/module-exports-vs-exports-in-node-js
 - [07] https://github.com/nodejs/node/blob/master/lib/internal/modules/cjs/loader.js
 - [08] https://jakearchibald.com/2017/es-modules-in-browsers/
+- [09] https://www.quora.com/Is-everything-an-object-in-Javascript
 
 - https://nodejs.org/docs/latest/api/modules.html#modules_module_exports
 - https://blog.risingstack.com/node-js-at-scale-module-system-commonjs-require/
