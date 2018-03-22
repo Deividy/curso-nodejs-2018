@@ -2,7 +2,7 @@
 
 Node.js usa para controle de módulo internamente o *CommonJs*[[01]](http://wiki.commonjs.org/wiki/Modules/1.1.1), com o ES6 surgiu o ECMAScript Modules[[02]](https://gist.github.com/jkrems/769a8cd8806f7f57903b641c74b5f08a), existem várias discussões a respeito da implementação no Node.js e atualmente a feature está disponível como experimental[[03]](https://nodejs.org/api/esm.html).
 
-Na referência tem o link do proposal bem detalhado[[04]](https://gist.github.com/ceejbot/b49f8789b2ab6b09548ccb72813a1054) além de um post de *James M Snell*[[05]](https://hackernoon.com/node-js-tc-39-and-modules-a1118aecf95e) sobre as diferenças de *CJS* e *ECM*.
+Na referência tem o link do proposal bem detalhado[[04]](https://gist.github.com/ceejbot/b49f8789b2ab6b09548ccb72813a1054) além de um post de *James M Snell*[[05]](https://hackernoon.com/node-js-tc-39-and-modules-a1118aecf95e) sobre as diferenças de *CJS* e *ESM*.
 
 Veremos aqui como funciona o CommonJS Module, o ECMAScript Module, iremos conhecer a história e entendermos a respeito do `npm`, além de conhecer o novo `npx`.
 
@@ -83,6 +83,9 @@ Caso tenha interesse em ver como o Node.js cuida do load de modules para CJS int
 
 ## ECMAScript Module
 
+ESM *(como é conhecido pelos chegados)* se tornou o padrão em browsers[[10]](https://jakearchibald.com/2017/es-modules-in-browsers/), desenvolvedores vindos do *front end* para o Node.js tem maior familiaridade com o *ESM* do que com *CJS*, além de ter algumas vantagens como:
+
+
 
 ## npm
 
@@ -109,7 +112,7 @@ npm é o maior registro de softwares do mundo [[10]](https://docs.npmjs.com/gett
 - [07] https://stackoverflow.com/questions/7137397/module-exports-vs-exports-in-node-js
 - [08] https://www.quora.com/Is-everything-an-object-in-Javascript
 - [09] https://github.com/nodejs/node/blob/master/lib/internal/modules/cjs/loader.js
-- [10] https://www.quora.com/Is-everything-an-object-in-Javascript
+- [10] https://jakearchibald.com/2017/es-modules-in-browsers/
 
 ---
 
