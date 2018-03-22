@@ -23,14 +23,7 @@ function multiply (a, b) {
 module.exports = multiply;
 ```
 
-[cjs-example.js](../examples/module-5/cjs-example.js)
-```javascript
-const multiply = require('./cjs-example-multiply');
-
-console.log(multiply(10, 42)); // 420
-```
-
-Por baixo dos panos, o módulo `cjs-example-multiply` se torna:
+Por baixo dos panos todo script em Node.js é *wrapped* em volta de uma função que passa algumas variáveis das quais podemos usar, por exemplo, o módulo `cjs-example-multiply` se torna:
 
 ```javascript
 (function (exports, require, module, __filename, __dirname) {
@@ -40,12 +33,26 @@ Por baixo dos panos, o módulo `cjs-example-multiply` se torna:
 
      module.exports = multiply;
 });
-
 ```
+
 
 É por isso que temos acesso as variáveis `exports`, `require`, `module`, `__filename` e `__dirname`. Elas são injetadas em nosso script.
 
-`exports` é basicamente uma referência para o mesmo objeto que `module.exports`[[07]](https://stackoverflow.com/questions/7137397/module-exports-vs-exports-in-node-js), essa é a resposta curta, mas na prática eles são um pouco diferentes, `exports` serve como um *alias* para um objeto, podemos definir propriedades alí que iram para dentro de `module.exports`, porém, apenas o `module.exports` é exportado, isso significa que:
+Agora, para usarmos esse module, usamos a função `require`:
+
+[cjs-example.js](../examples/module-5/cjs-example.js)
+```javascript
+const multiply = require('./cjs-example-multiply');
+
+console.log(multiply(10, 42)); // 420
+```
+
+[require works...]
+
+
+### `exports` vs `module.exports`
+
+`exports` é basicamente uma referência para o mesmo objeto que `module.exports`[[07]](https://stackoverflow.com/questions/7137397/module-exports-vs-exports-in-node-js), essa é a resposta curta, mas na prática eles são um pouco diferentes, `exports` serve como um *alias* para um objeto, podemos definir propriedades alí que iram para dentro de `module.exports`, porém, apenas o `module.exports` é exportado.
 
 [cjs-exports-example-module.js](../examples/module-5/cjs-exports-example-module.js)
 ```javascript
