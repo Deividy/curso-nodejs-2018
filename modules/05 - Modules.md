@@ -23,7 +23,9 @@ function multiply (a, b) {
 module.exports = multiply;
 ```
 
-Por baixo dos panos todo script em Node.js é *wrapped* em volta de uma função que passa algumas variáveis das quais podemos usar, por exemplo, o módulo `cjs-example-multiply` se torna:
+No módulo acima, podemos notar o uso de `module.exports = multiply;`, quando escrevemos isso, estamos expondo a nossa função de `multiply` para qualquer usuário de nossa função.
+
+A variável `module` é uma váriavel injetada em nosso script, todo script em Node.js é *wrapped* em volta de uma função que passa algumas variáveis das quais podemos usar, por exemplo, o módulo `cjs-example-multiply` se torna:
 
 ```javascript
 (function (exports, require, module, __filename, __dirname) {
