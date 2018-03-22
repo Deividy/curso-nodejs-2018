@@ -92,12 +92,14 @@ Caso tenha interesse em ver como o Node.js cuida do load de modules para CJS int
 
 ## ECMAScript Module
 
-ESM *(como é conhecido pelos chegados)* se tornou o padrão em browsers[[10]](https://jakearchibald.com/2017/es-modules-in-browsers/), desenvolvedores vindos do *front end* para o Node.js tem maior familiaridade com o *ESM* do que com *CJS*, além de ter algumas vantagens como:
+ESM *(como é conhecido pelos chegados)* se tornou o padrão em browsers[[10]](https://jakearchibald.com/2017/es-modules-in-browsers/), desenvolvedores vindos do *front end* para o Node.js tem maior familiaridade com o *ESM* do que com *CJS*, além de ter algumas vantagens como[[11]](http://voidcanvas.com/import-vs-require/):
 
+- Erros na hora de *parsing*
+- *Static evaluation*
+- *Lexical*
+- file URI scheme
 
-Porém, como ESM e CJS são dois module loaders completamente diferentes, temos algumas peculiaridades em usar os dois juntos, no momento, com Node.js, modulos usando *ESM* tem que ter a extensão `.mjs`, temos que ter cuidado ao usar um com o outro[[ref]](), outra opção é *transpilar* nosso código com babel[[ref]]() ou algum outro *third part*[[ref]]().
-
-Por causa dessa confusão, iremos nos focar em *CJS* modules, que é o padrão atual, não será removido[[ref]]() e é obrigatório o entendimento para usar Node.js.
+Porém, como ESM e CJS são dois module loaders completamente diferentes, temos algumas peculiaridades em usar os dois juntos, no momento, com Node.js, modulos usando *ESM* tem que ter a extensão `.mjs`[[12]](https://nodejs.org/api/esm.html), outra opção é o *@std/esm*[[13]](https://github.com/standard-things/esm).
 
 ## npm
 
@@ -125,6 +127,10 @@ Nascido em NNNN, acabou se tornando o maior registro de softwares do mundo [[10]
 - [08] https://www.quora.com/Is-everything-an-object-in-Javascript
 - [09] https://github.com/nodejs/node/blob/master/lib/internal/modules/cjs/loader.js
 - [10] https://jakearchibald.com/2017/es-modules-in-browsers/
+- [11] http://voidcanvas.com/import-vs-require/
+- [12] https://nodejs.org/api/esm.html
+- [13] https://github.com/standard-things/esm
+
 - [11] https://docs.npmjs.com/getting-started/what-is-npm
 
 ---
