@@ -98,6 +98,7 @@ ESM *(como é conhecido pelos chegados)* se tornou o padrão em browsers[[10]](h
 - *Static evaluation*
 - *Lexical*
 - file URI scheme
+- Dynamic export / import [[14]](https://medium.com/@WebReflection/javascript-dynamic-import-export-b0e8775a59d4)
 
 Porém, como ESM e CJS são dois module loaders completamente diferentes, temos algumas peculiaridades em usar os dois juntos, no momento, com Node.js, modulos usando *ESM* tem que ter a extensão `.mjs`[[12]](https://nodejs.org/api/esm.html), outra opção é usar o *@std/esm*[[13]](https://github.com/standard-things/esm).
 
@@ -161,11 +162,11 @@ Nascido em NNNN, acabou se tornando o maior registro de softwares do mundo [[10]
 - [11] http://voidcanvas.com/import-vs-require/
 - [12] https://nodejs.org/api/esm.html
 - [13] https://github.com/standard-things/esm
-
-- [11] https://docs.npmjs.com/getting-started/what-is-npm
+- [14] https://medium.com/@WebReflection/javascript-dynamic-import-export-b0e8775a59d4
 
 ---
 
+- https://docs.npmjs.com/getting-started/what-is-npm
 - https://nodejs.org/docs/latest/api/modules.html#modules_module_exports
 - https://blog.risingstack.com/node-js-at-scale-module-system-commonjs-require/
 - https://gist.github.com/ceejbot/b49f8789b2ab6b09548ccb72813a1054
