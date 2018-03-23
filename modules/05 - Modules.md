@@ -103,6 +103,35 @@ Porém, como ESM e CJS são dois module loaders completamente diferentes, temos 
 
 Um módulo em *ESM* consiste em:
 
+[esm-module.mjs](../examples/module-5/esm-module.mjs)
+```javascript
+export default 'foo';
+
+export function add (a, b) { return a + b; };
+
+export const sleep = async (secs = 1) => {
+    return new Promise((resolve) => {
+        setTimeout(resolve, secs * 1000);
+    });
+};
+```
+
+[esm-run.mjs](../examples/module-5/esm-run.mjs)
+```javascript
+import foo, { add, sleep } from './esm-module';
+
+console.log(foo); // 'foo'
+console.log(add(1, 2)); // 3
+
+(async () => {
+    console.log('sleeping for 1sec...');
+    await sleep(1);
+    console.log('wake!');
+})();
+```
+
+O código acima pode ser rodado no Node.js v8.10+ com a flag `--experimental-modules` *(`node --experimental-modules esm-run.mjs`)* ou usando o module *@std/esm*[[13]](https://github.com/standard-things/esm).
+
 ## npm
 
 Nascido em NNNN, acabou se tornando o maior registro de softwares do mundo [[10]](https://docs.npmjs.com/getting-started/what-is-npm) em pouquissimo tempo.
