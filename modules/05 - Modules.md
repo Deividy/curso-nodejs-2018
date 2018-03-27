@@ -133,6 +133,8 @@ console.log(add(1, 2)); // 3
 
 O código acima pode ser rodado no Node.js v8.10+ com a flag `--experimental-modules` *(`node --experimental-modules esm-run.mjs`)* ou usando o module *@std/esm*[[13]](https://github.com/standard-things/esm).
 
+Por ser uma feature experimental na versão mais recente do Node.js e adicionar uma complexidade extra, iremos ser breves aqui e nos manteremos usando *CJS requires*, na referência tem vários links[[14]]() para continuar seu estudo em relação ao *ECMAScript modules*.
+
 ## npm
 
 Nascido em NNNN, acabou se tornando o maior registro de softwares do mundo [[10]](https://docs.npmjs.com/getting-started/what-is-npm) em pouquissimo tempo.
