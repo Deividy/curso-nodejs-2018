@@ -49,7 +49,33 @@ const multiply = require('./cjs-example-multiply');
 console.log(multiply(10, 42)); // 420
 ```
 
-[require works...]
+O Gerencimaneto de módulos no Node.js *cacheia* o módulo na primeiro *require* dele, isso significa que toda vez que vermos um `require('module-speedy')` sempre receberemos a mesma instância, isso garante que modules do tipo *singleton* funcionem corretamente, veja um exemplo:
+
+```javascript
+class MyCoolClass {
+    constructor (foo) {
+        this.foo = foo;
+    }
+}
+module.exports = new MyCoolClass('bar');
+```
+
+```javascript
+const myCoolClass = require('./my-cool-class');
+console.log(myCoolClass.foo); // 'bar'
+
+myCoolClass.foo = 'zaz';
+
+module.export = 'just exporting';
+```
+
+```javascript
+const justExporting = require('./just-exporting-cool-class');
+const myCoolClass = require('./my-cool-class');
+
+console.log(justExporting); // 'just exporting'
+console.log(myCoolClass.foo); // 'zaz'
+```
 
 
 ### `exports` vs `module.exports`
