@@ -183,12 +183,11 @@ Outro detalhe importante, o *npm* é uma empresa, com poucos desenvolvedores e a
 - Isaac Z. Schlueter, CEO
 - Laurie Voss, COO
 - CJ Silverio, CTO
-
 A missão do *npm* é levar o Open Source para todos os lugares do mundo [[20]](https://www.npmjs.com/about).
 
-Para publicar um pacote, você primeiro precisa criar uma conta no site do npm[[21]](https://www.npmjs.com/signup) e em seguida usar os comandos de `npm init`[[22]](https://docs.npmjs.com/cli/init) e `npm publish`[[23]](https://docs.npmjs.com/cli/publish).
 
-Criaremos nosso primeiro pacote e publicaremos ele no *npm* no final desse módulo. 
+Agora caso você queira publicar um pacote, você primeiro precisa criar uma conta no site do npm[[21]](https://www.npmjs.com/signup) e em seguida usar os comandos de `npm init`[[22]](https://docs.npmjs.com/cli/init) e `npm publish`[[23]](https://docs.npmjs.com/cli/publish). <br />
+Criaremos nosso primeiro pacote e publicaremos ele no final desse módulo. 
 
 ## npx
 
