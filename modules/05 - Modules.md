@@ -306,7 +306,7 @@ Aqui está o código completo:
 ```
 
 [[index.js]](../examples/module-5/my-first-npm-module-speedyforce/index.js)
-```json
+```javascript
 #!/usr/bin/env node
 console.log(`Hello, ${process.argv[2] || 'someone'}!`);
 ```
