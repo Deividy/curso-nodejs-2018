@@ -166,14 +166,29 @@ Por ser uma feature experimental na versão mais recente do Node.js e adicionar 
 
 ## npm
 
-npm é o gerenciamento de módulos padrão do Node.jse atualmente é o maior registro de softwares do mundo [[16]](https://docs.npmjs.com/getting-started/what-is-npm).
+npm é o registro de módulos padrão do Node.js e atualmente é o maior registro de softwares do mundo, contando com aproximadamente **6 bilhões** de downloads por semana [[16]](https://docs.npmjs.com/getting-started/what-is-npm) e contendo mais de **600.000** *packages*.
 
-**npm, Inc.** é uma empresa fundada em 2014 por:
+Consiste em 3 diferentes componentes:
+- O website https://npmjs.com
+- Interface de linha de comando (CLI)
+- O registro
+
+Você pode usar o site para procurar pacotes, a linha de comando para interagir com o npm e o registro para publicar e baixar novos pacotes.
+
+Qualquer pessoa no mundo pode criar um pacote publico no npm e publicar, por isso, **muito cuidado com qualquer módulo que você queira instalar em seu aplicativo**, sempre procure ver se é realmente necessário[[17]](https://news.ycombinator.com/item?id=11348798) e se será útil para sua app, seja bem criterioso ao instalar novos pacotes.
+
+Outro detalhe importante, o *npm* é uma empresa, com poucos desenvolvedores e alta demanda, no momento é um pouco turbulento [[18]](https://news.ycombinator.com/item?id=16435305) e não aconselho a depender do registro em produção[[19]](https://news.ycombinator.com/item?id=16087024).
+
+**npm, Inc.** foi fundada em 2014 por:
 - Isaac Z. Schlueter, CEO
 - Laurie Voss, COO
 - CJ Silverio, CTO
 
-A missão do *npm* é levar o Open Source para todos os lugares do mundo [[17]](https://www.npmjs.com/about).
+A missão do *npm* é levar o Open Source para todos os lugares do mundo [[20]](https://www.npmjs.com/about).
+
+Para publicar um pacote, você primeiro precisa criar uma conta no site do npm[[21]](https://www.npmjs.com/signup) e em seguida usar os comandos de `npm init`[[22]](https://docs.npmjs.com/cli/init) e `npm publish`[[23]](https://docs.npmjs.com/cli/publish).
+
+Criaremos nosso primeiro pacote e publicaremos ele no *npm* no final desse módulo. 
 
 ## npx
 
