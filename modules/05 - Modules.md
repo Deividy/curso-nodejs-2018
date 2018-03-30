@@ -333,19 +333,18 @@ console.log(`Hello, ${process.argv[2] || 'someone'}!`);
 - [09] https://github.com/nodejs/node/blob/master/lib/internal/modules/cjs/loader.js
 - [10] https://jakearchibald.com/2017/es-modules-in-browsers/
 - [11] http://voidcanvas.com/import-vs-require/
-- [12]
+- [12] https://github.com/standard-things/esm
 - [13]
 - [14]
-- [15]
-- [16]
-- [17]
-- [18]
-- [19]
-- [20]
-- [21]
-- [22]
-- [23]
-- [24]
+- [15] https://docs.npmjs.com/getting-started/what-is-npm
+- [16] https://news.ycombinator.com/item?id=11348798
+- [17] https://news.ycombinator.com/item?id=16435305
+- [18] https://news.ycombinator.com/item?id=16087024
+- [19] https://www.npmjs.com/about
+- [20] https://www.npmjs.com/signup
+- [21] https://docs.npmjs.com/cli/init
+- [22] https://docs.npmjs.com/cli/publish
+- [23] https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b
 
 
 ---
