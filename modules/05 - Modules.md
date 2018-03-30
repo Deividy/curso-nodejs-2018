@@ -186,7 +186,7 @@ Outro detalhe importante, o *npm* é uma empresa, com poucos desenvolvedores e a
 A missão do *npm* é levar o Open Source para todos os lugares do mundo [[20]](https://www.npmjs.com/about).
 
 
-Agora caso você queira publicar um pacote, você primeiro precisa criar uma conta no site do npm[[21]](https://www.npmjs.com/signup) e em seguida usar os comandos de `npm init`[[22]](https://docs.npmjs.com/cli/init) e `npm publish`[[23]](https://docs.npmjs.com/cli/publish). <br />
+Para puublicar um pacote, você primeiro precisa criar uma conta no site do npm[[21]](https://www.npmjs.com/signup) e em seguida usar os comandos de `npm init`[[22]](https://docs.npmjs.com/cli/init) e `npm publish`[[23]](https://docs.npmjs.com/cli/publish). <br />
 Criaremos nosso primeiro pacote e publicaremos ele no final desse módulo. 
 
 ## npx
@@ -199,6 +199,17 @@ O *npx* é uma ferramenta destinada a ajudar e complementar a experiência de us
 ## Publicando meu primeiro pacote
 
 
+Como vimos anteriormente, a primeira coisa que precisa ser feita para publicar um módulo é criar uma conta no site do *npm*[[21]](https://www.npmjs.com/signup).
+
+Após criada, precisamos configurar a *CLI*:
+
+```shell
+$ npm login
+Username: (deividy)
+Password: (or leave unchanged)
+Email: (this IS public) (deividyz@gmail.com)
+Logged in as deividy on https://registry.npmjs.org/.
+```
 
 ---
 
