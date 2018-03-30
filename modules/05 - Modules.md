@@ -49,8 +49,9 @@ const multiply = require('./cjs-example-multiply');
 console.log(multiply(10, 42)); // 420
 ```
 
-O Gerencimaneto de módulos no Node.js *cacheia* o módulo na primeiro *require* dele, isso significa que toda vez que vermos um `require('module-speedy')` sempre receberemos a mesma instância, isso garante que modules do tipo *singleton* funcionem corretamente, veja um exemplo:
+O Gerencimaneto de módulos no Node.js *cacheia* o módulo no primeiro *require* dele, isso significa que toda vez que vermos um `require('module-speedy')` sempre receberemos a mesma instância, isso garante que modules do tipo *singleton* funcionem corretamente, veja um exemplo:
 
+[cjs-cool-class-example1.js](../examples/module-5/cjs-cool-class-example1.js)
 ```javascript
 class MyCoolClass {
     constructor (foo) {
@@ -60,18 +61,20 @@ class MyCoolClass {
 module.exports = new MyCoolClass('bar');
 ```
 
+[cjs-cool-class-example2.js](../examples/module-5/cjs-cool-class-example2.js)
 ```javascript
-const myCoolClass = require('./my-cool-class');
+const myCoolClass = require('./cjs-cool-class-example1');
 console.log(myCoolClass.foo); // 'bar'
 
 myCoolClass.foo = 'zaz';
 
-module.export = 'just exporting';
+module.exports = 'just exporting';
 ```
 
+[cjs-cool-class-example-run.js](../examples/module-5/cjs-cool-class-example-run.js)
 ```javascript
-const justExporting = require('./just-exporting-cool-class');
-const myCoolClass = require('./my-cool-class');
+const myCoolClass = require('./cjs-cool-class-example1');
+const justExporting = require('./cjs-cool-class-example2');
 
 console.log(justExporting); // 'just exporting'
 console.log(myCoolClass.foo); // 'zaz'
