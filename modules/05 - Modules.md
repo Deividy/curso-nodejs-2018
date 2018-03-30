@@ -294,9 +294,6 @@ Aqui está o código completo:
   "version": "1.0.3",
   "description": "Testing module system for Node.js 2018 :)",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "bin": {
       "my-first-npm-module-speedyforce": "./index.js"
   },
