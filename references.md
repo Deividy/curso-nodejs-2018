@@ -60,3 +60,28 @@
 - [11] https://nodejs.org/api/util.html
 - [12] https://github.com/nodejs/node/blob/1d2fd8b6/lib/internal/util.js#L295-L333
 - [13] https://stackoverflow.com/questions/46908575/async-await-native-implementations
+
+## Módulo 5 - Módulos em Node.js
+- [01] http://wiki.commonjs.org/wiki/Modules/1.1.1
+- [02] https://gist.github.com/jkrems/769a8cd8806f7f57903b641c74b5f08a
+- [03] https://nodejs.org/api/esm.html
+- [04] https://gist.github.com/ceejbot/b49f8789b2ab6b09548ccb72813a1054
+- [05] https://hackernoon.com/node-js-tc-39-and-modules-a1118aecf95e
+- [06] https://blog.risingstack.com/node-js-at-scale-module-system-commonjs-require/
+- [07] https://stackoverflow.com/questions/7137397/module-exports-vs-exports-in-node-js
+- [08] https://www.quora.com/Is-everything-an-object-in-Javascript
+- [09] https://github.com/nodejs/node/blob/master/lib/internal/modules/cjs/loader.js
+- [10] https://jakearchibald.com/2017/es-modules-in-browsers/
+- [11] http://voidcanvas.com/import-vs-require/
+- [12] https://github.com/standard-things/esm
+- [13] http://2ality.com/2017/05/es-module-specifiers.html
+- [14] https://medium.com/webpack/the-state-of-javascript-modules-4636d1774358
+- [15] https://docs.npmjs.com/getting-started/what-is-npm
+- [16] https://news.ycombinator.com/item?id=11348798
+- [17] https://news.ycombinator.com/item?id=16435305
+- [18] https://news.ycombinator.com/item?id=16087024
+- [19] https://www.npmjs.com/about
+- [20] https://www.npmjs.com/signup
+- [21] https://docs.npmjs.com/cli/init
+- [22] https://docs.npmjs.com/cli/publish
+- [23] https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b
