@@ -196,11 +196,15 @@ O *npx* é uma ferramenta destinada a ajudar e complementar a experiência de us
 
 ![cow say npx thanks to @maybekatz](https://cdn-images-1.medium.com/max/800/1*A4HJT1FHQA_1_z3aMBc5mg.gif)
 
-## Criando um módulo
+## Publicando meu primeiro pacote
+
+
 
 ---
 
 ## Exercícios
+
+### 1) Crie seu primeiro pacote público e publique no *npm*.
 
 ---
 
