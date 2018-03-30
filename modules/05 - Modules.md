@@ -287,7 +287,7 @@ Hello, Speedy!
 
 Aqui está o código completo:
 
-[[package.json]](../examples/module-5/my-first-npm-module-speedyforce/package.json)
+[package.json](../examples/module-5/my-first-npm-module-speedyforce/package.json)
 ```json
 {
   "name": "my-first-npm-module-speedyforce",
@@ -302,7 +302,7 @@ Aqui está o código completo:
 }
 ```
 
-[[index.js]](../examples/module-5/my-first-npm-module-speedyforce/index.js)
+[index.js](../examples/module-5/my-first-npm-module-speedyforce/index.js)
 ```javascript
 #!/usr/bin/env node
 console.log(`Hello, ${process.argv[2] || 'someone'}!`);
