@@ -211,6 +211,106 @@ Email: (this IS public) (deividyz@gmail.com)
 Logged in as deividy on https://registry.npmjs.org/.
 ```
 
+Após logado na *CLI*, podemos acessar a pasta do nosso pacote, rodar o comando `npm init` e seguir as instruções
+
+```shell
+npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help json` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install <pkg>` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (my-first-npm-module-speedyforce)
+version: (1.0.0)
+description: Testing module system for Node.js 2018 :)
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author: Deividy Metheler Zachetti
+license: (ISC) UNLICENSED
+About to write to /Users/deividy/dev/speedyforce/curso-nodejs-2018/examples/module-5/my-first-npm-module-speedyforce/package.json:
+
+{
+  "name": "my-first-npm-module-speedyforce",
+  "version": "1.0.0",
+  "description": "Testing module system for Node.js 2018 :)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Deividy Metheler Zachetti",
+  "license": "UNLICENSED"
+}
+
+
+Is this ok? (yes) yes
+```
+
+*Não é obrigatório, mas o padrão é o pacote estar em um repositório git.*
+
+**Usando o npx** <br />
+Para usar o *npx* podemos adicionar no nosso `package.json` uma entrada `"bin":{}` com os comandos a serem executados, por exempo:
+
+```json
+ "bin": {
+      "my-first-npm-module-speedyforce": "./index.js"
+  }
+```
+
+Após iniciado o projeto, podemos mandar um `npm publish` e se o nome do módulo for único, e não existir nenhum pacote com o mesmo nome, ele automaticamente publicará no registro:
+
+```shell
+$ npm publish
++ my-first-npm-module-speedyforce@1.0.0
+```
+
+Pronto! Nosso modulo está publicado! :) <br />
+Podemos agora instalar ele com apenas:
+
+```shell
+npm install my-first-npm-module-speedyforce --save
+```
+
+Ou executar ele direto com *npx*:
+
+```shell
+$ npx my-first-npm-module-speedyforce Speedy
+npx: installed 1 in 3.001s
+Hello, Speedy!
+```
+
+Aqui está o código completo:
+
+[[package.json]](../examples/module-5/my-first-npm-module-speedyforce/package.json)
+```json
+{
+  "name": "my-first-npm-module-speedyforce",
+  "version": "1.0.3",
+  "description": "Testing module system for Node.js 2018 :)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+      "my-first-npm-module-speedyforce": "./index.js"
+  },
+  "author": "Deividy Metheler Zachetti",
+  "license": "UNLICENSED"
+}
+```
+
+[[index.js]](../examples/module-5/my-first-npm-module-speedyforce/index.js)
+```json
+#!/usr/bin/env node
+console.log(`Hello, ${process.argv[2] || 'someone'}!`);
+```
+
 ---
 
 ## Exercícios
