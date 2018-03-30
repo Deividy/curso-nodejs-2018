@@ -1,0 +1,11 @@
+{
+  "name": "my-first-npm-module-speedyforce",
+  "version": "1.0.3",
+  "description": "Testing module system for Node.js 2018 :)",
+  "main": "index.js",
+  "bin": {
+      "my-first-npm-module-speedyforce": "./index.js"
+  },
+  "author": "Deividy Metheler Zachetti",
+  "license": "UNLICENSED"
+}
