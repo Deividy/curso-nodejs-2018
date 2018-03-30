@@ -129,7 +129,7 @@ ESM *(como é conhecido pelos chegados)* se tornou o padrão em browsers[[10]](h
 - file URI scheme
 - Dynamic export / import
 
-Porém, como ESM e CJS são dois module loaders completamente diferentes, temos algumas peculiaridades em usar os dois juntos, no momento, com Node.js, modulos usando *ESM* tem que ter a extensão `.mjs`[[12]](https://nodejs.org/api/esm.html), outra opção é usar o *@std/esm*[[13]](https://github.com/standard-things/esm).
+Porém, como ESM e CJS são dois module loaders completamente diferentes, temos algumas peculiaridades em usar os dois juntos, no momento, com Node.js, modulos usando *ESM* tem que ter a extensão `.mjs`[[03]](https://nodejs.org/api/esm.html), outra opção é usar o *@std/esm*[[12]](https://github.com/standard-things/esm).
 
 Um módulo em *ESM* consiste em:
 
@@ -160,13 +160,13 @@ console.log(add(1, 2)); // 3
 })();
 ```
 
-O código acima pode ser rodado no Node.js v8.10+ com a flag `--experimental-modules` *(`node --experimental-modules esm-run.mjs`)* ou usando o module *@std/esm*[[13]](https://github.com/standard-things/esm).
+O código acima pode ser rodado no Node.js v8.10+ com a flag `--experimental-modules` *(`node --experimental-modules esm-run.mjs`)* ou usando o module *@std/esm*[[12]](https://github.com/standard-things/esm).
 
-Por ser uma feature experimental na versão mais recente do Node.js e adicionar uma complexidade extra, iremos ser breves aqui e nos manteremos usando *CJS requires*, na referência tem alguns links([[14]](), [[15]]()) para continuar seu estudo em relação ao *ECMAScript modules*.
+Por ser uma feature experimental na versão mais recente do Node.js e adicionar uma complexidade extra, iremos ser breves aqui e nos manteremos usando *CJS requires*, na referência tem alguns links([[13]](), [[14]]()) para continuar seu estudo em relação ao *ECMAScript modules*.
 
 ## npm
 
-npm é o registro de módulos padrão do Node.js e atualmente é o maior registro de softwares do mundo, contando com aproximadamente **6 bilhões** de downloads por semana [[16]](https://docs.npmjs.com/getting-started/what-is-npm) e contendo mais de **600.000** *packages*.
+npm é o registro de módulos padrão do Node.js e atualmente é o maior registro de softwares do mundo, contando com aproximadamente **6 bilhões** de downloads por semana [[15]](https://docs.npmjs.com/getting-started/what-is-npm) e contendo mais de **600.000** *packages*.
 
 Consiste em 3 diferentes componentes:
 - O website https://npmjs.com
@@ -175,31 +175,31 @@ Consiste em 3 diferentes componentes:
 
 Você pode usar o site para procurar pacotes, a linha de comando para interagir com o npm e o registro para publicar e baixar novos pacotes.
 
-Qualquer pessoa no mundo pode criar um pacote publico no npm e publicar, por isso, **muito cuidado com qualquer módulo que você queira instalar em seu aplicativo**, sempre procure ver se é realmente necessário[[17]](https://news.ycombinator.com/item?id=11348798) e se será útil para sua app, seja bem criterioso ao instalar novos pacotes.
+Qualquer pessoa no mundo pode criar um pacote publico no npm e publicar, por isso, **muito cuidado com qualquer módulo que você queira instalar em seu aplicativo**, sempre procure ver se é realmente necessário[[16]](https://news.ycombinator.com/item?id=11348798) e se será útil para sua app, seja bem criterioso ao instalar novos pacotes.
 
-Outro detalhe importante, o *npm* é uma empresa, com poucos desenvolvedores e alta demanda, no momento é um pouco turbulento [[18]](https://news.ycombinator.com/item?id=16435305) e não aconselho a depender do registro em produção[[19]](https://news.ycombinator.com/item?id=16087024).
+Outro detalhe importante, o *npm* é uma empresa, com poucos desenvolvedores e alta demanda, no momento é um pouco turbulento [[17]](https://news.ycombinator.com/item?id=16435305) e não aconselho a depender do registro em produção[[18]](https://news.ycombinator.com/item?id=16087024).
 
 **npm, Inc.** foi fundada em 2014 por:
 - Isaac Z. Schlueter, CEO
 - Laurie Voss, COO
 - CJ Silverio, CTO
-A missão do *npm* é levar o Open Source para todos os lugares do mundo [[20]](https://www.npmjs.com/about).
+A missão do *npm* é levar o Open Source para todos os lugares do mundo [[19]](https://www.npmjs.com/about).
 
 
-Para puublicar um pacote, você primeiro precisa criar uma conta no site do npm[[21]](https://www.npmjs.com/signup) e em seguida usar os comandos de `npm init`[[22]](https://docs.npmjs.com/cli/init) e `npm publish`[[23]](https://docs.npmjs.com/cli/publish). <br />
+Para puublicar um pacote, você primeiro precisa criar uma conta no site do npm[[20]](https://www.npmjs.com/signup) e em seguida usar os comandos de `npm init`[[21]](https://docs.npmjs.com/cli/init) e `npm publish`[[22]](https://docs.npmjs.com/cli/publish). <br />
 Criaremos nosso primeiro pacote e publicaremos ele no final desse módulo. 
 
 ## npx
 
 A partir da versão `5.2` do npm, foi introduzido um novo binário chamado `npx`.
-O *npx* é uma ferramenta destinada a ajudar e complementar a experiência de usar pacotes npm, *npx* facilita o uso das ferramentas *CLI* e outros executáveis hospedados no registro, simplificando a vida de uma série de pacotes que até então exigiam um pouco mais de *hard work*[[24]](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b).
+O *npx* é uma ferramenta destinada a ajudar e complementar a experiência de usar pacotes npm, *npx* facilita o uso das ferramentas *CLI* e outros executáveis hospedados no registro, simplificando a vida de uma série de pacotes que até então exigiam um pouco mais de *hard work*[[23]](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b).
 
 ![cow say npx thanks to @maybekatz](https://cdn-images-1.medium.com/max/800/1*A4HJT1FHQA_1_z3aMBc5mg.gif)
 
 ## Publicando meu primeiro pacote
 
 
-Como vimos anteriormente, a primeira coisa que precisa ser feita para publicar um módulo é criar uma conta no site do *npm*[[21]](https://www.npmjs.com/signup).
+Como vimos anteriormente, a primeira coisa que precisa ser feita para publicar um módulo é criar uma conta no site do *npm*[[20]](https://www.npmjs.com/signup).
 
 Após criada, precisamos configurar a *CLI*:
 
@@ -321,6 +321,34 @@ console.log(`Hello, ${process.argv[2] || 'someone'}!`);
 ---
 
 # Referência
+
+- [01] http://wiki.commonjs.org/wiki/Modules/1.1.1
+- [02] https://gist.github.com/jkrems/769a8cd8806f7f57903b641c74b5f08a
+- [03] https://nodejs.org/api/esm.html
+- [04] https://gist.github.com/ceejbot/b49f8789b2ab6b09548ccb72813a1054
+- [05] https://hackernoon.com/node-js-tc-39-and-modules-a1118aecf95e
+- [06] https://blog.risingstack.com/node-js-at-scale-module-system-commonjs-require/
+- [07] https://stackoverflow.com/questions/7137397/module-exports-vs-exports-in-node-js
+- [08] https://www.quora.com/Is-everything-an-object-in-Javascript
+- [09] https://github.com/nodejs/node/blob/master/lib/internal/modules/cjs/loader.js
+- [10] https://jakearchibald.com/2017/es-modules-in-browsers/
+- [11] http://voidcanvas.com/import-vs-require/
+- [12]
+- [13]
+- [14]
+- [15]
+- [16]
+- [17]
+- [18]
+- [19]
+- [20]
+- [21]
+- [22]
+- [23]
+- [24]
+
+
+---
 
 - [01] http://wiki.commonjs.org/wiki/Modules/1.1.1
 - [02] https://gist.github.com/jkrems/769a8cd8806f7f57903b641c74b5f08a
