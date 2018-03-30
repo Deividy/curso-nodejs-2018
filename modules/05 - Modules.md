@@ -314,6 +314,10 @@ console.log(`Hello, ${process.argv[2] || 'someone'}!`);
 
 ### 1) Crie seu primeiro pacote público e publique no *npm*.
 
+### 2) Adicione um comando *bin* e execute com *npx*.
+
+### 3) Adicione um comando extra em `scripts`.
+
 ---
 
 # Referência
