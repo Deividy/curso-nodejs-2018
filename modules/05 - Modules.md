@@ -214,7 +214,7 @@ Logged in as deividy on https://registry.npmjs.org/.
 Após logado na *CLI*, podemos acessar a pasta do nosso pacote, rodar o comando `npm init` e seguir as instruções
 
 ```shell
-npm init
+$ npm init
 This utility will walk you through creating a package.json file.
 It only covers the most common items, and tries to guess sensible defaults.
 
@@ -274,7 +274,7 @@ Pronto! Nosso modulo está publicado! :) <br />
 Podemos agora instalar ele com apenas:
 
 ```shell
-npm install my-first-npm-module-speedyforce --save
+$ npm install my-first-npm-module-speedyforce --save
 ```
 
 Ou executar ele direto com *npx*:
