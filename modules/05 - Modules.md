@@ -191,6 +191,11 @@ Criaremos nosso primeiro pacote e publicaremos ele no final desse módulo.
 
 ## npx
 
+A partir da versão `5.2` do npm, foi introduzido um novo binário chamado `npx`.
+O *npx* é uma ferramenta destinada a ajudar e complementar a experiência de usar pacotes npm, *npx* facilita o uso das ferramentas *CLI* e outros executáveis hospedados no registro, simplificando a vida de uma série de pacotes que até então exigiam um pouco mais de *hard work*[[24]](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b).
+
+![cow say npx thanks to @maybekatz](https://cdn-images-1.medium.com/max/800/1*A4HJT1FHQA_1_z3aMBc5mg.gif)
+
 ## Criando um módulo
 
 ---
