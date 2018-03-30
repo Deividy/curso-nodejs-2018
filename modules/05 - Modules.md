@@ -166,7 +166,14 @@ Por ser uma feature experimental na versão mais recente do Node.js e adicionar 
 
 ## npm
 
-Nascido em NNNN, acabou se tornando o maior registro de softwares do mundo [[10]](https://docs.npmjs.com/getting-started/what-is-npm) em pouquissimo tempo.
+npm é o gerenciamento de módulos padrão do Node.jse atualmente é o maior registro de softwares do mundo [[16]](https://docs.npmjs.com/getting-started/what-is-npm).
+
+**npm, Inc.** é uma empresa fundada em 2014 por:
+- Isaac Z. Schlueter, CEO
+- Laurie Voss, COO
+- CJ Silverio, CTO
+
+A missão do *npm* é levar o Open Source para todos os lugares do mundo [[17]](https://www.npmjs.com/about).
 
 ## npx
 
