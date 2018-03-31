@@ -10,13 +10,26 @@ Veremos os mais úteis e construiremos pequenas aplicações com base neles.
 
 O módulo *util*[[01]](https://nodejs.org/api/util.html) nos da funcionalidades muito úteis (ah va!), como por exemplo `promisify` que vimos anteriormente.
 
-Além do `promisify` temos o `callbackfy` que é o oposto do `promisify`.
-
+Além do `promisify` temos o `callbackfy` que é o oposto do `promisify`. <br />
 Temos também a função `inspect`[[02]](https://nodejs.org/api/util.html#util_util_inspect_object_options) que é bem útil para inspecionarmos objetos ou logarmos ele no console.
 
 Veremos um exemplo com algumas das funções que você vai mais utilizar:
 
 ```javascript
+const util = require('util');
+
+function callbackStyleFunction (someVar, callback) {
+    setTimeout(() => {
+        if (someVar) return callback();
+        callback('No var!');
+    }, 1);
+}
+
+const promiseFunction = util.promisify(callbackStyleFunction);
+
+(async () => {
+
+})();
 
 ```
 
