@@ -78,7 +78,7 @@ Conhecimento básico em JavaScript, sistemas operacionais e terminal (ou cmd).
    - [bcrypt]()
    - [pg]()
    - [mongo]()
-   - [Outros módulos]()
+   - [Outros módulos]()
 8. [Debugging]()
    - [Debugger]()
    - [Inspector (experimental)]()
