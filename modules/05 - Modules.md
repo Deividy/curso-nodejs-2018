@@ -189,6 +189,10 @@ A missão do *npm* é levar o Open Source para todos os lugares do mundo [[19]](
 Para puublicar um pacote, você primeiro precisa criar uma conta no site do npm[[20]](https://www.npmjs.com/signup) e em seguida usar os comandos de `npm init`[[21]](https://docs.npmjs.com/cli/init) e `npm publish`[[22]](https://docs.npmjs.com/cli/publish). <br />
 Criaremos nosso primeiro pacote e publicaremos ele no final desse módulo. 
 
+### Usando módulos
+
+Para usar um módulo....
+
 ## npx
 
 A partir da versão `5.2` do npm, foi introduzido um novo binário chamado `npx`.
