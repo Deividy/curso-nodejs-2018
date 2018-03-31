@@ -8,10 +8,10 @@ Veremos os mais úteis e construiremos pequenas aplicações com base neles.
 
 ## util
 
-O módulo *util*[[01]](https://nodejs.org/api/util.html) nos da funcionalidades muito úteis (ah va!), como por exemplo `promisify` que vimos anteriormente.
+O módulo *util*[[01]](https://nodejs.org/api/util.html) nos da funcionalidades muito úteis (ah va!), como por exemplo `promisify`[[02]](https://nodejs.org/api/util.html#util_util_promisify_original) que vimos anteriormente.
 
-Além do `promisify` temos o `callbackfy` que é o oposto do `promisify`. <br />
-Temos também a função `inspect`[[02]](https://nodejs.org/api/util.html#util_util_inspect_object_options) que é bem útil para inspecionarmos objetos ou logarmos ele no console.
+Além do `promisify` temos o `callbackify`[[03]](https://nodejs.org/api/util.html#util_util_callbackify_original) que é o oposto do `promisify`. <br />
+Temos também a função `inspect`[[04]](https://nodejs.org/api/util.html#util_util_inspect_object_options) que é bem útil para inspecionarmos objetos ou logarmos ele no console.
 
 Veremos um exemplo com algumas das funções que você vai mais utilizar:
 
@@ -34,6 +34,3 @@ const promiseFunction = util.promisify(callbackStyleFunction);
 ```
 
 # Referência
-
-- [01] https://nodejs.org/api/util.html
-- [02] https://nodejs.org/api/util.html#util_util_inspect_object_options
