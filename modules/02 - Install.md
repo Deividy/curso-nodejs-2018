@@ -1,6 +1,7 @@
 # 2) Instalação do Node.js
 
-> "Good software, like wine, takes time." - Joel Spolsky
+> "Good software, like wine, takes time." <br />
+> Joel Spolsky
 
 Hoje em dia o Node.js é um sistema bem leve e de fácil instalação, na maioria dos casos basta você acessar o site oficial[[01]](https://nodejs.org/en/download/) e baixar o arquivo para seu sistema operacional.
 
