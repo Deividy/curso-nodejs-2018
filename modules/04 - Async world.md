@@ -1,5 +1,6 @@
 # 4) Programação assíncrona
-> "Programs must be written for people to read, and only incidentally for machines to execute." - Abelson / Sussman
+> "Programs must be written for people to read, and only incidentally for machines to execute." <br />
+> Abelson / Sussman
 
 
 Programação assíncrona é quando mandamos o código executar alguma ação e podemos mandar ele fazer alguma outra coisa enquanto executa essa ação.
