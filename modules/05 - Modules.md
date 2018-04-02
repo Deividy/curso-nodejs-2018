@@ -1,5 +1,6 @@
 # 5) Módulos em Node.js
-> "We build our computer (systems) the way we build our cities: over time, without a plan, on top of ruins." - Ellen Ullman
+> "We build our computer (systems) the way we build our cities: over time, without a plan, on top of ruins." <br />
+> Ellen Ullman
 
 Node.js usa para controle de módulo internamente o *CommonJS*[[01]](http://wiki.commonjs.org/wiki/Modules/1.1.1), com o ES6 surgiu o ECMAScript Modules[[02]](https://gist.github.com/jkrems/769a8cd8806f7f57903b641c74b5f08a), existem várias discussões a respeito da implementação no Node.js e atualmente a feature está disponível como experimental[[03]](https://nodejs.org/api/esm.html).
 
