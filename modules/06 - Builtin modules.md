@@ -147,6 +147,6 @@ myEventEmitter.emit('speedy', '--- force HIT');
 myEventEmitter.removeAllListeners();
 ```
 
-Notou que o `EventEmitter` chama os eventos na ordem que foram registrados?
+Notou que o `EventEmitter` chama os eventos na ordem que foram registrados? Notou também que o `removeListener` é chamado quando removemos o `newListener` em `myEventEmitter.removeAllListeners()` ? E o inverso também ocorre, vemos o evento `removeListener` ser adicionando. :)
 
 # Referência
