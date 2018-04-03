@@ -96,6 +96,8 @@ class MyClassEvent extends EventEmitter {
     }
 }
 
+// ---
+
 const myEventEmitterInstance = new MyClassEvent();
 
 myEventEmitterInstance.on('add', (number) => {
@@ -117,7 +119,7 @@ myEventEmitterInstance.once('add', (number) => {
 
 myEventEmitterInstance.addAndEmit();
 
-// getting listeners:
+// ---
 
 myEventEmitter.on('newListener', (eventName, listenerFunction) => {
     console.log('new listener:');
