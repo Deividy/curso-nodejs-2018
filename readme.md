@@ -1,5 +1,7 @@
 <h1>Curso Node.js 2018 <span>&#x1f1e7;&#x1f1f7;</span></h1>
 
+🚧 🚧 Under Construction 🚧 🚧
+
 Welcome! :mouse:
 
 Esse curso tem como objetivo levar o conhecimento histórico, ensinar conceitos básicos do ecossistema, apresentar os módulos do core, passar uma perspectiva dos módulos da comunidade e capacitar você a ler, entender e escrever um bom código para Node.js.
