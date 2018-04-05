@@ -2,6 +2,8 @@
 
 🚧 🚧 Under Construction 🚧 🚧
 
+---
+
 Welcome! :mouse:
 
 Esse curso tem como objetivo levar o conhecimento histórico, ensinar conceitos básicos do ecossistema, apresentar os módulos do core, passar uma perspectiva dos módulos da comunidade e capacitar você a ler, entender e escrever um bom código para Node.js.
