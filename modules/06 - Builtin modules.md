@@ -164,7 +164,7 @@ Streams são mais consumidas do que implementadas, o que *IMHO* deixa mais difí
 
 ### Implementando streams
 
-Para implementar uma stream, precisamos primeiro criar uma classe extendendo um dos 4 tipos de streams: `stream.Writable`[[11](https://nodejs.org/api/stream.html#stream_implementing_a_writable_stream)], `stream.Readable`[[12]](https://nodejs.org/api/stream.html#stream_implementing_a_readable_stream), `stream.Duplex`[[13](https://nodejs.org/api/stream.html#stream_implementing_a_duplex_stream) ou `stream.Transform`[[14](https://nodejs.org/api/stream.html#stream_implementing_a_transform_stream)] e implementarmos alguns métodos necessários dependo da instância desejada.
+Para implementar uma stream, precisamos primeiro criar uma classe extendendo um dos 4 tipos de streams: `stream.Writable`[[11](https://nodejs.org/api/stream.html#stream_implementing_a_writable_stream)], `stream.Readable`[[12](https://nodejs.org/api/stream.html#stream_implementing_a_readable_stream)], `stream.Duplex`[[13](https://nodejs.org/api/stream.html#stream_implementing_a_duplex_stream)] ou `stream.Transform`[[14](https://nodejs.org/api/stream.html#stream_implementing_a_transform_stream)] e implementarmos alguns métodos necessários dependo da instância desejada.
 Também podemos implementar streams iniciando alguma dessas classes diretamente, passando como `options{}` os métodos necessários para implementação.
 
 Veremos em detalhes cada uma dessas classes a seguir.
@@ -173,11 +173,11 @@ Veremos em detalhes cada uma dessas classes a seguir.
 
 Precisamos implementar os seguintes métodos para uma writable stream:
 
-- `_write` (`options.write`) [[15](https://nodejs.org/api/stream.html#stream_writable_write_chunk_encoding_callback_1]
-- `_writev`  (`options.writev`)[[16](https://nodejs.org/api/stream.html#stream_writable_writev_chunks_callback] *optional*
-- `_final`  (`options.final`)[[17](https://nodejs.org/api/stream.html#stream_writable_final_callback) *optional*
+- `_write` (`options.write`) [[15](https://nodejs.org/api/stream.html#stream_writable_write_chunk_encoding_callback_1)]
+- `_writev`  (`options.writev`)[[16](https://nodejs.org/api/stream.html#stream_writable_writev_chunks_callback)] *optional*
+- `_final`  (`options.final`)[[17](https://nodejs.org/api/stream.html#stream_writable_final_callback)] *optional*
 
-Todas as opções aceitadas pela writable stream podem ser encontradas na referência[[18](https://nodejs.org/api/stream.html#stream_constructor_new_stream_writable_options].
+Todas as opções aceitadas pela writable stream podem ser encontradas na referência[[18](https://nodejs.org/api/stream.html#stream_constructor_new_stream_writable_options)].
 
 Veremos um exemplo simples de writable stream:
 
@@ -209,13 +209,13 @@ myFirstStream.on('finish', () => {
     console.log(myUnderlyingResource); // foobar
 });
 
-console.log(myUnderlyingResource); // empty string
+console.log(myUnderlyingResource); // ''
 ```
 
 Note que no exemplo acima passamos uma string e simplesmente concatenamos nossa string em nosso *resource* (internamente é chamado o método `.toString()` para nosso buffer). <br />
 Esse resource poderia ser um *file description*, uma outra *stream* ou até mesmo um outro processo.
 
-Para simplificar não estamos usando o módulo interno `string_decoder`, porém se estivéssemos trabalhando com *multi-byte encoding*, precisaríamos fazer algo mais parecido com o exemplo da própria documentação [[19](https://nodejs.org/api/stream.html#stream_decoding_buffers_in_a_writable_stream)
+Para simplificar não estamos usando o módulo interno `string_decoder`, porém se estivéssemos trabalhando com *multi-byte encoding*, precisaríamos fazer algo mais parecido com o exemplo da própria documentação [[19](https://nodejs.org/api/stream.html#stream_decoding_buffers_in_a_writable_stream)]
 
 [ ... talk a little about how that is working and why not necessary need to call finish/writev ...)
 
