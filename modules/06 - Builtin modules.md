@@ -70,7 +70,7 @@ const promiseFunction = util.promisify(callbackStyleFunction);
 
 ## events
 
-O módulo de events[[05]](https://nodejs.org/api/events.html) basicamente provém uma interface para *Observer pattern*[[06]](https://www.tutorialspoint.com/design_pattern/observer_pattern.htm).
+O módulo de events[[05]](https://nodejs.org/api/events.html) provém uma interface para o *Observer pattern*[[06]](https://www.tutorialspoint.com/design_pattern/observer_pattern.htm).
 
 É uma classe que podemos extender, ou usar ela direto, ela tem métodos como `on`[[07]](https://nodejs.org/api/events.html#events_emitter_on_eventname_listener) e `once`[[08]](https://nodejs.org/api/events.html#events_emitter_once_eventname_listener) para ouvir eventos e um método chamado `emit`[[09]](https://nodejs.org/api/events.html#events_emitter_emit_eventname_args) para chamarmos esses eventos, além de varios outros *helpers*[[05]](https://nodejs.org/api/events.html).
 
@@ -149,6 +149,100 @@ myEventEmitter.emit('speedy', '--- force HIT');
 myEventEmitter.removeAllListeners();
 ```
 
-Notou que o `EventEmitter` chama os eventos na ordem que foram registrados? Notou também que o `removeListener` é chamado quando removemos o `newListener` em `myEventEmitter.removeAllListeners()` ? E o inverso também ocorre, vemos o evento `removeListener` ser adicionando. :)
+Notou que o `EventEmitter` chama os eventos na ordem que foram registrados? Notou também que o `removeListener` é chamado quando removemos o `newListener` em `myEventEmitter.removeAllListeners()` ? E o inverso também ocorre, vemos o evento `removeListener` ser adicionando.
+
+
+## stream
+
+O módulo `stream` provém uma API para criarmos e usarmos de modo fácil streams. Vários objetos internamente usam (e abusam) de stream, como por exemplo o http incoming(request) [[10]](https://github.com/nodejs/node/blob/29be1e5/lib/_http_incoming.js#L25-L302].
+
+Streams podem ser *readable*, *writable* ou ambos, o que significa que podemos ter uma stream para escrever dados, para ler dados ou ambos. Todas as streams são instâncias de *EventEmitter*.
+
+Streams são mais consumidas do que implementadas, o que *IMHO* deixa mais difícil para o dev entender o que está acontecendo, quando primeiro aprendemos a implementar uma stream e depois a consumi-la fica muito mais claro todo o caminho, por esse motivo iremos começar *implementando streams* (além de que, é bem mais divertido você consumir uma stream que você implementou =D).
+
+[ ... talk about end/finish ... ]
+
+### Implementando streams
+
+Para implementar uma stream, precisamos primeiro criar uma classe extendendo um dos 4 tipos de streams: `stream.Writable`[[11](https://nodejs.org/api/stream.html#stream_implementing_a_writable_stream)], `stream.Readable`[[12]](https://nodejs.org/api/stream.html#stream_implementing_a_readable_stream), `stream.Duplex`[[13](https://nodejs.org/api/stream.html#stream_implementing_a_duplex_stream) ou `stream.Transform`[[14](https://nodejs.org/api/stream.html#stream_implementing_a_transform_stream)] e implementarmos alguns métodos necessários dependo da instância desejada.
+Também podemos implementar streams iniciando alguma dessas classes diretamente, passando como `options{}` os métodos necessários para implementação.
+
+Veremos em detalhes cada uma dessas classes a seguir.
+
+#### stream.Writable
+
+Precisamos implementar os seguintes métodos para uma writable stream:
+
+- `_write` (`options.write`) [[15](https://nodejs.org/api/stream.html#stream_writable_write_chunk_encoding_callback_1]
+- `_writev`  (`options.writev`)[[16](https://nodejs.org/api/stream.html#stream_writable_writev_chunks_callback] *optional*
+- `_final`  (`options.final`)[[17](https://nodejs.org/api/stream.html#stream_writable_final_callback) *optional*
+
+Todas as opções aceitadas pela writable stream podem ser encontradas na referência[[18](https://nodejs.org/api/stream.html#stream_constructor_new_stream_writable_options].
+
+Veremos um exemplo simples de writable stream:
+
+```javascript
+const { Writable } = require('stream');
+
+let myUnderlyingResource = '';
+class MyFirstWritable extends Writable {
+    // http://bit.ly/2JoEZe9
+    _write (chunk, encoding, callback) {
+        // console.log(chunk); // <Buffer .. .. ..>
+        // console.log(encoding); // buffer
+
+        // we don't really care about enconding now, we will just implement
+        // a write string, and will use a setTimeout to simulate async
+        setTimeout(() => {
+            myUnderlyingResource += chunk;
+            callback();
+        }, 1);
+    }
+}
+
+const myFirstStream = new MyFirstWritable();
+
+myFirstStream.write('foo');
+myFirstStream.end('bar');
+
+myFirstStream.on('finish', () => {
+    console.log(myUnderlyingResource); // foobar
+});
+
+console.log(myUnderlyingResource); // empty string
+```
+
+Note que no exemplo acima passamos uma string e simplesmente concatenamos nossa string em nosso *resource* (internamente é chamado o método `.toString()` para nosso buffer). <br />
+Esse resource poderia ser um *file description*, uma outra *stream* ou até mesmo um outro processo.
+
+Para simplificar não estamos usando o módulo interno `string_decoder`, porém se estivéssemos trabalhando com *multi-byte encoding*, precisaríamos fazer algo mais parecido com o exemplo da própria documentação [[19](https://nodejs.org/api/stream.html#stream_decoding_buffers_in_a_writable_stream)
+
+[ ... talk a little about how that is working and why not necessary need to call finish/writev ...)
+
+### Consumindo streams
+
+## http e https
+
+## querystring
+
+## url
+
+## net
+
+## fs
+
+## path
+
+## crypto
+
+## zlib
+
+## cluster
+
+## child_process
+
+
+---
+
 
 # Referência
