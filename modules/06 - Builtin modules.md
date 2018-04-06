@@ -186,7 +186,7 @@ const { Writable } = require('stream');
 
 let myUnderlyingResource = '';
 class MyFirstWritable extends Writable {
-    // http://bit.ly/2JoEZe9
+    // https://nodejs.org/api/stream.html#stream_writable_write_chunk_encoding_callback_1
     _write (chunk, encoding, callback) {
         // console.log(chunk); // <Buffer .. .. ..>
         // console.log(encoding); // buffer
@@ -206,7 +206,7 @@ myFirstStream.write('foo');
 myFirstStream.end('bar');
 
 myFirstStream.on('finish', () => {
-    console.log(myUnderlyingResource); // foobar
+    console.log(myUnderlyingResource); // 'foobar'
 });
 
 console.log(myUnderlyingResource); // ''
