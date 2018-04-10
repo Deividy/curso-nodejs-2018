@@ -163,7 +163,7 @@ Streams podem ser *readable*, *writable* ou ambos, o que significa que podemos t
 
 ### Consumindo streams
 
-Como *streams* são instâncias de EventEmitter, para consumi-las usamos a interface de eventos, os principais eventos emitidos por padrão de uma stream são: `data`, `end` (para readable streams) e `finish`.
+Como *streams* são instâncias de `EventEmitter`, para consumi-las usamos a interface de eventos, os principais eventos emitidos por padrão de uma stream são: `data`, `end` *(readable streams)* e `finish` *(writable streams)*.
 O exemplo mais comum é o http module, ele usa internamente *streams* para cuidar do request object, o exemplo pode ser encontrado nas docs do Node.js[[25]](https://nodejs.org/api/stream.html#stream_api_for_stream_consumers).
 
 Vamos implementar algumas streams e ficará mais claro como elas funcinonam assim que formos implementando.
