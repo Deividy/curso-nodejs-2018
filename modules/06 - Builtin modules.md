@@ -217,7 +217,61 @@ Esse resource poderia ser um *file description*, uma outra *stream* ou até mesm
 
 Para simplificar não estamos usando o módulo interno `string_decoder`, porém se estivéssemos trabalhando com *multi-byte encoding*, precisaríamos fazer algo mais parecido com o exemplo da própria documentação [[19](https://nodejs.org/api/stream.html#stream_decoding_buffers_in_a_writable_stream)]
 
-[ ... talk a little about how that is working and why not necessary need to call finish/writev ...)
+[ ... talk a little about how that is working and why not necessary need to call finish/writev ...]
+
+#### stream.Readable
+
+Para usarmos uma *readable stream* precisamos implementar pelo menos o método de `read(size)`, podemos passar ele como `options`, igual fazemos para writable streams, ou extender a propriedade `_read(size)`[[20]](https://nodejs.org/api/stream.html#stream_readable_read_size_1).
+
+Importante notarmos que o *size* é o tamanho em bytes pedidos pela stream, nossa implementação não necessáriamente precisa usar esse paramêtro, podemos simplesmente cuidar de mandar nossos dados de uma vez ou paginarmos de outra forma. <br />
+O método `read` é chamado quando iniciamos uma stream e sempre que chamamos o método `this.push(chunk)`[[21]](https://nodejs.org/api/stream.html#stream_readable_push_chunk_encoding).
+Para enviarmos os dados para o *caller* de nossa API usamos esse método `push`, para indicarmos que nossa stream terminou, enviamos o valor `null` *(`this.push(null)`)*.
+
+Execute o seguinte exemplo:
+
+```javascript
+const stream = require('stream');
+
+const myResource = "fear is how I fall, confusing what is real";
+class MyReadableStream extends stream.Readable {
+    constructor (options) {
+        super(options);
+        this.readPosition = 0;
+    }
+
+    // we will ignore the size here
+    _read (size) {
+        // setTimeout to simulate something async
+        setTimeout(() => {
+            // here we have to ensure a null return, since node will check by null:
+            // https://github.com/nodejs/node/blob/cf5f986/lib/_stream_readable.js#L228
+            this.push(myResource.split(' ')[this.readPosition++] || null);
+        }, 5 * Math.random()); // since its async, why not use some random time? :)
+    }
+}
+
+
+const myFirstReadableStream = new MyReadableStream();
+
+// parsing this readable stream! :)
+const allWords = [ ];
+myFirstReadableStream.on('data', (data) => {
+    console.log(`Receiving data: ${data}`);
+    allWords.push(data);
+});
+
+myFirstReadableStream.on('end', () => {
+    console.log(' ');
+    console.log(allWords.join(' '));
+});
+```
+
+Nos docs do próprio Node.js tem um exemplo de contador usando *readable stream*[[22]](https://nodejs.org/api/stream.html#stream_an_example_counting_stream).
+
+[talk about read internally and push]
+
+#### stream.Duplex
+
 
 ### Consumindo streams
 
