@@ -161,9 +161,12 @@ O módulo `stream` provém uma API para criarmos e usarmos de modo fácil stream
 
 Streams podem ser *readable*, *writable* ou ambos, o que significa que podemos ter uma stream para escrever dados, para ler dados ou ambos. Todas as streams são instâncias de *EventEmitter*.
 
-Streams são mais consumidas do que implementadas, o que *IMHO* deixa mais difícil para o dev entender o que está acontecendo, quando primeiro aprendemos a implementar uma stream e depois a consumi-la fica muito mais claro todo o caminho, por esse motivo iremos começar *implementando streams* (além de que, é bem mais divertido você consumir uma stream que você implementou =D).
+### Consumindo streams
 
-[ ... talk about end/finish ... ]
+Como *streams* são instâncias de EventEmitter, para consumi-las usamos a interface de eventos, os principais eventos emitidos por padrão de uma stream são: `data`, `end` (para readable streams) e `finish`.
+O exemplo mais comum é o http module, ele usa internamente *streams* para cuidar do request object, o exemplo pode ser encontrado nas docs do Node.js[[25]](https://nodejs.org/api/stream.html#stream_api_for_stream_consumers).
+
+Vamos implementar algumas streams e ficará mais claro como elas funcinonam assim que formos implementando.
 
 ### Implementando streams
 
@@ -370,10 +373,7 @@ myFirstTransformStream.on('end', () => {
     console.log('End');
     console.log(transformedArray);
 });
-
 ```
-
-### Consumindo streams
 
 ## http e https
 
