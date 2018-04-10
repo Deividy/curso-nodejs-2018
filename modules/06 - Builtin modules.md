@@ -223,8 +223,6 @@ Esse resource poderia ser um *file description*, uma outra *stream* ou até mesm
 
 Para simplificar não estamos usando o módulo interno `string_decoder`, porém se estivéssemos trabalhando com *multi-byte encoding*, precisaríamos fazer algo mais parecido com o exemplo da própria documentação [[19](https://nodejs.org/api/stream.html#stream_decoding_buffers_in_a_writable_stream)]
 
-[ ... talk a little about how that is working and why not necessary need to call finish/writev ...]
-
 #### stream.Readable
 
 Para usarmos uma *readable stream* precisamos implementar pelo menos o método de `read(size)`, podemos passar ele como `options`, igual fazemos para writable streams, ou extender a propriedade `_read(size)`[[20]](https://nodejs.org/api/stream.html#stream_readable_read_size_1).
@@ -273,8 +271,6 @@ myFirstReadableStream.on('end', () => {
 ```
 
 Nos docs do próprio Node.js tem um exemplo de contador usando *readable stream*[[22]](https://nodejs.org/api/stream.html#stream_an_example_counting_stream).
-
-[talk about read internally and push]
 
 #### stream.Duplex
 
@@ -375,7 +371,7 @@ myFirstTransformStream.on('end', () => {
 });
 ```
 
-## http e https
+## http / https
 
 ## querystring
 
