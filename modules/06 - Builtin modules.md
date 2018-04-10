@@ -157,7 +157,7 @@ Notou que o `EventEmitter` chama os eventos na ordem que foram registrados? Noto
 
 ## stream
 
-O módulo `stream` provém uma API para criarmos e usarmos de modo fácil streams. Vários objetos internamente usam (e abusam) de stream, como por exemplo o http incoming(request) [[10](https://github.com/nodejs/node/blob/29be1e5/lib/_http_incoming.js#L25-L302].
+O módulo `stream` provém uma API para criarmos e usarmos de modo fácil streams. Vários objetos internamente usam (e abusam) de stream, como por exemplo o http incoming(request) [[10]](https://github.com/nodejs/node/blob/29be1e5/lib/_http_incoming.js#L25-L302).
 
 Streams podem ser *readable*, *writable* ou ambos, o que significa que podemos ter uma stream para escrever dados, para ler dados ou ambos. Todas as streams são instâncias de *EventEmitter*.
 
