@@ -1,5 +1,8 @@
 # 6) Módulos internos
 
+> "Truth can only be found in one place: the code." <br />
+> Robert C. Martin
+
 Podemos fazer **muita** coisa somente usando os módulos que vem no Node.js, na maioria dos casos não precisamos de um *framework boladão* para resolver um simples problema.
 
 Temos *out-of-the-box* modulos para eventos, streams, http, https, net, file system, entre muitos outros!
