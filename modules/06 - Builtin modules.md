@@ -343,6 +343,35 @@ myFirstDuplexStream.on('finish', (a) => {
 
 Essa é uma duplex stream onde o *output* pode ser diferente de seu input, ou seja podemos transformar o dado antes de retornar na parte para readable[[24]](https://nodejs.org/api/stream.html#stream_implementing_a_transform_stream).
 
+`stream.Transform` extende de `stream.Duplex` e implementa seus próprios métodos de `read()` e `write()`.
+
+Ela é muito usada quando precisamos transformar um dado de input em algo um pouco diferente para output, considere o seguinte exemplo:
+
+```javascript
+const stream = require('stream');
+
+const myFirstTransformStream = new stream.Transform({
+    transform (chunk, encoding, callback) {
+        this.push(`Transforming: ${chunk}`);
+        callback();
+    }
+});
+
+const transformedArray = [ ];
+myFirstTransformStream.on('data', (d) => {
+    console.log(`Received data: ${d}`);
+    transformedArray.push(d.toString());
+});
+
+myFirstTransformStream.write('fire');
+myFirstTransformStream.end('in the hole');
+
+myFirstTransformStream.on('end', () => {
+    console.log('End');
+    console.log(transformedArray);
+});
+
+```
 
 ### Consumindo streams
 
