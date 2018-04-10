@@ -272,6 +272,74 @@ Nos docs do próprio Node.js tem um exemplo de contador usando *readable stream*
 
 #### stream.Duplex
 
+Uma *strea duplex* é básicamente uma stream que implementa as duas interfâces, pode ler e escrever [[22]](https://nodejs.org/api/stream.html#stream_implementing_a_duplex_stream), uma conexão TCP é um exemplo de duplex stream.
+
+Como não conseguimos extender duas classes em JavaScript, `stream.Duplex` extende de `stream.Readable` e aplica os métodos de `stream.Writable`, como ela reescreve `Symbol.hasInstance` o método `instanceoff` retorna true para ambos.
+
+Uma opção interessante da duplex stream é `allowHalfOpen`, pois podemos fechar a stream assim que a parte writable ou readable terminar, ou não (*default* é não), além disso podemos passar qualquer uma das opções de readable ou writeable[[23]](https://nodejs.org/api/stream.html#stream_new_stream_duplex_options).
+
+Veja um exemplo simples usando *stream duplex*:
+
+```javascript
+const stream = require('stream');
+
+class MyDuplexStream extends stream.Duplex {
+    constructor (options) {
+        super(options);
+
+        this.myResourceArray = [ ];
+        this.readPosition = 0;
+    }
+
+    _write(chunk, encoding, callback) {
+        setTimeout(() => {
+            console.log(`Writing: ${chunk}`);
+            this.myResourceArray.push(chunk);
+
+            callback();
+        }, 600 * Math.random()); // well, usually write takes more time
+                                 // than read :P
+    }
+
+    _read (size) {
+        setTimeout(() => {
+            this.push(this.myResourceArray[this.readPosition++] || null);
+        }, 420 * Math.random());
+    }
+}
+
+const myFirstDuplexStream = new MyDuplexStream();
+
+myFirstDuplexStream.write('Enquanto');
+myFirstDuplexStream.write('uns');
+myFirstDuplexStream.write('choram');
+myFirstDuplexStream.write('outros');
+myFirstDuplexStream.write('vem e os');
+myFirstDuplexStream.end('devoram.');
+
+myFirstDuplexStream.on('finish', (a) => {
+    console.log('Finish write.');
+    console.log('');
+
+    const allReadData = [ ];
+    myFirstDuplexStream.on('data', (data) => {
+        allReadData.push(data);
+        console.log(`Reading data: ${data}`);
+    });
+
+    myFirstDuplexStream.on('end', () => {
+        console.log('Finish read.');
+        console.log('');
+
+        console.log(allReadData.join(' '));
+    });
+});
+```
+
+#### stream.Transform
+
+Essa é uma duplex stream onde o *output* pode ser diferente de seu input, ou seja podemos transformar o dado antes de retornar na parte para readable[[24]](https://nodejs.org/api/stream.html#stream_implementing_a_transform_stream).
+
 
 ### Consumindo streams
 
