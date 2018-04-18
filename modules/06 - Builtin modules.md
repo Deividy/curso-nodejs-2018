@@ -373,6 +373,12 @@ myFirstTransformStream.on('end', () => {
 
 ## http / https
 
+Vamos falar agora sobre http modules, provavelmente o primeiro modulo que muitas (se não quase todas) as pessoas tem contato ao iniciar com o Node.js.
+
+A interface de HTTP foi desenvolvida com muitas *features* do protocolo, que geralmente tem sido difíceis de usar em outras linguagens. Foi desenvolvida com muito cuidado para nunca mandar todos os dados de uma vez (e não matar sua app).
+
+Recebemos os headers em um objeto comum JavaScript, uma peculiaridade é que as chaves desse objeto voltam em *lower case* mas os valores não são modificados, porém é possível acessar o objeto original com as keys no formato que foram enviados em uma entrada de `.rawHeaders`.
+
 ## querystring
 
 ## url
